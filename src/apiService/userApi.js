@@ -3,7 +3,7 @@ const baseUrl = import.meta.env.VITE_BACKEND;
 export const getUser = async () => {
     const token = localStorage.getItem("access_token");
     const response = await fetch(`${baseUrl}/user`, {
-        headers: { authorization: `Bearer ${token}` }, // ponemos en headers el token generado
+        headers: { "authorization": `Bearer ${token}` }, // ponemos en headers el token generado
     });
     const user = await response.json();
     return user;
@@ -16,6 +16,7 @@ export const login = async (email, password) => {
         body: JSON.stringify({ email, password }),
         headers: {
             "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
         },
     });
     const logged = await response.json();
