@@ -6,6 +6,7 @@ import './login.scss'
 import '../../color.scss'
 import { login } from "../../apiService/userApi";
 import { useNavigate } from "react-router-dom";
+import Loader from "react-js-loader";
 
 function Login() {
     useEffect(() => {
@@ -27,8 +28,8 @@ function Login() {
         console.log('Received values of form: ', values);
         if (values.username === "" || values.password === "") { }
         setLoading(true)
-        const response = await login(email, password)
-        setLoading(false)
+        // const response = await login(email, password)
+        // setLoading(false)
         if (!response.msg) {
             navigate('/')
         }
@@ -85,7 +86,7 @@ function Login() {
                             </Form.Item>
                             <Form.Item>
                                 <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                    {loading ? <Spin /> : 'Send email'}
+                                    {loading ? <Loader type="rectangular-ping" /> : 'Send email'}
                                 </Button>
                             </Form.Item>
                         </Form>
