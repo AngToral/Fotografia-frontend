@@ -7,7 +7,10 @@ import '../../color.scss'
 
 function Login() {
     useEffect(() => {
-        document.body.style.backgroundColor = "#F1F0E8"
+        //document.body.style.backgroundColor = "#F1F0E8"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.png')"
+        document.body.style.backgroundSize = "contain"
+        document.body.style.backgroundPosition = "center center"
     })
 
     const onFinish = (values) => {
@@ -18,7 +21,7 @@ function Login() {
         <>
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
-                    <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendonza</Typography>
+                    <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography>
                     <Form
                         name="login"
                         initialValues={{
