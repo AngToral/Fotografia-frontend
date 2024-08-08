@@ -1,6 +1,14 @@
 @import "../../color.scss";
 
 .button {
-    background-color: $secondaryColor;
-    border-color: $secondaryColor;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    color: black;
+}
+
+.login {
+    padding: 50px;
+    border: 1px solid $thirdColor;
+    border-radius: 20px;
+    background-color: $fourthColor;
 }

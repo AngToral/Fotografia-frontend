@@ -16,6 +16,9 @@ module.exports = withMT({
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        display: 'AlexBrush'
+      },
       colors: {
         foto: {
           50: "#transparent", //trasparente
