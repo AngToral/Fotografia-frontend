@@ -31,7 +31,7 @@ function Login() {
         const response = await login(email, password)
         setLoading(false)
         if (!response.msg) {
-            navigate('/')
+            navigate('/') //logeado
         }
         if (response.msg === "This email is not registered") {
             message.warning("This email is not registered")
@@ -52,7 +52,8 @@ function Login() {
         setLoading(false)
         if (!response.msg) {
             setForgot(false)
-            navigate('/login')
+            navigate('/login') //correo enviado
+            message.success("Email sent!")
         }
         if (response.msg === "This email is not registered") {
             message.warning("This email is not registered")
