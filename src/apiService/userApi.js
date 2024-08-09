@@ -50,3 +50,17 @@ export const updateUser = async (id, data) => {
     const user = await response.json();
     return user;
 };
+
+export const forgotPasswordEmail = async (email) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/user/forgottenpassword`, {
+        method: "POST",
+        body: JSON.stringify(email),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}

@@ -4,7 +4,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Typography } from "@material-tailwind/react";
 import './login.scss'
 import '../../color.scss'
-import { login } from "../../apiService/userApi";
+import { forgotPasswordEmail, login } from "../../apiService/userApi";
 import { useNavigate } from "react-router-dom";
 import Loader from "react-js-loader";
 
@@ -28,8 +28,8 @@ function Login() {
         console.log('Received values of form: ', values);
         if (values.username === "" || values.password === "") { }
         setLoading(true)
-        // const response = await login(email, password)
-        // setLoading(false)
+        const response = await login(email, password)
+        setLoading(false)
         if (!response.msg) {
             navigate('/')
         }
@@ -44,10 +44,14 @@ function Login() {
         }
     };
 
-    const onForgot = (value) => {
-        console.log('Received values of form: ', value);
+    const onForgot = async (email) => {
+        console.log('Received emails of form: ', email);
         setLoading(true)
-        //enviamos correo
+        const response = await forgotPasswordEmail(email)
+        setLoading(false)
+        if (!response.msg) {
+            navigate('/')
+        }
     }
 
     return (
