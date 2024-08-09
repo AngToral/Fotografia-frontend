@@ -16,7 +16,6 @@ export const login = async (email, password) => {
         body: JSON.stringify({ email, password }),
         headers: {
             "Content-Type": "application/json",
-            "authorization": `Bearer ${token}`,
         },
     });
     const logged = await response.json();
