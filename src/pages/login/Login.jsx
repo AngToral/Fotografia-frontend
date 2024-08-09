@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Checkbox, Form, Input, Flex, Spin, message } from 'antd';
+import { Button, Checkbox, Form, Input, Flex, message } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Typography } from "@material-tailwind/react";
 import './login.scss'
