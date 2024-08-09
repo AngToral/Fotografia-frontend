@@ -86,7 +86,7 @@ function Login() {
                             </Form.Item>
                             <Form.Item>
                                 <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                    {loading ? <Loader type="rectangular-ping" /> : 'Send email'}
+                                    {loading ? <Loader type="rectangular-ping" size={180} /> : 'Send email'}
                                 </Button>
                             </Form.Item>
                         </Form>
@@ -144,7 +144,7 @@ function Login() {
 
                             <Form.Item>
                                 <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                    {loading ? <Spin /> : 'Login'}
+                                    {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
                                 </Button>
                             </Form.Item>
                         </Form>}
