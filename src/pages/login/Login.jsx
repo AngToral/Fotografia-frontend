@@ -46,11 +46,15 @@ function Login() {
 
     const onForgot = async (email) => {
         console.log('Received emails of form: ', email);
+        if (email === "") { }
         setLoading(true)
         const response = await forgotPasswordEmail(email)
         setLoading(false)
         if (!response.msg) {
             navigate('/')
+        }
+        if (response.msg === "This email is not registered") {
+            message.warning("This email is not registered")
         }
     }
 
