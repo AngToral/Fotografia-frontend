@@ -1,20 +1,29 @@
-import { Alert, Button, Form, Input, Typography } from "antd";
+import { Alert, Button, Form, Input, Typography, message } from "antd";
 import { useEffect, useState } from "react";
 import Loader from "react-js-loader";
+import { useNavigate, useParams } from "react-router-dom";
+import { updateUser } from "../../apiService/userApi";
 
 function ForgotPassword() {
     useEffect(() => {
         document.body.style.backgroundColor = "#F1F0E8"
     })
 
+    const navigate = useNavigate();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false)
     const [change, setChange] = useState(false)
-    const [password, setPassword] = useState('')
+    const { userid } = useParams();
 
-    const onNew = (value) => {
-        console.log('Received values of form: ', value);
+    const onNew = async (value) => {
+        console.log('Received values of form: ', value.password);
         setLoading(true)
+        const response = await updateUser(userid, { password: value.password })
+        if (!response.msg) {
+            setLoading(false)
+            navigate('/login')
+            message.success("Password changed successfully")
+        }
     }
 
     return (
