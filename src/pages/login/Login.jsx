@@ -51,7 +51,8 @@ function Login() {
         const response = await forgotPasswordEmail(email)
         setLoading(false)
         if (!response.msg) {
-            navigate('/')
+            setForgot(false)
+            navigate('/login')
         }
         if (response.msg === "This email is not registered") {
             message.warning("This email is not registered")
@@ -146,7 +147,7 @@ function Login() {
                                     <Form.Item name="remember" valuePropName="checked" noStyle>
                                         <Checkbox className="check">Remember me</Checkbox>
                                     </Form.Item>
-                                    <a onClick={e => setForgot(!forgot)}>Forgot password</a>
+                                    <a onClick={e => setForgot(true)}>Forgot password</a>
                                 </Flex>
                             </Form.Item>
 
