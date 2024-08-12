@@ -29,7 +29,6 @@ export const addUser = async (data) => {
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",
-            "authorization": `Bearer ${token}`,
         },
     });
     const newUser = await response.json();

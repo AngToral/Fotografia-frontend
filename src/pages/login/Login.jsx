@@ -101,63 +101,66 @@ function Login() {
                             </Form.Item>
                         </Form>
                         :
-                        <Form
-                            form={form}
-                            name="login"
-                            initialValues={{
-                                remember: true,
-                            }}
-                            style={{
-                                maxWidth: 360,
-                            }}
-                            onFinish={onFinish}
-                        >
-                            <Form.Item
-                                name="email"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your email!',
-                                    },
-                                ]}
+                        <div>
+                            <Typography className="text-2xl mb-6 flex justify-center">Welcome back!</Typography>
+                            <Form
+                                form={form}
+                                name="login"
+                                initialValues={{
+                                    remember: true,
+                                }}
+                                style={{
+                                    maxWidth: 360,
+                                }}
+                                onFinish={onFinish}
                             >
-                                <Input
-                                    prefix={<UserOutlined />}
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={e => setEmail(e.currentTarget.value)} />
-                            </Form.Item>
-                            <Form.Item
-                                name="password"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your password!',
-                                    },
-                                ]}
-                            >
-                                <Input.Password
-                                    prefix={<LockOutlined />}
-                                    type="password"
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={e => setPassword(e.currentTarget.value)} />
-                            </Form.Item>
-                            <Form.Item>
-                                <Flex justify="space-between" align="center">
-                                    <Form.Item name="remember" valuePropName="checked" noStyle>
-                                        <Checkbox className="check">Remember me</Checkbox>
-                                    </Form.Item>
-                                    <a onClick={e => setForgot(true)}>Forgot password</a>
-                                </Flex>
-                            </Form.Item>
+                                <Form.Item
+                                    name="email"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your email!',
+                                        },
+                                    ]}
+                                >
+                                    <Input
+                                        prefix={<UserOutlined />}
+                                        placeholder="Email"
+                                        value={email}
+                                        onChange={e => setEmail(e.currentTarget.value)} />
+                                </Form.Item>
+                                <Form.Item
+                                    name="password"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your password!',
+                                        },
+                                    ]}
+                                >
+                                    <Input.Password
+                                        prefix={<LockOutlined />}
+                                        type="password"
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={e => setPassword(e.currentTarget.value)} />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Flex justify="space-between" align="center">
+                                        <Form.Item name="remember" valuePropName="checked" noStyle>
+                                            <Checkbox className="check">Remember me</Checkbox>
+                                        </Form.Item>
+                                        <a onClick={e => setForgot(true)}>Forgot password</a>
+                                    </Flex>
+                                </Form.Item>
 
-                            <Form.Item>
-                                <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                    {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
-                                </Button>
-                            </Form.Item>
-                        </Form>}
+                                <Form.Item>
+                                    <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
+                                        {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>}
                 </div>
             </div >
         </>
