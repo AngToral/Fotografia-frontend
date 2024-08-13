@@ -22,7 +22,13 @@ module.exports = withMT({
       colors: {
         foto: {
           50: "#transparent", //trasparente
-          100: "#d496a7", //rosa oscuro
+          100: "#c29e9b", //rosa oscuro
+          200: "#F1F0E8", //blanco roto
+          300: "#EEE0C9", //beige
+          400: "#ADC4CE", //azul claro
+          500: "#96B6C5", //azul más intenso
+          600: "#96B6C5bf", //600 transparente
+          700: "#f1dede", //rosa claro
         },
       },
     },

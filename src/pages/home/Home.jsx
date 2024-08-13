@@ -1,89 +1,47 @@
 import { useEffect, useState } from "react";
 import './home.scss'
-import { Typography } from "antd";
-import { Button, Collapse, IconButton, Menu, MenuHandler, MenuItem, MenuList, Navbar } from "@material-tailwind/react";
-import { Bars3Icon, ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Col, Divider, Flex, Row } from "antd";
 
 function Home() {
     useEffect(() => {
-        window.addEventListener(
-            "resize",
-            () => window.innerWidth >= 960 && setOpenNav(false)),
-            document.body.style.backgroundColor = "#f0ffff"
+        document.body.style.backgroundColor = "#f1dede"
     })
 
-    const [openMenu, setOpenMenu] = useState(false);
-    const [openNav, setOpenNav] = useState(false);
-
-    const navList = (
-        <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-medium"
-            >
-                <a href="#" className="flex items-center">
-                    Pages
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-medium"
-            >
-                <a href="#" className="flex items-center">
-                    Account
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-medium"
-            >
-                <a href="#" className="flex items-center">
-                    Blocks
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-medium"
-            >
-                <a href="#" className="flex items-center">
-                    Docs
-                </a>
-            </Typography>
-        </ul>
-    );
-
-    const countries = [
+    const flags = [
         {
             flag: "🇺🇸",
             name: "English",
         },
         {
             flag: "🇪🇸",
-            name: "Spain",
+            name: "Spanish",
         },
     ];
 
     return (
         <>
-            <div className="inicio flex flex-col justify-center items-center h-screen">
-                <div className="">
-                    <h1 className="text-3xl font-bold text-foto-100">
-                        Hola, home
-                    </h1>
-                </div>
-                <div>
-                    <h1 className="text-3xl font-bold text-foto-100">
-                        Hola, home
-                    </h1>
-                </div>
+            <div className="inicio h-screen">
+                <Flex justify="space-between">
+                    <Flex>
+                        <div className="m-4 text-xl font-bold text-foto-100">
+                            <div>Sobre mí</div>
+                        </div>
+                        <div className="m-4 text-xl font-bold text-foto-100">
+                            <div>Contacto</div>
+                        </div>
+                    </Flex>
+                    <div className="m-4 text-xl font-bold text-foto-100">
+                        <div>Idiomas</div>
+                    </div>
+                </Flex>
+                <Flex vertical align="center" justify="center" className="h-full">
+                    <div>
+                        <h1 className="text-3xl font-bold text-foto-100">Firma centro abajo</h1>
+                    </div>
+                    <div>
+                        <h1 className="text-3xl font-bold text-foto-100">Foto centro debajo</h1>
+                    </div>
+                </Flex>
             </div>
             <div className="inicio flex justify-center items-center h-screen">
                 <h1 className="text-3xl font-bold text-foto-100">
