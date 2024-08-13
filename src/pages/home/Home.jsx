@@ -15,19 +15,19 @@ function Home() {
 
     return (
         <>
-            <div className="h-screen">
+            <div className="h-screen bg-foto-">
                 <Flex justify="space-between">
                     <Flex>
-                        <Button type="text" className="m-4 md:text-xl font-bold text-foto-800">
+                        <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-800">
                             Sobre mí
                         </Button>
-                        <Button type="text" className="m-4 md:text-xl font-bold text-foto-800">
+                        <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-800">
                             Contacto
                         </Button>
                     </Flex>
                     <Menu>
                         <MenuHandler>
-                            <Button type="text" className="m-4 md:text-xl font-bold text-foto-800">Idioma</Button>
+                            <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-800">Idioma</Button>
                         </MenuHandler>
                         <MenuList className="bg-foto-700 border-foto-100">
                             <MenuItem className="text-black">🇪🇸 Español</MenuItem>
@@ -36,20 +36,23 @@ function Home() {
                     </Menu>
                 </Flex>
                 <Flex vertical align="center" justify="center" className="">
-                    <img className="firma" src="../../../images/firma.png" />
-                    <img className="foto-inicio sm:h-[490px]" src="../../../images/perfil.png" />
-                    <p className="text-foto-800">_______________</p>
+                    <img className="rounded-full md:h-96 h-[300px]" src="../../../images/perfil.jpeg" />
+                    <img className="firma absolute md:bottom-72 bottom-48" src="../../../images/firma.png" />
+                    <p className="mt-14 text-foto-800">______________________</p>
                     <Flex>
-                        <Button type="text" className="md:text-xl text-foto-800">
+                        <Button type="text" className="text-lg text-foto-800">
                             Instagram
                         </Button>
-                        <Button type="text" className="md:text-xl text-foto-800">
+                        <Button type="text" className="text-lg text-foto-800">
                             Portfolio
                         </Button>
-                        <Button type="text" className="md:text-xl text-foto-800">
+                        <Button type="text" className="text-lg text-foto-800">
                             Blog
                         </Button>
                     </Flex>
+                    <Button type="text" className="mt-10 text-7xl text-foto-800 font-display">
+                        Galeria
+                    </Button>
                 </Flex>
             </div>
             <div className="inicio flex justify-center items-center h-screen">
