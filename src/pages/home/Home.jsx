@@ -77,6 +77,9 @@ function Home() {
                     <Animator animation={batch(Fade(), Sticky())}>
                         <p style={{ fontSize: "30px" }}>Servicios</p>
                     </Animator>
+                    <Animator animation={MoveIn(1000, 10)}>
+                        <p style={{ fontSize: "30px" }}>Servicios</p>
+                    </Animator>
                 </ScrollPage>
                 {/* contacto */}
                 <div>
