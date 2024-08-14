@@ -4,7 +4,6 @@
 }
 
 .foto-inicio {
-    //border: 1px solid #907a5f;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -12,4 +11,35 @@
 
 .firma {
     height: 230px;
+}
+
+.encabezado {
+    margin-top: 120px;
+}
+
+@media screen and (min-width: 1080px) {
+    .big-screen {
+        background-image: url('../../../images/perfil.jpeg');
+        background-size: cover;
+    }
+
+    .imagen {
+        display: none;
+    }
+
+    .firma {
+        top: 250px;
+        //height: 280px;
+    }
+
+    .encabezado {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .firma {
+        top: 300px;
+        height: 200px;
+    }
 }

@@ -30,6 +30,7 @@ module.exports = withMT({
           600: "#96B6C5bf", //600 transparente
           700: "#f1dede", //rosa claro
           800: "#907a5f", //marron oscuro
+          900: "#646f66", //verde
         },
       },
     },
