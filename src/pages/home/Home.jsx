@@ -16,15 +16,13 @@ function Home() {
     return (
         <>
             <div className="h-screen big-screen">
-                <div className="flex justify-between">
-                    <div>
-                        <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
-                            Sobre mí
-                        </Button>
-                        <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
-                            Contacto
-                        </Button>
-                    </div>
+                <div className="flex justify-end">
+                    <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
+                        Sobre mí
+                    </Button>
+                    <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
+                        Contacto
+                    </Button>
                     <Menu>
                         <MenuHandler>
                             <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">Idioma</Button>
