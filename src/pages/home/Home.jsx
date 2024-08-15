@@ -29,15 +29,15 @@ function Home() {
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
                             <div className="flex justify-end">
-                                <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.about-me")}
                                 </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.contact")}
                                 </Button>
                                 <Menu>
                                     <MenuHandler>
-                                        <Button type="text" className="m-4 md:text-xl text-base font-bold text-foto-900">
+                                        <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                             {t("header.lenguage")}<FaAngleDown />
                                         </Button>
                                     </MenuHandler>
@@ -55,16 +55,16 @@ function Home() {
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
                                 <div className="flex">
-                                    <Button type="text" className="text-lg text-foto-900">
+                                    <Button type="text" className="text-lg text-foto-900 font-display">
                                         {t("header.gallery")}
                                     </Button>
-                                    <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="text-lg text-foto-900">
+                                    <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="text-lg text-foto-900 font-display">
                                         Instagram
                                     </Button>
-                                    <Button type="text" className="text-lg text-foto-900">
+                                    <Button type="text" className="text-lg text-foto-900 font-display">
                                         Portfolio
                                     </Button>
-                                    <Button type="text" className="text-lg text-foto-900">
+                                    <Button type="text" className="text-lg text-foto-900 font-display">
                                         Blog
                                     </Button>
                                 </div>
