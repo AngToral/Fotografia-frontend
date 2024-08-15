@@ -50,7 +50,7 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.png" alt="mariana-mendoza" />
-                                <h1 type="text" className="encabezado text-7xl text-foto-900 font-display">
+                                <h1 type="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
@@ -75,19 +75,19 @@ function Home() {
                 {/* servicios */}
                 <ScrollPage>
                     <Animator animation={batch(Fade(), Sticky())}>
-                        <p style={{ fontSize: "30px" }}>Servicios</p>
+                        <p className="font-display" style={{ fontSize: "30px" }}>Servicios</p>
                     </Animator>
                     <Animator animation={MoveIn(1000, 10)}>
-                        <p style={{ fontSize: "30px" }}>Servicios</p>
+                        <p className="font-display" style={{ fontSize: "30px" }}>Servicios</p>
                     </Animator>
                 </ScrollPage>
                 {/* contacto */}
                 <div>
-                    <p style={{ fontSize: "30px" }} className="prueba h-screen">Contacto</p>
+                    <p style={{ fontSize: "30px" }} className="prueba h-screen font-display">Contacto</p>
                 </div>
                 {/* footer */}
                 <div >
-                    <p style={{ fontSize: "30px" }} className="prueba h-[100px]">Footer</p>
+                    <p style={{ fontSize: "30px" }} className="prueba h-[100px] font-display">Footer</p>
                 </div>
             </ScrollContainer >
         </>

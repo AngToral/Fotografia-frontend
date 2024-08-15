@@ -17,7 +17,9 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        display: 'AlexBrush'
+        firma: 'AlexBrush', //super cursiva
+        cursiva: ['Playwrite MX'],
+        display: ['LXGW WenKai TC']
       },
       colors: {
         foto: {
