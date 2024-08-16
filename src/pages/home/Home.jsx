@@ -11,10 +11,9 @@ import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 
-
 function Home() {
     useEffect(() => {
-        document.body.style.backgroundColor = "#F1F0E8"
+        document.body.style.backgroundColor = "#646f66"
     })
     const [t, i18n] = useTranslation("home")
 
@@ -42,8 +41,8 @@ function Home() {
                                         </Button>
                                     </MenuHandler>
                                     <MenuList className="bg-foto-700 border-foto-100">
-                                        <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black" data-lenguage="es">🇪🇸 Español</MenuItem>
-                                        <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black" data-lenguage="en">🇬🇧 English</MenuItem>
+                                        <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black font-display" data-lenguage="es">🇪🇸 Español</MenuItem>
+                                        <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black font-display" data-lenguage="en">🇬🇧 English</MenuItem>
                                     </MenuList>
                                 </Menu>
                             </div>
@@ -73,18 +72,70 @@ function Home() {
                     </Animator>
                 </ScrollPage>
                 {/* servicios */}
-                <ScrollPage>
-                    <Animator animation={batch(Fade(), Sticky())}>
-                        <p className="font-display" style={{ fontSize: "30px" }}>Servicios</p>
-                    </Animator>
-                    <Animator animation={MoveIn(1000, 10)}>
-                        <p className="font-display" style={{ fontSize: "30px" }}>Servicios</p>
-                    </Animator>
+                <ScrollPage >
+                    <div className="flex flex-col justify-between">
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.documentary")}
+                                </p>
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                            </div>
+                        </Animator>
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.portrait")}
+                                </p>
+                            </div>
+                        </Animator>
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.stage")}
+                                </p>
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                            </div>
+                        </Animator>
+                    </div>
+                </ScrollPage>
+                <ScrollPage >
+                    <div className="flex flex-col justify-between">
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.events")}
+                                </p>
+                            </div>
+                        </Animator>
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.crossfit")}
+                                </p>
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                            </div>
+                        </Animator>
+                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
+                            <div className="flex justify-between m-10">
+                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <p className="font-display text-foto-200 md:text-5xl">
+                                    {t("services.travel")}
+                                </p>
+                            </div>
+                        </Animator>
+                    </div>
                 </ScrollPage>
                 {/* contacto */}
-                <div>
-                    <p style={{ fontSize: "30px" }} className="prueba h-screen font-display">Contacto</p>
-                </div>
+                <ScrollPage>
+                    <Animator animation={Fade()}>
+                        <div>
+                            <p style={{ fontSize: "30px" }} className="prueba h-screen font-display">Contacto</p>
+                        </div>
+                    </Animator>
+                </ScrollPage>
                 {/* footer */}
                 <div >
                     <p style={{ fontSize: "30px" }} className="prueba h-[100px] font-display">Footer</p>

@@ -5,5 +5,13 @@
         "contact": "Contacto",
         "lenguage": "Idiomas",
         "gallery": "Galería"
+    },
+    "services": {
+        "documentary": "Fotoperiodismo y documental",
+        "portrait": "Retratos",
+        "stage": "Escenarios",
+        "events": "Cultural y Eventos",
+        "crossfit": "Crossfit",
+        "travel": "Viajes y paisajes"
     }
 }
