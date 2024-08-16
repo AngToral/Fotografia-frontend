@@ -73,7 +73,7 @@ function Home() {
                 </ScrollPage>
                 {/* servicios */}
                 <ScrollPage >
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <p className="font-display text-foto-200 md:text-5xl">
