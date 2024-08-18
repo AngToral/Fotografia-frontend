@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './home.scss'
-import { Button } from "antd";
+import { Button, DatePicker, Form, Input } from "antd";
 import {
     Menu,
     MenuHandler,
@@ -19,6 +19,7 @@ function Home() {
 
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
     const FadeUp = batch(Fade(), Move(), Sticky());
+    const { TextArea } = Input;
 
     return (
         <>
@@ -113,7 +114,7 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <p className="font-display text-foto-200 md:text-5xl">
-                                    {t("services.crossfit")}
+                                    {t("services.sports")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
                             </div>
@@ -129,10 +130,35 @@ function Home() {
                     </div>
                 </ScrollPage>
                 {/* contacto */}
-                <ScrollPage>
+                <ScrollPage className="flex justify-end items-center">
                     <Animator animation={Fade()}>
-                        <div>
-                            <p style={{ fontSize: "30px" }} className="prueba h-screen font-display">Contacto</p>
+                        <div className="mr-10">
+                            <Form
+                                className="form"
+                                wrapperCol={{
+                                    span: 25,
+                                }}
+                                labelCol={{
+                                    span: 20,
+                                }}
+                                layout="vertical"
+                            >
+                                <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
+                                    Contáctame
+                                </p>
+                                <Form.Item label="Nombre">
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item label="Email">
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item label="Título">
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item label="¿En qué te puedo ayudar?">
+                                    <TextArea rows={4} />
+                                </Form.Item>
+                            </Form>
                         </div>
                     </Animator>
                 </ScrollPage>
