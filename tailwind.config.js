@@ -31,7 +31,7 @@ module.exports = withMT({
           500: "#96B6C5", //azul más intenso
           600: "#96B6C5bf", //600 transparente
           700: "#f1dede", //rosa claro
-          800: "#907a5f", //marron oscuro
+          800: "#907a5f", //marron
           900: "#646f66", //verde
         },
       },

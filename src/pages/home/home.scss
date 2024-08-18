@@ -59,6 +59,7 @@
 
 .prueba {
     border: 1px solid red;
+    color: red;
 }
 
 .form {
@@ -67,4 +68,9 @@
     padding: 20px;
     width: 330px;
     background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));
+}
+
+.contact {
+    background-image: url('../../../images/fondo-contacto.png');
+    background-size: cover;
 }

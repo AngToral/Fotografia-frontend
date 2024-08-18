@@ -73,7 +73,7 @@ function Home() {
                     </Animator>
                 </ScrollPage>
                 {/* servicios */}
-                <ScrollPage >
+                <ScrollPage>
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
@@ -130,9 +130,9 @@ function Home() {
                     </div>
                 </ScrollPage>
                 {/* contacto */}
-                <ScrollPage className="flex justify-end items-center">
+                <ScrollPage className="flex md:justify-start justify-center items-center contact">
                     <Animator animation={Fade()}>
-                        <div className="mr-10">
+                        <div className="flex md:ml-48">
                             <Form
                                 className="form"
                                 wrapperCol={{
@@ -146,13 +146,13 @@ function Home() {
                                 <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
                                     Contáctame
                                 </p>
-                                <Form.Item label="Nombre">
+                                <Form.Item label="Nombre" className="mb-2" >
                                     <Input />
                                 </Form.Item>
-                                <Form.Item label="Email">
+                                <Form.Item label="Email" className="mb-2">
                                     <Input />
                                 </Form.Item>
-                                <Form.Item label="Título">
+                                <Form.Item label="Título" className="mb-2">
                                     <Input />
                                 </Form.Item>
                                 <Form.Item label="¿En qué te puedo ayudar?">
@@ -164,7 +164,7 @@ function Home() {
                 </ScrollPage>
                 {/* footer */}
                 <div >
-                    <p style={{ fontSize: "30px" }} className="prueba h-[100px] font-display">Footer</p>
+                    <p style={{ fontSize: "30px" }} className="h-[100px] font-display">Footer</p>
                 </div>
             </ScrollContainer >
         </>
