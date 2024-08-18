@@ -13,5 +13,11 @@
         "events": "Cultural y Eventos",
         "sports": "Deportes",
         "travel": "Viajes y paisajes"
+    },
+    "contact": {
+        "contactMe": "Contáctame",
+        "name": "Nombre",
+        "subject": "¿En qué te puedo ayudar?",
+        "send": "Enviar"
     }
 }

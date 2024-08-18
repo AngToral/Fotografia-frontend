@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import './home.scss'
-import { Button, DatePicker, Form, Input } from "antd";
+import { Button } from "antd";
 import {
     Menu,
     MenuHandler,
     MenuList,
     MenuItem,
+    Input,
+    Typography,
+    Textarea,
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+import { FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaInstagram } from "react-icons/fa";
 
 function Home() {
     useEffect(() => {
@@ -32,7 +38,7 @@ function Home() {
                                 <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.about-me")}
                                 </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" href="#contacto">
                                     {t("header.contact")}
                                 </Button>
                                 <Menu>
@@ -129,43 +135,89 @@ function Home() {
                         </Animator>
                     </div>
                 </ScrollPage>
+                {/* feedbacks */}
+                <ScrollPage className="bg-white">
+                    <p >Feedbak</p>
+                </ScrollPage>
                 {/* contacto */}
                 <ScrollPage className="flex md:justify-start justify-center items-center contact">
                     <Animator animation={Fade()}>
                         <div className="flex md:ml-48">
-                            <Form
+                            <form
                                 className="form"
-                                wrapperCol={{
-                                    span: 25,
-                                }}
-                                labelCol={{
-                                    span: 20,
-                                }}
-                                layout="vertical"
                             >
                                 <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
-                                    Contáctame
+                                    {t("contact.contactMe")}
                                 </p>
-                                <Form.Item label="Nombre" className="mb-2" >
-                                    <Input />
-                                </Form.Item>
-                                <Form.Item label="Email" className="mb-2">
-                                    <Input />
-                                </Form.Item>
-                                <Form.Item label="Título" className="mb-2">
-                                    <Input />
-                                </Form.Item>
-                                <Form.Item label="¿En qué te puedo ayudar?">
-                                    <TextArea rows={4} />
-                                </Form.Item>
-                            </Form>
+                                <div className="flex flex-col font-display gap-4">
+                                    <Input label={t("contact.name")} variant="standard" color="black" />
+                                    <Input label="Email" variant="standard" color="black" />
+                                    <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
+                                    <Textarea variant="standard" />
+                                </div>
+                                <Button className="md:text-xl text-base font-display text-foto-900" block type="text">
+                                    {t("contact.send")}
+                                </Button>
+                            </form>
                         </div>
                     </Animator>
                 </ScrollPage>
                 {/* footer */}
-                <div >
-                    <p style={{ fontSize: "30px" }} className="h-[100px] font-display">Footer</p>
-                </div>
+                <footer className="w-full bg-foto-200 p-8">
+                    <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
+                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-10" />
+                        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+                            <li>
+                                <Typography
+                                    as="a"
+                                    href="https://www.instagram.com/nanamendozago/"
+                                    color="blue-gray"
+                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    target="_blanck"
+                                >
+                                    <FaInstagram className="h-10 mr-1" />
+                                    @nanamendozago
+                                </Typography>
+                            </li>
+                            <li>
+                                <Typography
+                                    as="a"
+                                    href="https://www.linkedin.com/in/mariana1995/"
+                                    color="blue-gray"
+                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    target="_blanck"
+                                >
+                                    <FaLinkedin className="h-10 mr-1" />
+                                    Linked In
+                                </Typography>
+                            </li>
+                            <li>
+                                <Typography
+                                    color="blue-gray"
+                                    className="font-normal transition-colors flex items-center"
+                                >
+                                    <HiOutlineMail className="h-10 mr-1" />
+                                    nanamendozago@gmail.com
+                                </Typography>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr className="my-4 border-foto-800" />
+                    <div className="flex justify-center">
+                        <Typography color="blue-gray" className="font-normal mr-1">
+                            Website made by:
+                        </Typography>
+                        <Typography
+                            as="a"
+                            href="https://angelatoral.es/"
+                            color="blue-gray"
+                            className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
+                            target="_blanck"
+                        >
+                            @AngToral
+                        </Typography>
+                    </div>
+                </footer>
             </ScrollContainer >
         </>
     );

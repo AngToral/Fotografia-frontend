@@ -35,6 +35,11 @@
     .encabezado {
         margin-top: 40px;
     }
+
+    .contact {
+        background-image: url('../../../images/fondo-contacto.png');
+        background-size: cover;
+    }
 }
 
 @media screen and (max-width: 1079px) {
@@ -55,6 +60,11 @@
     .foto {
         height: 100px;
     }
+
+    .contact {
+        background-image: url('../../../images/fondo-contacto-mobile.png');
+        background-size: cover;
+    }
 }
 
 .prueba {
@@ -67,10 +77,5 @@
     border-radius: 20px;
     padding: 20px;
     width: 330px;
-    background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));
-}
-
-.contact {
-    background-image: url('../../../images/fondo-contacto.png');
-    background-size: cover;
+    background: rgba(255, 255, 255, 0.55);
 }

@@ -13,5 +13,11 @@
         "events": "Cultural and Events",
         "sports": "Sports",
         "travel": "Travel and Landscape"
+    },
+    "contact": {
+        "contactMe": "Contact me",
+        "name": "Name",
+        "subject": "How can I help?",
+        "send": "Send"
     }
 }
