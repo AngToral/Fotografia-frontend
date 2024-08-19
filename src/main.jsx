@@ -7,16 +7,20 @@ import { I18nextProvider } from "react-i18next";
 import i18next from 'i18next';
 import home_es from "./translations/es/home.json"
 import home_en from "./translations/en/home.json"
+import contact_es from "./translations/es/contact.json"
+import contact_en from "./translations/en/contact.json"
 
 i18next.init({
   interpolation: { escapeValue: false },
   lng: "es",
   resources: {
     es: {
-      home: home_es
+      home: home_es,
+      contact: contact_es
     },
     en: {
-      home: home_en
+      home: home_en,
+      contact: contact_en
     }
   }
 })

@@ -1,0 +1,37 @@
+@media screen and (max-width: 1079px) {
+    .screen {
+        display: block;
+    }
+
+    .div-foto {
+        width: auto;
+    }
+
+    .div-text {
+        width: auto;
+    }
+
+    .foto {
+        border-radius: 10px;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .screen {
+        display: flex;
+    }
+
+    .div-foto {
+        width: 50%;
+    }
+
+    .div-text {
+        width: 50%;
+    }
+
+    .foto {
+        border-radius: 30px;
+    }
+}
