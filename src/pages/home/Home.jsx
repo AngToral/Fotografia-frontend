@@ -23,10 +23,6 @@ function Home() {
     })
     const [t, i18n] = useTranslation("home")
 
-    const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
-    const FadeUp = batch(Fade(), Move(), Sticky());
-    const { TextArea } = Input;
-
     return (
         <>
             {/* header */}
@@ -38,7 +34,7 @@ function Home() {
                                 <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.about-me")}
                                 </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" href="#contacto">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.contact")}
                                 </Button>
                                 <Menu>
@@ -140,8 +136,8 @@ function Home() {
                     <p >Feedbak</p>
                 </ScrollPage>
                 {/* contacto */}
-                <ScrollPage className="flex md:justify-start justify-center items-center contact">
-                    <Animator animation={Fade()}>
+                <ScrollPage className="flex md:justify-start justify-center items-center contact" >
+                    <Animator animation={Fade()} >
                         <div className="flex md:ml-48">
                             <form
                                 className="form"
