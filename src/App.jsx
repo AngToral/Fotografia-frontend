@@ -5,6 +5,7 @@ import Login from './pages/login/Login'
 import Home from './pages/home/Home'
 import ForgotPassword from './pages/forgotPassword/ForgotPassword'
 import Register from './pages/register/Register'
+import AboutMe from './pages/about-me/AboutMe'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/newpassword/:userid' element={<ForgotPassword />} />
         <Route path='/' element={<Home />} />
+        <Route path='/aboutme' element={<AboutMe />} />
         {/* 
         gallery
         agregar nueva entrada 

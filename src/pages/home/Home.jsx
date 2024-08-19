@@ -17,17 +17,23 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Mo
 import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 
 function Home() {
     useEffect(() => {
         document.body.style.backgroundColor = "#646f66"
     })
+
     const [t, i18n] = useTranslation("home")
+    const navigate = useNavigate();
 
     const scrollToBottom = () => {
         document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
     };
+
+    function handleAboutMe() {
+        navigate("/aboutme")
+    }
 
     return (
         <>
@@ -37,7 +43,7 @@ function Home() {
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
                             <div className="flex justify-end">
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleAboutMe}>
                                     {t("header.about-me")}
                                 </Button>
                                 <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={scrollToBottom}>
