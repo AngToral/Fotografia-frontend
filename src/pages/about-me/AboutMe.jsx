@@ -22,9 +22,13 @@ function AboutMe() {
                                     Home
                                 </Button>
                             </div>
-                            <div className="flex justify-between">
-                                <p>Imagen</p>
-                                <p>Texto</p>
+                            <div className="flex m-6">
+                                <div className="w-1/2">
+                                    <p className="h-full w-full">Imagen</p>
+                                </div>
+                                <div>
+                                    <p className="ml-6">Texto</p>
+                                </div>
                             </div>
                         </div>
                     </Animator>
