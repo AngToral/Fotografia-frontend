@@ -22,6 +22,10 @@ function AboutMe() {
                                     Home
                                 </Button>
                             </div>
+                            <div className="flex justify-between">
+                                <p>Imagen</p>
+                                <p>Texto</p>
+                            </div>
                         </div>
                     </Animator>
                 </ScrollPage>
