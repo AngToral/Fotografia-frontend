@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import './home.scss'
 import { Button } from "antd";
@@ -17,11 +18,16 @@ import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
 
+
 function Home() {
     useEffect(() => {
         document.body.style.backgroundColor = "#646f66"
     })
     const [t, i18n] = useTranslation("home")
+
+    const scrollToBottom = () => {
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <>
@@ -34,7 +40,7 @@ function Home() {
                                 <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
                                     {t("header.about-me")}
                                 </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={scrollToBottom}>
                                     {t("header.contact")}
                                 </Button>
                                 <Menu>
@@ -136,32 +142,34 @@ function Home() {
                     <p >Feedbak</p>
                 </ScrollPage>
                 {/* contacto */}
-                <ScrollPage className="flex md:justify-start justify-center items-center contact" >
-                    <Animator animation={Fade()} >
-                        <div className="flex md:ml-48">
-                            <form
-                                className="form"
-                            >
-                                <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
-                                    {t("contact.contactMe")}
-                                </p>
-                                <div className="flex flex-col font-display gap-4">
-                                    <Input label={t("contact.name")} variant="standard" color="black" />
-                                    <Input label="Email" variant="standard" color="black" />
-                                    <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
-                                    <Textarea variant="standard" />
-                                </div>
-                                <Button className="md:text-xl text-base font-display text-foto-900" block type="text">
-                                    {t("contact.send")}
-                                </Button>
-                            </form>
-                        </div>
-                    </Animator>
-                </ScrollPage>
+                <div id='contacto'>
+                    <ScrollPage className="flex md:justify-start justify-center items-center contact" >
+                        <Animator animation={Fade()} >
+                            <div className="flex md:ml-48">
+                                <form
+                                    className="form"
+                                >
+                                    <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
+                                        {t("contact.contactMe")}
+                                    </p>
+                                    <div className="flex flex-col font-display gap-4">
+                                        <Input label={t("contact.name")} variant="standard" color="black" />
+                                        <Input label="Email" variant="standard" color="black" />
+                                        <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
+                                        <Textarea variant="standard" />
+                                    </div>
+                                    <Button className="md:text-xl text-base font-display text-foto-900" block type="text">
+                                        {t("contact.send")}
+                                    </Button>
+                                </form>
+                            </div>
+                        </Animator>
+                    </ScrollPage>
+                </div>
                 {/* footer */}
                 <footer className="w-full bg-foto-200 p-8">
                     <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
-                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-10" />
+                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
                         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                             <li>
                                 <Typography
