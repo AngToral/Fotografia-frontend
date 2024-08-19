@@ -1,9 +1,31 @@
-
+import { Button } from "antd";
+import { Animator, Fade, ScrollContainer, ScrollPage } from "react-scroll-motion";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 function AboutMe() {
+    const [t, i18n] = useTranslation("home")
+    const navigate = useNavigate();
+
+    function handleHome() {
+        navigate("/")
+    }
+
     return (
         <>
-            <h1>Sobre mí pantalla</h1>
+            <ScrollContainer>
+                <ScrollPage>
+                    <Animator animation={Fade()}>
+                        <div className="h-screen">
+                            <div className="flex justify-start">
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-300" onClick={handleHome}>
+                                    Home
+                                </Button>
+                            </div>
+                        </div>
+                    </Animator>
+                </ScrollPage>
+            </ScrollContainer>
         </>
     );
 }
