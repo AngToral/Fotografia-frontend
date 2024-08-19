@@ -65,7 +65,7 @@ function Login() {
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
                     {/* <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography> */}
-                    <img className="flex justify-center w-64" src="../../../public/images/firma.png" />
+                    <img className="flex justify-center w-64" src="../../../public/images/firma-rosa.png" />
                     {forgot ?
                         <Form
                             layout="vertical"
