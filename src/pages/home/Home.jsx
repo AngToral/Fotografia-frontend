@@ -42,7 +42,7 @@ function Home() {
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
-                            <div className="flex justify-end">
+                            <div className="flex justify-end navbar mb-4">
                                 <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleAboutMe}>
                                     {t("header.about-me")}
                                 </Button>

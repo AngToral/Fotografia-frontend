@@ -51,21 +51,21 @@ function AboutMe() {
                             <a
                                 href="https://www.instagram.com/nanamendozago/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-800 focus:text-foto-800"
+                                className="transition-colors hover:text-foto-800 focus:text-foto-800 mb-4"
                             >
                                 <FaInstagram className="h-10 w-7 mr-4" />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/mariana1995/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-800 focus:text-foto-800"
+                                className="transition-colors hover:text-foto-800 focus:text-foto-800 mb-4"
                             >
                                 <FaLinkedin className="h-10 w-7 mr-4" />
                             </a>
-                            <HiOutlineMail className="h-10 w-7 mr-1" />
+                            <HiOutlineMail className="h-10 w-7 mr-1 mb-4" />
                             <Typography
                                 color="blue-gray"
-                                className="font-display transition-colors flex items-center"
+                                className="font-display transition-colors flex items-center mb-4"
                             >
                                 nanamendozago@gmail.com
                             </Typography>

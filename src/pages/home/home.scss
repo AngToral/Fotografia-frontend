@@ -40,11 +40,15 @@
         background-image: url('../../../images/fondo-contacto.png');
         background-size: cover;
     }
+
+    .navbar {
+        background: rgba(215, 215, 215, 0.7);
+    }
 }
 
 @media screen and (max-width: 1079px) {
     .firma {
-        top: 300px;
+        top: 310px;
         height: 200px;
     }
 
