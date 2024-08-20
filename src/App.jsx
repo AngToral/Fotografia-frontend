@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import ForgotPassword from './pages/forgotPassword/ForgotPassword'
 import Register from './pages/register/Register'
 import AboutMe from './pages/about-me/AboutMe'
+import Gallery from './pages/gallery/Gallery'
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
         <Route path='/newpassword/:userid' element={<ForgotPassword />} />
         <Route path='/' element={<Home />} />
         <Route path='/aboutme' element={<AboutMe />} />
+        <Route path='/gallery' element={<Gallery />} />
         {/* 
-        gallery
         agregar nueva entrada 
         elimino
         edito

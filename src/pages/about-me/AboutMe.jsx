@@ -19,7 +19,7 @@ function AboutMe() {
         navigate("/")
     }
     function handleGallery() {
-        navigate("/")
+        navigate("/gallery")
     }
     function handleBlog() {
         navigate("/")

@@ -34,6 +34,9 @@ function Home() {
     function handleAboutMe() {
         navigate("/aboutme")
     }
+    function handleGallery() {
+        navigate("/gallery")
+    }
 
     return (
         <>
@@ -69,7 +72,7 @@ function Home() {
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
                                 <div className="flex">
-                                    <Button type="text" className="text-lg text-foto-900 font-display">
+                                    <Button type="text" className="text-lg text-foto-900 font-display" onClick={handleGallery}>
                                         {t("header.gallery")}
                                     </Button>
                                     <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="text-lg text-foto-900 font-display">
