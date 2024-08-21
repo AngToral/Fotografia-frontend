@@ -1,3 +1,6 @@
+@import "../../app.scss";
+// @import url("../../App.css");
+
 .inicio {
     border: 1px solid #907a5f;
     margin: 5px;
@@ -82,4 +85,25 @@
     padding: 20px;
     width: 330px;
     background: rgba(255, 255, 255, 0.55);
+}
+
+.link:hover {
+    animation-name: Getbig;
+    animation-fill-mode: both;
+    cursor: pointer;
+    color: $marron800 !important;
+}
+
+.link:active {
+    color: $marron800 !important;
+}
+
+@keyframes Getbig {
+    0% {
+        scale: 1;
+    }
+
+    100% {
+        scale: 1.1;
+    }
 }

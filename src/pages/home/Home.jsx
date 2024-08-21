@@ -46,15 +46,15 @@ function Home() {
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
                             <div className="flex justify-end navbar mb-4">
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleAboutMe}>
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link" onClick={handleAboutMe}>
                                     {t("header.about-me")}
                                 </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={scrollToBottom}>
+                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link" onClick={scrollToBottom}>
                                     {t("header.contact")}
                                 </Button>
                                 <Menu>
                                     <MenuHandler>
-                                        <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900">
+                                        <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link">
                                             {t("header.lenguage")}<FaAngleDown />
                                         </Button>
                                     </MenuHandler>
@@ -72,16 +72,16 @@ function Home() {
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
                                 <div className="flex">
-                                    <Button type="text" className="text-lg text-foto-900 font-display" onClick={handleGallery}>
+                                    <Button type="text" className="text-lg text-foto-900 font-display link" onClick={handleGallery}>
                                         {t("header.gallery")}
                                     </Button>
-                                    <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="text-lg text-foto-900 font-display">
+                                    <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="link text-lg text-foto-900 font-display">
                                         Instagram
                                     </Button>
-                                    <Button type="text" className="text-lg text-foto-900 font-display">
+                                    <Button type="text" className="text-lg text-foto-900 font-display link">
                                         Portfolio
                                     </Button>
-                                    <Button type="text" className="text-lg text-foto-900 font-display">
+                                    <Button type="text" className="text-lg text-foto-900 font-display link">
                                         Blog
                                     </Button>
                                 </div>
