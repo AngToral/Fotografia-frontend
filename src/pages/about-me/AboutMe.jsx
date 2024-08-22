@@ -65,7 +65,7 @@ function AboutMe() {
                             <HiOutlineMail className="h-10 w-7 mr-1 mb-4" />
                             <Typography
                                 color="blue-gray"
-                                className="font-display transition-colors flex items-center mb-4"
+                                className="font-display flex items-center mb-4"
                             >
                                 nanamendozago@gmail.com
                             </Typography>

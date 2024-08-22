@@ -1,0 +1,10 @@
+@import "../app.scss";
+
+.tema {
+    border: 1px solid $rosaClaro700;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: $rosaTransparente;
+    color: $marron800;
+}

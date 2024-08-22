@@ -207,7 +207,7 @@ function Home() {
                             <li>
                                 <Typography
                                     color="blue-gray"
-                                    className="font-normal transition-colors flex items-center"
+                                    className="font-normal flex items-center"
                                 >
                                     <HiOutlineMail className="h-10 mr-1" />
                                     nanamendozago@gmail.com
