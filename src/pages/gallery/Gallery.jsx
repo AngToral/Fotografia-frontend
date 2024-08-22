@@ -46,10 +46,10 @@ const Gallery = () => {
         <>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-between">
-                    <Button variant="text" className="link text-foto-500 m-4 md:text-lg font-semibold" onClick={handleHome}>
+                    <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
                         Home
                     </Button>
-                    <Button variant="text" className="link text-foto-500 m-4 md:text-lg font-semibold" onClick={addPhoto}>
+                    <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={addPhoto}>
                         Upload photo
                     </Button>
                 </div>
