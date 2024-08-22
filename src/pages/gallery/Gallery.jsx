@@ -37,9 +37,10 @@ function Gallery() {
                 {allPhotos.map((photo, index) => (
                     <div key={index}>
                         <p>{photo.createdAt ? photo.createdAt : null}</p>
+                        <p>{photo._id ? photo._id : null}</p>
                         <p>{photo.theme1 ? photo.theme1 : null}</p>
                         <p>{photo.theme2 ? photo.theme2 : null}</p>
-                        <p>{photo.photo ? photo.photo : null}</p>
+                        <p>{photo.imageGallery ? photo.imageGallery : null}</p>
                         <p>{photo.photoDate ? photo.photoDate : null}</p>
                     </div>
                 ))}
