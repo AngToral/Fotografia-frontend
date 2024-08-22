@@ -9,11 +9,11 @@ function ModalPhoto({ visible, onCancel, refresh }) {
 
     return (
         <Modal open={visible} okType="primary">
-            <Typography>Nueva foto de galería</Typography>
+            <Typography className="m-6 font-bold text-lg font-display">Nueva foto de galería</Typography>
             <Form
                 form={form}
                 labelCol={{
-                    span: 4,
+                    span: 6,
                 }}
                 wrapperCol={{
                     span: 14,

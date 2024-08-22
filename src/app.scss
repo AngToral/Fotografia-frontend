@@ -10,13 +10,12 @@ $rosaTransparente: #f1dedebf;
 
 button {
     &.ant-btn {
-        background-color: $rosaClaro700 !important;
+        background-color: $blancoRoto200 !important;
         color: $verde900 !important;
         border: none;
 
         &:hover {
-            background-color: $verde900 !important;
-            color: $rosaClaro700 !important;
+            background-color: $beige300 !important;
         }
     }
 }

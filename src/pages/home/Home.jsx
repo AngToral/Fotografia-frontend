@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import './home.scss'
-//import { Button } from "antd";
+import { Button } from "antd";
 import {
     Menu,
     MenuHandler,
@@ -10,7 +10,6 @@ import {
     Input,
     Typography,
     Textarea,
-    Button
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
@@ -168,9 +167,11 @@ function Home() {
                                         <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
                                         <Textarea variant="standard" />
                                     </div>
-                                    <Button className="md:text-xl text-base font-display text-foto-900" block type="text">
-                                        {t("contact.send")}
-                                    </Button>
+                                    <div className='flex justify-center'>
+                                        <button className="md:text-xl text-base font-display text-foto-900" block src="#">
+                                            {t("contact.send")}
+                                        </button>
+                                    </div>
                                 </form>
                             </div>
                         </Animator>

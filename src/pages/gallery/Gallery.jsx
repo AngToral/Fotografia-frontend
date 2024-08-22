@@ -1,9 +1,10 @@
-import { Button } from "antd";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getPhoto } from "../../apiService/photoApi";
 import CardsGallery from "../../components/cardsGallery";
 import ModalPhoto from "../../components/modalPhoto";
+import { Button } from "@material-tailwind/react";
 
 
 const Gallery = () => {
@@ -45,11 +46,11 @@ const Gallery = () => {
         <>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-between">
-                    <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-500" onClick={handleHome}>
+                    <Button variant="text" className="link text-foto-500 m-4 md:text-lg font-semibold" onClick={handleHome}>
                         Home
                     </Button>
-                    <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-500" onClick={addPhoto}>
-                        Subir foto
+                    <Button variant="text" className="link text-foto-500 m-4 md:text-lg font-semibold" onClick={addPhoto}>
+                        Upload photo
                     </Button>
                 </div>
                 <div className="flex flex-wrap justify-center place-items-center">

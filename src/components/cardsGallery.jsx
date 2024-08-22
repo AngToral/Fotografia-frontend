@@ -30,12 +30,12 @@ const CardsGallery = ({ photo, refresh }) => {
                     <p className="tema">{photo.theme2}</p>
                 </div>
                 <div className="flex justify-center gap-6 mt-4 place-content-end">
-                    <Button className="link text-foto-800" variant="text">Editar</Button>
+                    <Button className="link text-foto-800" variant="text">Edit</Button>
                     <Popconfirm
                         okType="dashed"
                         title="Sure to delete?"
                         onConfirm={() => handleDelete(photo._id)}>
-                        <Button className="link text-foto-800" variant="text">Eliminar</Button>
+                        <Button className="link text-foto-800" variant="text">Delete</Button>
                     </Popconfirm>
                 </div>
             </CardBody>

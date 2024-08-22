@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import { Animator, Fade, ScrollContainer, ScrollPage } from "react-scroll-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import './about-me.scss'
 import { useEffect } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import { Button } from "@material-tailwind/react";
 
 function AboutMe() {
     useEffect(() => {
@@ -28,16 +29,16 @@ function AboutMe() {
     return (
         <>
             <div className="h-screen">
-                <div className="flex flex-wrap justify-start">
-                    <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleHome}>
+                <div className="flex flex-wrap justify-start ml-6">
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleHome}>
                         Home
-                    </Button>
-                    <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleGallery}>
+                    </button>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleGallery}>
                         {t("menu.gallery")}
-                    </Button>
-                    <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900" onClick={handleBlog}>
+                    </button>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleBlog}>
                         Blog
-                    </Button>
+                    </button>
                 </div>
                 <div className="screen items-center m-6">
                     <div className="div-foto flex justify-center">
