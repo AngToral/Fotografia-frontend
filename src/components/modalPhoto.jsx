@@ -1,30 +1,63 @@
 import { Button, Dialog, DialogBody, DialogFooter, DialogHeader } from "@material-tailwind/react";
 import './cardsGallery.scss'
+import { DatePicker, Form, Modal, Select, Typography, Upload } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
-function ModalPhoto({ visible, onCancel }) {
+function ModalPhoto({ visible, onCancel, refresh }) {
+    const [form] = Form.useForm();
+
+
     return (
-        <Dialog open={visible}>
-            <DialogHeader>Nueva foto de galería</DialogHeader>
-            <DialogBody>
-                The key to more success is to have a lot of pillows. Put it this way,
-                it took me twenty five years to get these plants, twenty five years of
-                blood sweat and tears, and I&apos;m never giving up, I&apos;m just
-                getting started. I&apos;m up to something. Fan luv.
-            </DialogBody>
-            <DialogFooter>
-                <Button
-                    variant="text"
-                    color="red"
-                    onClick={onCancel}
-                    className="link text-foto-800 mr-3"
-                >
-                    <span>Cancel</span>
-                </Button>
-                <Button variant="text" className="link text-foto-200 mr-1 bg-foto-900" onClick={onCancel}>
-                    <span>Confirm</span>
-                </Button>
-            </DialogFooter>
-        </Dialog>
+        <Modal open={visible} okType="primary">
+            <Typography>Nueva foto de galería</Typography>
+            <Form
+                form={form}
+                labelCol={{
+                    span: 4,
+                }}
+                wrapperCol={{
+                    span: 14,
+                }}
+                layout="horizontal"
+                style={{
+                    maxWidth: 600,
+                }}
+            >
+                <Form.Item label="Theme 1" name="theme1">
+                    <Select>
+                        <Select.Option value="hola">Hola</Select.Option>
+                    </Select>
+                </Form.Item>
+                <Form.Item label="Theme 2" name="theme2">
+                    <Select>
+                        <Select.Option value="demo">Demo</Select.Option>
+                    </Select>
+                </Form.Item>
+                <Form.Item label="Picture date" name="photoDate">
+                    <DatePicker />
+                </Form.Item>
+                <Form.Item label="Photo" valuePropName="fileList" >
+                    <Upload action="/upload.do" listType="picture-card">
+                        <button
+                            style={{
+                                border: 0,
+                                background: 'none',
+                            }}
+                            type="button"
+                        >
+                            <PlusOutlined />
+                            <div
+                                style={{
+                                    marginTop: 8,
+                                }}
+                            >
+                                Upload
+                            </div>
+                        </button>
+                    </Upload>
+                </Form.Item>
+            </Form>
+        </Modal>
     );
 }
 

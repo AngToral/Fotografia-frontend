@@ -7,3 +7,16 @@ $rosaClaro700: #f1dede;
 $marron800: #907a5f;
 $verde900: #646f66;
 $rosaTransparente: #f1dedebf;
+
+button {
+    &.ant-btn {
+        background-color: $rosaClaro700 !important;
+        color: $verde900 !important;
+        border: none;
+
+        &:hover {
+            background-color: $verde900 !important;
+            color: $rosaClaro700 !important;
+        }
+    }
+}

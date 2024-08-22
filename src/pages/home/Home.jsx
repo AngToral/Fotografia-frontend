@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import './home.scss'
-import { Button } from "antd";
+//import { Button } from "antd";
 import {
     Menu,
     MenuHandler,
@@ -10,6 +10,7 @@ import {
     Input,
     Typography,
     Textarea,
+    Button
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
@@ -46,17 +47,17 @@ function Home() {
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
                             <div className="flex justify-end navbar mb-4">
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link" onClick={handleAboutMe}>
+                                <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
                                     {t("header.about-me")}
-                                </Button>
-                                <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link" onClick={scrollToBottom}>
+                                </a>
+                                <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={scrollToBottom}>
                                     {t("header.contact")}
-                                </Button>
+                                </a>
                                 <Menu>
                                     <MenuHandler>
-                                        <Button type="text" className="m-4 md:text-xl text-base font-semibold text-foto-900 link">
+                                        <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-900 link">
                                             {t("header.lenguage")}<FaAngleDown />
-                                        </Button>
+                                        </a>
                                     </MenuHandler>
                                     <MenuList className="bg-foto-700 border-foto-100">
                                         <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black font-display" data-lenguage="es">🇪🇸 Español</MenuItem>
@@ -67,23 +68,23 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.png" alt="mariana-mendoza" />
-                                <h1 type="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
+                                <h1 variant="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
-                                <div className="flex">
-                                    <Button type="text" className="text-lg text-foto-900 font-display link" onClick={handleGallery}>
+                                <div className="flex gap-6">
+                                    <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleGallery}>
                                         {t("header.gallery")}
-                                    </Button>
-                                    <Button href="https://www.instagram.com/nanamendozago/" target="_blanck" type="text" className="link text-lg text-foto-900 font-display">
+                                    </a>
+                                    <a href="https://www.instagram.com/nanamendozago/" target="_blanck" variant="text" className="link text-lg text-foto-900 font-display">
                                         Instagram
-                                    </Button>
-                                    <Button type="text" className="text-lg text-foto-900 font-display link">
+                                    </a>
+                                    <a variant="text" className="text-lg text-foto-900 font-display link">
                                         Portfolio
-                                    </Button>
-                                    <Button type="text" className="text-lg text-foto-900 font-display link">
+                                    </a>
+                                    <a variant="text" className="text-lg text-foto-900 font-display link">
                                         Blog
-                                    </Button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

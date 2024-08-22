@@ -6,21 +6,23 @@ import CardsGallery from "../../components/cardsGallery";
 import ModalPhoto from "../../components/modalPhoto";
 
 
-function Gallery() {
+const Gallery = () => {
+    const [allPhotos, setAllPhotos] = useState([]);
+    const [error, setError] = useState("");
+    const [open, setOpen] = useState(false);
+    const [dummy, refresh] = useState(false);
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
+
     useEffect(() => {
         getAllPhotos();
-        document.body.style.backgroundColor = "#f1dede"
-    })
+        document.body.style.backgroundColor = "#f1dede";
+    }, [dummy]);
+
     const navigate = useNavigate();
 
     function handleHome() {
         navigate("/")
     }
-
-    const [allPhotos, setAllPhotos] = useState([]);
-    const [error, setError] = useState("");
-    const [open, setOpen] = useState(false);
-    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
     const getAllPhotos = async () => {
         const gallery = await getPhoto();
@@ -33,6 +35,7 @@ function Gallery() {
         setSelectedPhoto(null)
         setOpen(true)
     };
+
     const onCancel = () => {
         setSelectedPhoto(null)
         setOpen(false)
@@ -54,12 +57,14 @@ function Gallery() {
                         <CardsGallery
                             key={photo._id}
                             photo={photo}
+                            refresh={refresh}
                         />
                     )}
                 </div>
                 <ModalPhoto
                     visible={open}
                     onCancel={onCancel}
+                    refresh={refresh}
                 />
                 {error ? error : null}
             </div>
