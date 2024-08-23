@@ -4,19 +4,16 @@ import './cardsGallery.scss'
 import '../../pages/home/home.scss'
 import { deletePhoto } from "../../apiService/photoApi";
 import { useEffect, useState } from "react";
+//import { useTranslation } from "react-i18next";
 
 const CardsGallery = ({ photo, refresh }) => {
-
-    // useEffect(() => {
-
-    // }, [dummy])
+    //const [t, i18n] = useTranslation("themes")
 
     const handleDelete = async (id) => {
         await deletePhoto(id)
         message.success("Photo deleted!")
         refresh(prev => !prev);
     }
-
 
     return (
         <Card className="max-w-[300px] h-full rounded-2xl m-6 bg-foto-200">
@@ -26,8 +23,8 @@ const CardsGallery = ({ photo, refresh }) => {
             />
             <CardBody className="flex flex-col">
                 <div className="flex justify-start">
-                    <p className="tema">{photo.theme1}</p>
-                    <p className="tema">{photo.theme2}</p>
+                    <p className="tema">{(photo.theme1)}</p>
+                    <p className="tema">{(photo.theme2) !== "undefined" ? photo.theme2 : "🩶"}</p>
                 </div>
                 <div className="flex justify-center gap-6 mt-4 place-content-end">
                     <Button className="link text-foto-800" variant="text">Edit</Button>

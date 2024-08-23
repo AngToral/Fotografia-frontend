@@ -4,6 +4,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import dayjs from "dayjs";
 import { addPhoto } from '../../apiService/photoApi';
+import Loader from "react-js-loader";
 
 dayjs().format()
 
@@ -11,6 +12,7 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
     const [form] = Form.useForm();
     const [messageInfo, setMessageInfo] = useState(null);
     const [fileList, setFileList] = useState([]);
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if (messageInfo) {
@@ -74,7 +76,9 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
             formData.append("theme1", values.theme1);
             formData.append("theme2", values.theme2);
             formData.append("photoDate", values.photoDate);
+            setLoading(true)
             const response = await addPhoto(formData);
+            setLoading(false)
             setMessageInfo({ type: 'success', content: 'Photo uploaded correctly!' });
             refresh(prev => !prev)
             form.resetFields();
@@ -126,41 +130,73 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
                 </Form>
             )}
         >
-            <Form.Item label="Theme 1" name="theme1">
-                <Select placeholder="Seleccionar..." options={themes} />
-            </Form.Item>
-            <Form.Item label="Theme 2" name="theme2">
-                <Select placeholder="Seleccionar..." options={themes} />
-            </Form.Item>
-            <Form.Item label="Picture date" name="photoDate" getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}>
-                <DatePicker
-                    onChange={onChangeDate}
-                />
-            </Form.Item>
-            <Form.Item label="Photo" name="imageGallery" >
-                <Upload
-                    listType="picture-card"
-                    fileList={fileList}
-                    onChange={onChangeUpload}
-                    beforeUpload={() => false} >
-                    <button
-                        style={{
-                            border: 0,
-                            background: 'none',
-                        }}
-                        type="button"
+            {loading ? <Loader type="bubble-ping" bgColor="#907a5f" size={180} /> :
+                <>
+                    <Form.Item
+                        label="Theme 1"
+                        name="theme1"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please select one theme!',
+                            },
+                        ]}
                     >
-                        <PlusOutlined />
-                        <div
-                            style={{
-                                marginTop: 8,
-                            }}
-                        >
-                            Upload
-                        </div>
-                    </button>
-                </Upload>
-            </Form.Item>
+                        <Select placeholder="Select..." options={themes} />
+                    </Form.Item>
+                    <Form.Item label="Theme 2" name="theme2">
+                        <Select placeholder="Select..." options={themes} />
+                    </Form.Item>
+                    <Form.Item
+                        label="Picture date"
+                        name="photoDate"
+                        getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please select a date!',
+                            },
+                        ]}
+                    >
+                        <DatePicker
+                            onChange={onChangeDate}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label="Photo"
+                        name="imageGallery"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please select one photo!',
+                            },
+                        ]}
+                    >
+                        <Upload
+                            listType="picture-card"
+                            fileList={fileList}
+                            onChange={onChangeUpload}
+                            beforeUpload={() => false} >
+                            <button
+                                style={{
+                                    border: 0,
+                                    background: 'none',
+                                }}
+                                type="button"
+                            >
+                                <PlusOutlined />
+                                <div
+                                    style={{
+                                        marginTop: 8,
+                                    }}
+                                >
+                                    Upload
+                                </div>
+                            </button>
+                        </Upload>
+                    </Form.Item>
+                </>
+            }
         </Modal >
     );
 }
