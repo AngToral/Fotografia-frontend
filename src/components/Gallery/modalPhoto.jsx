@@ -3,16 +3,17 @@ import { DatePicker, Form, Modal, Select, Typography, Upload, message } from "an
 import { PlusOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import dayjs from "dayjs";
-import { addPhoto } from '../../apiService/photoApi';
+import { addPhoto, getPhotoId, updatePhoto } from '../../apiService/photoApi';
 import Loader from "react-js-loader";
 
 dayjs().format()
 
-const ModalPhoto = ({ visible, onCancel, refresh }) => {
+const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     const [form] = Form.useForm();
     const [messageInfo, setMessageInfo] = useState(null);
     const [fileList, setFileList] = useState([]);
     const [loading, setLoading] = useState(false)
+    const [initialValues, setInitialValues] = useState({})
 
     useEffect(() => {
         if (messageInfo) {
@@ -22,8 +23,11 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
                 message.error(messageInfo.content);
             }
             setMessageInfo(null);
+        };
+        if (photoId) {
+            getPhotoData(photoId)
         }
-    }, [messageInfo]);
+    }, [messageInfo, photoId]);
 
     const themes = [
         {
@@ -68,18 +72,39 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
         },
     ]
 
+    const getPhotoData = async (photoId) => {
+        console.log(photoId)
+        const data = await getPhotoId(photoId)
+        const formValues = {
+            theme1: data.theme1,
+            theme2: data.theme2 ? data.theme2 : null,
+            photoDate: data.photoDate
+        }
+        console.log(formValues)
+        setInitialValues(formValues)
+        form.setFieldsValue(formValues)
+    }
+
     const onFinish = async (values) => {
         try {
-            console.log("values: ", values)
             const formData = new FormData();
-            formData.append("imageGallery", fileList[0].originFileObj);
+            if (fileList[0]?.originFileObj) {
+                formData.append("imageGallery", fileList[0].originFileObj);
+            }
             formData.append("theme1", values.theme1);
             formData.append("theme2", values.theme2);
             formData.append("photoDate", values.photoDate);
             setLoading(true)
-            const response = await addPhoto(formData);
+            if (photoId) {
+                console.log("Edito el id: ", photoId, "formData", formData)
+                await updatePhoto(photoId, formData)
+                setMessageInfo({ type: 'success', content: 'Photo updated correctly!' });
+            } else {
+                console.log("creo foto con los values: ", values)
+                await addPhoto(formData);
+                setMessageInfo({ type: 'success', content: 'Photo uploaded correctly!' });
+            }
             setLoading(false)
-            setMessageInfo({ type: 'success', content: 'Photo uploaded correctly!' });
             refresh(prev => !prev)
             form.resetFields();
             onCancel();
@@ -165,12 +190,13 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
                     <Form.Item
                         label="Photo"
                         name="imageGallery"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please select one photo!',
-                            },
-                        ]}
+                    // rules = {
+                    //     [
+                    //     {
+                    //         required: true,
+                    //         message: 'Please select one photo!',
+                    //     },
+                    // ]}
                     >
                         <Upload
                             listType="picture-card"

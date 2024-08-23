@@ -6,13 +6,19 @@ import { deletePhoto } from "../../apiService/photoApi";
 import { useEffect, useState } from "react";
 //import { useTranslation } from "react-i18next";
 
-const CardsGallery = ({ photo, refresh }) => {
+const CardsGallery = ({ photo, refresh, visible, photoId }) => {
     //const [t, i18n] = useTranslation("themes")
 
     const handleDelete = async (id) => {
         await deletePhoto(id)
         message.success("Photo deleted!")
         refresh(prev => !prev);
+    }
+
+    const editPhoto = (id) => {
+        console.log("edito id: ", id)
+        photoId((prev) => id)
+        visible((prev) => !prev);
     }
 
     return (
@@ -27,7 +33,7 @@ const CardsGallery = ({ photo, refresh }) => {
                     <p className="tema">{(photo.theme2) !== "undefined" ? photo.theme2 : "🩶"}</p>
                 </div>
                 <div className="flex justify-center gap-6 mt-4 place-content-end">
-                    <Button className="link text-foto-800" variant="text">Edit</Button>
+                    <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800" variant="text">Edit</Button>
                     <Popconfirm
                         okType="dashed"
                         title="Sure to delete?"

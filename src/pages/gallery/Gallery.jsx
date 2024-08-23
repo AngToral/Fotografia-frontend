@@ -87,6 +87,8 @@ const Gallery = () => {
                             key={photo._id}
                             photo={photo}
                             refresh={refresh}
+                            visible={setOpen}
+                            photoId={setSelectedPhoto}
                         />
                     )}
                 </div>
@@ -94,6 +96,7 @@ const Gallery = () => {
                     visible={open}
                     onCancel={onCancel}
                     refresh={refresh}
+                    photoId={selectedPhoto}
                 />
                 {error ? error : null}
             </div>
