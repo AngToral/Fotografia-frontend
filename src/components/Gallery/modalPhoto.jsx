@@ -1,13 +1,27 @@
 import './cardsGallery.scss'
-import { DatePicker, Form, Modal, Select, Typography, Upload } from "antd";
+import { DatePicker, Form, Modal, Select, Typography, Upload, message } from "antd";
 import { PlusOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import dayjs from "dayjs";
+import { addPhoto } from '../../apiService/photoApi';
 
 dayjs().format()
 
 const ModalPhoto = ({ visible, onCancel, refresh }) => {
     const [form] = Form.useForm();
+    const [messageInfo, setMessageInfo] = useState(null);
+    const [fileList, setFileList] = useState([]);
+
+    useEffect(() => {
+        if (messageInfo) {
+            if (messageInfo.type === 'success') {
+                message.success(messageInfo.content);
+            } else if (messageInfo.type === 'error') {
+                message.error(messageInfo.content);
+            }
+            setMessageInfo(null);
+        }
+    }, [messageInfo]);
 
     const themes = [
         {
@@ -53,11 +67,29 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
     ]
 
     const onFinish = async (values) => {
-        console.log("values: ", values)
+        try {
+            console.log("values: ", values)
+            const formData = new FormData();
+            formData.append("imageGallery", fileList[0].originFileObj);
+            formData.append("theme1", values.theme1);
+            formData.append("theme2", values.theme2);
+            formData.append("photoDate", values.photoDate);
+            const response = await addPhoto(formData);
+            setMessageInfo({ type: 'success', content: 'Photo uploaded correctly!' });
+            refresh(prev => !prev)
+            form.resetFields();
+            onCancel();
+        } catch (error) {
+            setMessageInfo({ type: 'error', content: error.message || 'Failed to upload photo' });
+        }
     }
 
     const onChangeDate = (date, dateStrings) => {
         form.setFieldsValue({ photoDate: dateStrings })
+    };
+
+    const onChangeUpload = ({ fileList: newFileList }) => {
+        setFileList(newFileList);
     };
 
     return (
@@ -106,7 +138,11 @@ const ModalPhoto = ({ visible, onCancel, refresh }) => {
                 />
             </Form.Item>
             <Form.Item label="Photo" name="imageGallery" >
-                <Upload listType="picture-card">
+                <Upload
+                    listType="picture-card"
+                    fileList={fileList}
+                    onChange={onChangeUpload}
+                    beforeUpload={() => false} >
                     <button
                         style={{
                             border: 0,

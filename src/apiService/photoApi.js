@@ -20,17 +20,23 @@ export const getPhotoId = async (id) => {
 
 export const addPhoto = async (data) => {
     const token = localStorage.getItem("access_token");
-    const response = await fetch(`${baseUrl}/gallery`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-            "authorization": `Bearer ${token}`,
-        },
-    });
-    const entry = await response.json();
-    return entry;
-};
+    console.log("data: ", data)
+    try {
+        const response = await fetch(`${baseUrl}/gallery`, {
+            method: "POST",
+            body: data,
+            headers: {
+                "authorization": `Bearer ${token}`,
+            },
+        });
+        const newPhoto = await response.json();
+        return newPhoto;
+
+    } catch (error) {
+        console.log("error: ", error)
+        throw error;
+    }
+}
 
 export const updatePhoto = async (id, data) => {
     const token = localStorage.getItem("access_token");

@@ -1,9 +1,8 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getPhoto } from "../../apiService/photoApi";
-import CardsGallery from "../../components/cardsGallery";
-import ModalPhoto from "../../components/modalPhoto";
+import CardsGallery from "../../components/Gallery/cardsGallery";
+import ModalPhoto from "../../components/Gallery/modalPhoto";
 import { Button } from "@material-tailwind/react";
 
 

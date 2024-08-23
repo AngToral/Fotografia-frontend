@@ -1,8 +1,8 @@
 import { Button, Card, CardBody } from "@material-tailwind/react";
 import { Image, Popconfirm, message } from "antd";
 import './cardsGallery.scss'
-import '../pages/home/home.scss'
-import { deletePhoto } from "../apiService/photoApi";
+import '../../pages/home/home.scss'
+import { deletePhoto } from "../../apiService/photoApi";
 import { useEffect, useState } from "react";
 
 const CardsGallery = ({ photo, refresh }) => {
