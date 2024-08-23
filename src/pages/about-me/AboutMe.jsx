@@ -1,14 +1,13 @@
 import { Typography } from "antd";
-import { Animator, Fade, ScrollContainer, ScrollPage } from "react-scroll-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import './about-me.scss'
 import { useEffect } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { Button } from "@material-tailwind/react";
 
 function AboutMe() {
+
     useEffect(() => {
         document.body.style.backgroundColor = "#EEE0C9"
     })

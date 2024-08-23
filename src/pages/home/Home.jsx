@@ -1,7 +1,5 @@
-import React from 'react';
 import { useEffect } from "react";
 import './home.scss'
-import { Button } from "antd";
 import {
     Menu,
     MenuHandler,
@@ -20,6 +18,7 @@ import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
+
     useEffect(() => {
         document.body.style.backgroundColor = "#646f66"
     })
@@ -38,10 +37,11 @@ function Home() {
         navigate("/gallery")
     }
 
+
     return (
         <>
             {/* header */}
-            <ScrollContainer>
+            < ScrollContainer >
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
@@ -67,6 +67,7 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.png" alt="mariana-mendoza" />
+
                                 <h1 variant="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
                                 </h1>
@@ -78,7 +79,7 @@ function Home() {
                                     <a href="https://www.instagram.com/nanamendozago/" target="_blanck" variant="text" className="link text-lg text-foto-900 font-display">
                                         Instagram
                                     </a>
-                                    <a variant="text" className="text-lg text-foto-900 font-display link">
+                                    <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="../../../../public/files/portfolio.pdf" download={true}>
                                         Portfolio
                                     </a>
                                     <a variant="text" className="text-lg text-foto-900 font-display link">
@@ -233,7 +234,7 @@ function Home() {
                         </Typography>
                     </div>
                 </footer>
-            </ScrollContainer >
+            </ ScrollContainer>
         </>
     );
 }

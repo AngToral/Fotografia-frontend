@@ -4,7 +4,8 @@ import { getPhoto } from "../../apiService/photoApi";
 import CardsGallery from "../../components/Gallery/cardsGallery";
 import ModalPhoto from "../../components/Gallery/modalPhoto";
 import { Button } from "@material-tailwind/react";
-import { Input, message } from "antd";
+import { Empty, Input, message } from "antd";
+import Loader from "react-js-loader";
 //import { useTranslation } from "react-i18next";
 const { Search } = Input;
 
@@ -15,6 +16,7 @@ const Gallery = () => {
     const [dummy, refresh] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const [filtering, setFiltering] = useState([]);
+    const [loading, setLoading] = useState(false)
 
     //const [t, i18n] = useTranslation("themes")
 
@@ -30,10 +32,12 @@ const Gallery = () => {
     }
 
     const getAllPhotos = async () => {
+        setLoading(true)
         const gallery = await getPhoto();
         const notRemoved = gallery.filter((photo) => !photo.removeAt);
         if (gallery.length) setAllPhotos(notRemoved);
         else setError(gallery.message);
+        setLoading(false);
     };
 
     const addPhoto = () => {
@@ -62,6 +66,14 @@ const Gallery = () => {
         if (!info) allPhotos;
     }
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-dvh">
+                <Loader type="bubble-ping" bgColor="#907a5f" size={180} />
+            </div>
+        )
+    }
+
     return (
         <>
             <div className="h-screen">
@@ -82,15 +94,17 @@ const Gallery = () => {
                     />
                 </div>
                 <div className="flex flex-wrap justify-center place-items-center">
-                    {(filtering.length > 0 ? filtering : allPhotos).map(photo =>
-                        <CardsGallery
-                            key={photo._id}
-                            photo={photo}
-                            refresh={refresh}
-                            visible={setOpen}
-                            photoId={setSelectedPhoto}
-                        />
-                    )}
+                    {allPhotos.length === 0 ? <Empty /> :
+                        (filtering.length > 0 ? filtering : allPhotos).map(photo =>
+                            <CardsGallery
+                                key={photo._id}
+                                photo={photo}
+                                refresh={refresh}
+                                visible={setOpen}
+                                photoId={setSelectedPhoto}
+                            />
+                        )
+                    }
                 </div>
                 <ModalPhoto
                     visible={open}
