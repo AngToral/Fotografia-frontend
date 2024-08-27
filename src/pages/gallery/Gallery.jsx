@@ -7,6 +7,8 @@ import { Button } from "@material-tailwind/react";
 import { Empty, Input, message } from "antd";
 import Loader from "react-js-loader";
 //import { useTranslation } from "react-i18next";
+import './gallery.scss'
+
 const { Search } = Input;
 
 const Gallery = () => {

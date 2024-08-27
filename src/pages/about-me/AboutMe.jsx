@@ -9,8 +9,10 @@ import { HiOutlineMail } from "react-icons/hi";
 function AboutMe() {
 
     useEffect(() => {
-        document.body.style.backgroundColor = "#EEE0C9"
-    })
+        //document.body.style.backgroundColor = "#EEE0C9"
+        //document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('../../../../images/gallery.png')";
+
+    }, [])
 
     const [t, i18n] = useTranslation("contact")
     const navigate = useNavigate();
@@ -27,7 +29,7 @@ function AboutMe() {
 
     return (
         <>
-            <div className="h-screen">
+            <div className="h-screen fondo">
                 <div className="flex flex-wrap justify-start ml-6">
                     <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleHome}>
                         Home

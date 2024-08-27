@@ -41,7 +41,7 @@ function Home() {
     return (
         <>
             {/* header */}
-            < ScrollContainer >
+            < ScrollContainer className="bg-foto-900">
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
@@ -120,7 +120,7 @@ function Home() {
                     </div>
                 </ScrollPage>
                 <ScrollPage >
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between bg-foto-900">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
