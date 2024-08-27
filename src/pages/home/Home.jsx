@@ -125,7 +125,7 @@ function Home() {
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
                                 <p className="font-revista text-foto-200 md:text-5xl">
-                                    {t("services.events")}
+                                    {t("services.family")}
                                 </p>
                             </div>
                         </Animator>
@@ -178,63 +178,63 @@ function Home() {
                         </Animator>
                     </ScrollPage>
                 </div>
-                {/* footer */}
-                <footer className="w-full bg-foto-200 p-8">
-                    <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
-                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
-                        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-                            <li>
-                                <Typography
-                                    as="a"
-                                    href="https://www.instagram.com/nanamendozago/"
-                                    color="blue-gray"
-                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
-                                    target="_blanck"
-                                >
-                                    <FaInstagram className="h-10 mr-1" />
-                                    @nanamendozago
-                                </Typography>
-                            </li>
-                            <li>
-                                <Typography
-                                    as="a"
-                                    href="https://www.linkedin.com/in/mariana1995/"
-                                    color="blue-gray"
-                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
-                                    target="_blanck"
-                                >
-                                    <FaLinkedin className="h-10 mr-1" />
-                                    Linked In
-                                </Typography>
-                            </li>
-                            <li>
-                                <Typography
-                                    color="blue-gray"
-                                    className="font-normal flex items-center"
-                                >
-                                    <HiOutlineMail className="h-10 mr-1" />
-                                    nanamendozago@gmail.com
-                                </Typography>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr className="my-4 border-foto-800" />
-                    <div className="flex justify-center">
-                        <Typography color="blue-gray" className="font-normal mr-1">
-                            Website made by:
-                        </Typography>
-                        <Typography
-                            as="a"
-                            href="https://angelatoral.es/"
-                            color="blue-gray"
-                            className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
-                            target="_blanck"
-                        >
-                            @AngToral
-                        </Typography>
-                    </div>
-                </footer>
             </ ScrollContainer>
+            {/* footer */}
+            <footer className="w-full bg-foto-200 p-8">
+                <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
+                    <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
+                    <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+                        <li>
+                            <Typography
+                                as="a"
+                                href="https://www.instagram.com/nanamendozago/"
+                                color="blue-gray"
+                                className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                target="_blanck"
+                            >
+                                <FaInstagram className="h-10 mr-1" />
+                                @nanamendozago
+                            </Typography>
+                        </li>
+                        <li>
+                            <Typography
+                                as="a"
+                                href="https://www.linkedin.com/in/mariana1995/"
+                                color="blue-gray"
+                                className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                target="_blanck"
+                            >
+                                <FaLinkedin className="h-10 mr-1" />
+                                Linked In
+                            </Typography>
+                        </li>
+                        <li>
+                            <Typography
+                                color="blue-gray"
+                                className="font-normal flex items-center"
+                            >
+                                <HiOutlineMail className="h-10 mr-1" />
+                                nanamendozago@gmail.com
+                            </Typography>
+                        </li>
+                    </ul>
+                </div>
+                <hr className="my-4 border-foto-800" />
+                <div className="flex justify-center">
+                    <Typography color="blue-gray" className="font-normal mr-1">
+                        Website made by:
+                    </Typography>
+                    <Typography
+                        as="a"
+                        href="https://angelatoral.es/"
+                        color="blue-gray"
+                        className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
+                        target="_blanck"
+                    >
+                        @AngToral
+                    </Typography>
+                </div>
+            </footer>
         </>
     );
 }
