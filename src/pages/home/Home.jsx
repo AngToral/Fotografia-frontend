@@ -98,12 +98,12 @@ function Home() {
                                 <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.documentary")}
                                 </p>
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[200px]" />
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[200px]" />
                                 <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.portrait")}
                                 </p>
@@ -114,7 +114,7 @@ function Home() {
                                 <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.stage")}
                                 </p>
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[200px]" />
                             </div>
                         </Animator>
                     </div>
@@ -139,7 +139,7 @@ function Home() {
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto md:h-[200px]" />
                                 <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.travel")}
                                 </p>
