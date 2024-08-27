@@ -9,6 +9,8 @@ import home_es from "./translations/es/home.json"
 import home_en from "./translations/en/home.json"
 import contact_es from "./translations/es/contact.json"
 import contact_en from "./translations/en/contact.json"
+import themes_es from "./translations/es/themes.json"
+import themes_en from "./translations/en/themes.json"
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -16,11 +18,13 @@ i18next.init({
   resources: {
     es: {
       home: home_es,
-      contact: contact_es
+      contact: contact_es,
+      themes: themes_es
     },
     en: {
       home: home_en,
-      contact: contact_en
+      contact: contact_en,
+      themes: themes_en
     }
   }
 })

@@ -2,5 +2,9 @@
     "theme": {
         "sports": "Deportes",
         "search": "Prueba"
+    },
+    "button": {
+        "search1": "Buscar temas...",
+        "search2": "Buscar"
     }
 }

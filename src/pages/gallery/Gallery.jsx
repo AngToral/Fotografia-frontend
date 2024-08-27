@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getPhoto } from "../../apiService/photoApi";
 import CardsGallery from "../../components/Gallery/cardsGallery";
@@ -6,7 +7,6 @@ import ModalPhoto from "../../components/Gallery/modalPhoto";
 import { Button } from "@material-tailwind/react";
 import { Empty, Input, message } from "antd";
 import Loader from "react-js-loader";
-//import { useTranslation } from "react-i18next";
 import './gallery.scss'
 
 const { Search } = Input;
@@ -20,13 +20,13 @@ const Gallery = () => {
     const [filtering, setFiltering] = useState([]);
     const [loading, setLoading] = useState(false)
 
-    //const [t, i18n] = useTranslation("themes")
 
     useEffect(() => {
         getAllPhotos();
         document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('../../../../images/gallery.png')";
     }, [dummy]);
 
+    const [t, i18n] = useTranslation("themes")
     const navigate = useNavigate();
 
     function handleHome() {
@@ -79,19 +79,24 @@ const Gallery = () => {
     return (
         <>
             <div className="h-screen">
-                <div className="flex flex-wrap justify-between">
-                    <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
-                        Home
-                    </Button>
+                <div className="flex justify-between flex-wrap">
+                    <div className="flex  justify-start">
+                        <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
+                            Home
+                        </Button>
+                        <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
+                            Blog
+                        </Button>
+                    </div>
                     <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={addPhoto}>
                         Upload photo
                     </Button>
                 </div>
                 <div className="flex justify-end mr-6">
                     <Search className="w-[300px]"
-                        placeholder="Buscar temas..."
+                        placeholder={t("button.search1")}
                         allowClear
-                        enterButton="Buscar"
+                        enterButton={t("button.search2")}
                         onSearch={onSearch}
                     />
                 </div>

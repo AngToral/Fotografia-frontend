@@ -2,5 +2,9 @@
     "theme": {
         "sports": "Sports",
         "search": "Search theme"
+    },
+    "button": {
+        "search1": "Search themes...",
+        "search2": "Search"
     }
 }
