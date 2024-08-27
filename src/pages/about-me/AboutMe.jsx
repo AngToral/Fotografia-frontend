@@ -29,13 +29,13 @@ function AboutMe() {
         <>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-start ml-6">
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleHome}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleHome}>
                         Home
                     </button>
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleGallery}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleGallery}>
                         {t("menu.gallery")}
                     </button>
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-900" onClick={handleBlog}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleBlog}>
                         Blog
                     </button>
                 </div>

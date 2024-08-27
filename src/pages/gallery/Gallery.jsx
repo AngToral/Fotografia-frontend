@@ -22,7 +22,7 @@ const Gallery = () => {
 
     useEffect(() => {
         getAllPhotos();
-        document.body.style.backgroundColor = "#f1dede";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('../../../../images/gallery.png')";
     }, [dummy]);
 
     const navigate = useNavigate();
