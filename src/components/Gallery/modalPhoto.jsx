@@ -121,13 +121,21 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
         setFileList(newFileList);
     };
 
+    const cancel = () => {
+        onCancel();
+        form.resetFields();
+    }
+
     return (
         <Modal
             open={visible}
-            title={<Typography className="m-6 text-foto-900 font-bold text-lg font-display">Nueva foto de galería</Typography>}
+            title={
+                photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Editar foto</Typography>
+                    : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Nueva foto de galería</Typography>
+            }
             okType="primary"
             className="text-lg font-display"
-            onCancel={onCancel}
+            onCancel={cancel}
             okButtonProps={{
                 autoFocus: true,
                 htmlType: "submit",
@@ -190,13 +198,6 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
                     <Form.Item
                         label="Photo"
                         name="imageGallery"
-                    // rules = {
-                    //     [
-                    //     {
-                    //         required: true,
-                    //         message: 'Please select one photo!',
-                    //     },
-                    // ]}
                     >
                         <Upload
                             listType="picture-card"
