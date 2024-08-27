@@ -95,7 +95,7 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.documentary")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
@@ -104,14 +104,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.portrait")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.stage")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
@@ -124,14 +124,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.events")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.sports")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
@@ -140,7 +140,7 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
-                                <p className="font-display text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl">
                                     {t("services.travel")}
                                 </p>
                             </div>

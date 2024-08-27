@@ -1,18 +1,18 @@
 {
     "header": {
-        "fotographer": "Fotographer",
+        "fotographer": "Photographer",
         "about-me": "About me",
         "contact": "Contact",
-        "lenguage": "Lenguage",
+        "lenguage": "Language",
         "gallery": "Gallery"
     },
     "services": {
-        "documentary": "Photojournalism and Documentary",
+        "documentary": "Photojournalism and documentary",
         "portrait": "Portrait",
-        "stage": "Stage",
-        "events": "Cultural and Events",
+        "stage": "Stage, cultural and events",
+        "events": "Family and couples",
         "sports": "Sports",
-        "travel": "Travel and Landscape"
+        "travel": "Travel and landscape"
     },
     "contact": {
         "contactMe": "Contact me",

@@ -44,8 +44,8 @@ function AboutMe() {
                         <img src="../../../images/about-me.png" className="foto" />
                     </div>
                     <div className="div-text">
-                        <p className="mx-6 font-display"> {t("text.first")}</p>
-                        <p className="m-6 font-display"> Idiomas, experiencias más relevantes</p>
+                        <p className="mx-6 font-revista text-lg"> {t("text.first")}</p>
+                        <p className="m-6 font-revista text-lg"> Idiomas, experiencias más relevantes</p>
                         <hr className="m-4 border-foto-800" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a

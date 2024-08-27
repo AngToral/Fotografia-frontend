@@ -19,7 +19,8 @@ module.exports = withMT({
       fontFamily: {
         firma: 'AlexBrush', //super cursiva
         cursiva: ['Playwrite MX'],
-        display: ['LXGW WenKai TC']
+        display: ['LXGW WenKai TC'],
+        revista: ['Playfair Display']
       },
       colors: {
         foto: {
