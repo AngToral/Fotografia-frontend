@@ -19,13 +19,14 @@ import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 import { sendContactEmail } from "../../apiService/userApi";
+import Loader from "react-js-loader";
 
 function Home() {
     const [clientName, setClientName] = useState("")
     const [clientEmail, setClientEmail] = useState("")
     const [subject, setSubject] = useState("")
     const [messageApi, contextHolder] = message.useMessage();
-
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         document.body.style.backgroundColor = "#646f66"
@@ -53,10 +54,9 @@ function Home() {
             })
         } else {
             console.log(clientName, clientEmail, subject)
-            //setLoading(true)
-            const response = await sendContactEmail({ clientName, clientEmail, subject })
-            //setLoading(false)
-
+            setLoading(true)
+            await sendContactEmail({ clientName, clientEmail, subject })
+            setLoading(false)
             messageApi.open({
                 type: 'success',
                 content: 'Correo enviado correctamente'
@@ -97,7 +97,6 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.png" alt="mariana-mendoza" />
-
                                 <h1 variant="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
                                 </h1>
@@ -186,24 +185,26 @@ function Home() {
                     <ScrollPage className="flex md:justify-start justify-center items-center contact" >
                         <Animator animation={Fade()} >
                             <div className="flex md:ml-48">
-                                <form
-                                    className="form"
-                                >
-                                    <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
-                                        {t("contact.contactMe")}
-                                    </p>
-                                    <div className="flex flex-col font-display gap-4">
-                                        <Input label={t("contact.name")} variant="standard" color="black" value={clientName} onChange={e => setClientName(e.target.value)} />
-                                        <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
-                                        <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
-                                        <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
-                                    </div>
-                                    <div className='flex justify-center'>
-                                        <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
-                                            {t("contact.send")}
-                                        </Button>
-                                    </div>
-                                </form>
+                                {loading ? <Loader type="bubble-ping" size={180} /> :
+                                    <form
+                                        className="form"
+                                    >
+                                        <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
+                                            {t("contact.contactMe")}
+                                        </p>
+                                        <div className="flex flex-col font-display gap-4">
+                                            <Input label={t("contact.name")} variant="standard" color="black" value={clientName} onChange={e => setClientName(e.target.value)} />
+                                            <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
+                                            <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
+                                            <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
+                                        </div>
+                                        <div className='flex justify-center'>
+                                            <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
+                                                {t("contact.send")}
+                                            </Button>
+                                        </div>
+                                    </form>
+                                }
                             </div>
                         </Animator>
                     </ScrollPage>
