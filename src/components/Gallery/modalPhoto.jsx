@@ -10,7 +10,7 @@ dayjs().format()
 
 const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     const [form] = Form.useForm();
-    const [messageApi, contextHolder] = message.useMessage();
+    //const [messageApi, contextHolder] = message.useMessage();
     const [fileList, setFileList] = useState([]);
     const [loading, setLoading] = useState(false)
     const [initialValues, setInitialValues] = useState({})
@@ -90,27 +90,30 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             if (photoId) {
                 console.log("Edito el id: ", photoId, "formData", formData)
                 await updatePhoto(photoId, formData)
-                messageApi.open({
-                    type: 'warning',
-                    content: 'Photo updated correctly!'
-                })
+                message.success("Photo updated correctly!")
+                // messageApi.open({
+                //     type: 'success',
+                //     content: 'Photo updated correctly!'
+                // })
             } else {
                 console.log("creo foto con los values: ", values)
                 await addPhoto(formData);
-                messageApi.open({
-                    type: 'warning',
-                    content: 'Photo uploaded correctly!'
-                })
+                message.success("Photo uploaded correctly!")
+                // messageApi.open({
+                //     type: 'success',
+                //     content: 'Photo uploaded correctly!'
+                // })
             }
             setLoading(false)
             refresh(prev => !prev)
             form.resetFields();
             onCancel();
         } catch (error) {
-            messageApi.open({
-                type: 'error',
-                content: 'Failed to upload photo'
-            })
+            message.error("Failed to upload photo")
+            // messageApi.open({
+            //     type: 'error',
+            //     content: 'Failed to upload photo'
+            // })
         }
     }
 
@@ -129,7 +132,7 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
 
     return (
         <>
-            {contextHolder}
+            {/* {contextHolder} */}
             <Modal
                 open={visible}
                 title={

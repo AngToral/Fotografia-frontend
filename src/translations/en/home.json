@@ -18,6 +18,8 @@
         "contactMe": "Contact me",
         "name": "Name",
         "subject": "How can I help?",
-        "send": "Send"
+        "send": "Send",
+        "warning": "Contact details missing",
+        "success": "Email sent successfully"
     }
 }

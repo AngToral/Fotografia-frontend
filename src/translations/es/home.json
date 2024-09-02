@@ -18,6 +18,8 @@
         "contactMe": "Contáctame",
         "name": "Nombre",
         "subject": "¿En qué te puedo ayudar?",
-        "send": "Enviar"
+        "send": "Enviar",
+        "warning": "Faltan datos de contacto",
+        "success": "Correo enviado correctamente"
     }
 }

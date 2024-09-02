@@ -3,19 +3,18 @@ import { Image, Popconfirm, message } from "antd";
 import './cardsGallery.scss'
 import '../../pages/home/home.scss'
 import { deletePhoto } from "../../apiService/photoApi";
-import { useEffect, useState } from "react";
-//import { useTranslation } from "react-i18next";
 
 const CardsGallery = ({ photo, refresh, visible, photoId }) => {
-    const [messageApi, contextHolder] = message.useMessage();
+    //const [messageApi, contextHolder] = message.useMessage();
 
     const handleDelete = async (id) => {
         await deletePhoto(id)
-        messageApi.open({
-            type: 'success',
-            content: 'Photo deleted!'
-        })
         refresh(prev => !prev);
+        message.success("Photo deleted!")
+        // messageApi.open({
+        //     type: 'success',
+        //     content: 'Photo deleted!'
+        // })
     }
 
     const editPhoto = (id) => {
@@ -26,7 +25,7 @@ const CardsGallery = ({ photo, refresh, visible, photoId }) => {
 
     return (
         <>
-            {contextHolder}
+            {/* {contextHolder} */}
             <Card className="max-w-[300px] h-full rounded-2xl m-6 bg-foto-200">
                 <Image
                     className="rounded-t-2xl"

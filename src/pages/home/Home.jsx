@@ -50,7 +50,7 @@ function Home() {
         if (clientName === "" || clientEmail === "" || subject === "") {
             messageApi.open({
                 type: 'warning',
-                content: 'Faltan datos de contacto'
+                content: `${t("contact.warning")}`
             })
         } else {
             console.log(clientName, clientEmail, subject)
@@ -59,7 +59,7 @@ function Home() {
             setLoading(false)
             messageApi.open({
                 type: 'success',
-                content: 'Correo enviado correctamente'
+                content: `${t("contact.success")}`
             })
             setClientName("")
             setClientEmail("")
