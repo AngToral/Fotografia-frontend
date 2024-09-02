@@ -84,17 +84,17 @@ const Gallery = () => {
             {contextHolder}
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
-                    <div className="flex  justify-start">
-                        <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
+                    <div className="flex  justify-start mx-6">
+                        <button variant="text" className="link font-display text-foto-500 m-4 md:text-xl font-bold" onClick={handleHome}>
                             Home
-                        </Button>
-                        <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={handleHome}>
+                        </button>
+                        <button variant="text" className="link font-display text-foto-500 m-4 md:text-xl font-bold" onClick={handleHome}>
                             Blog
-                        </Button>
+                        </button>
                     </div>
-                    <Button variant="text" className="link text-foto-500 m-4 md:text-base font-semibold" onClick={addPhoto}>
+                    <button variant="text" className="link font-display text-foto-500 mx-10 md:text-xl font-bold" onClick={addPhoto}>
                         Upload photo
-                    </Button>
+                    </button>
                 </div>
                 <div className="flex justify-end mr-6">
                     <Search className="w-[300px]"
