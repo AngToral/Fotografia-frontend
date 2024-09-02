@@ -10,24 +10,16 @@ dayjs().format()
 
 const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     const [form] = Form.useForm();
-    const [messageInfo, setMessageInfo] = useState(null);
+    const [messageApi, contextHolder] = message.useMessage();
     const [fileList, setFileList] = useState([]);
     const [loading, setLoading] = useState(false)
     const [initialValues, setInitialValues] = useState({})
 
     useEffect(() => {
-        if (messageInfo) {
-            if (messageInfo.type === 'success') {
-                message.success(messageInfo.content);
-            } else if (messageInfo.type === 'error') {
-                message.error(messageInfo.content);
-            }
-            setMessageInfo(null);
-        };
         if (photoId) {
             getPhotoData(photoId)
         }
-    }, [messageInfo, photoId]);
+    }, [photoId]);
 
     const themes = [
         {
@@ -98,18 +90,27 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             if (photoId) {
                 console.log("Edito el id: ", photoId, "formData", formData)
                 await updatePhoto(photoId, formData)
-                setMessageInfo({ type: 'success', content: 'Photo updated correctly!' });
+                messageApi.open({
+                    type: 'warning',
+                    content: 'Photo updated correctly!'
+                })
             } else {
                 console.log("creo foto con los values: ", values)
                 await addPhoto(formData);
-                setMessageInfo({ type: 'success', content: 'Photo uploaded correctly!' });
+                messageApi.open({
+                    type: 'warning',
+                    content: 'Photo uploaded correctly!'
+                })
             }
             setLoading(false)
             refresh(prev => !prev)
             form.resetFields();
             onCancel();
         } catch (error) {
-            setMessageInfo({ type: 'error', content: error.message || 'Failed to upload photo' });
+            messageApi.open({
+                type: 'error',
+                content: 'Failed to upload photo'
+            })
         }
     }
 
@@ -127,104 +128,107 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     }
 
     return (
-        <Modal
-            open={visible}
-            title={
-                photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Editar foto</Typography>
-                    : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Nueva foto de galería</Typography>
-            }
-            okType="primary"
-            className="text-lg font-display"
-            onCancel={cancel}
-            okButtonProps={{
-                autoFocus: true,
-                htmlType: "submit",
-            }}
-            modalRender={(dom) => (
-                <Form
-                    layout="horizontal"
-                    form={form}
-                    name="photoForm"
-                    initialValues={{
-                        modifier: "public",
-                    }}
-                    onFinish={(values) => onFinish(values)}
-                    labelCol={{
-                        span: 6,
-                    }}
-                    wrapperCol={{
-                        span: 14,
-                    }}
-                    style={{
-                        maxWidth: 600,
-                    }}
-                >
-                    {dom}
-                </Form>
-            )}
-        >
-            {loading ? <Loader type="bubble-ping" bgColor="#907a5f" size={180} /> :
-                <>
-                    <Form.Item
-                        label="Theme 1"
-                        name="theme1"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please select one theme!',
-                            },
-                        ]}
+        <>
+            {contextHolder}
+            <Modal
+                open={visible}
+                title={
+                    photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Editar foto</Typography>
+                        : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Nueva foto de galería</Typography>
+                }
+                okType="primary"
+                className="text-lg font-display"
+                onCancel={cancel}
+                okButtonProps={{
+                    autoFocus: true,
+                    htmlType: "submit",
+                }}
+                modalRender={(dom) => (
+                    <Form
+                        layout="horizontal"
+                        form={form}
+                        name="photoForm"
+                        initialValues={{
+                            modifier: "public",
+                        }}
+                        onFinish={(values) => onFinish(values)}
+                        labelCol={{
+                            span: 6,
+                        }}
+                        wrapperCol={{
+                            span: 14,
+                        }}
+                        style={{
+                            maxWidth: 600,
+                        }}
                     >
-                        <Select placeholder="Select..." options={themes} />
-                    </Form.Item>
-                    <Form.Item label="Theme 2" name="theme2">
-                        <Select placeholder="Select..." options={themes} />
-                    </Form.Item>
-                    <Form.Item
-                        label="Picture date"
-                        name="photoDate"
-                        getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please select a date!',
-                            },
-                        ]}
-                    >
-                        <DatePicker
-                            onChange={onChangeDate}
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label="Photo"
-                        name="imageGallery"
-                    >
-                        <Upload
-                            listType="picture-card"
-                            fileList={fileList}
-                            onChange={onChangeUpload}
-                            beforeUpload={() => false} >
-                            <button
-                                style={{
-                                    border: 0,
-                                    background: 'none',
-                                }}
-                                type="button"
-                            >
-                                <PlusOutlined />
-                                <div
+                        {dom}
+                    </Form>
+                )}
+            >
+                {loading ? <Loader type="bubble-ping" bgColor="#907a5f" size={180} /> :
+                    <>
+                        <Form.Item
+                            label="Theme 1"
+                            name="theme1"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please select one theme!',
+                                },
+                            ]}
+                        >
+                            <Select placeholder="Select..." options={themes} />
+                        </Form.Item>
+                        <Form.Item label="Theme 2" name="theme2">
+                            <Select placeholder="Select..." options={themes} />
+                        </Form.Item>
+                        <Form.Item
+                            label="Picture date"
+                            name="photoDate"
+                            getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please select a date!',
+                                },
+                            ]}
+                        >
+                            <DatePicker
+                                onChange={onChangeDate}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label="Photo"
+                            name="imageGallery"
+                        >
+                            <Upload
+                                listType="picture-card"
+                                fileList={fileList}
+                                onChange={onChangeUpload}
+                                beforeUpload={() => false} >
+                                <button
                                     style={{
-                                        marginTop: 8,
+                                        border: 0,
+                                        background: 'none',
                                     }}
+                                    type="button"
                                 >
-                                    Upload
-                                </div>
-                            </button>
-                        </Upload>
-                    </Form.Item>
-                </>
-            }
-        </Modal >
+                                    <PlusOutlined />
+                                    <div
+                                        style={{
+                                            marginTop: 8,
+                                        }}
+                                    >
+                                        Upload
+                                    </div>
+                                </button>
+                            </Upload>
+                        </Form.Item>
+                    </>
+                }
+            </Modal >
+        </>
     );
 }
 

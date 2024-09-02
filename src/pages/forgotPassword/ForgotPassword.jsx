@@ -14,6 +14,7 @@ function ForgotPassword() {
     const [loading, setLoading] = useState(false)
     const [change, setChange] = useState(false)
     const { userid } = useParams();
+    const [messageApi, contextHolder] = message.useMessage();
 
     const onNew = async (value) => {
         console.log('Received values of form: ', value.password);
@@ -22,12 +23,16 @@ function ForgotPassword() {
         if (!response.msg) {
             setLoading(false)
             navigate('/login')
-            message.success("Password changed successfully")
+            messageApi.open({
+                type: 'success',
+                content: 'Password changed successfully!'
+            })
         }
     }
 
     return (
         <>
+            {contextHolder}
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
                     <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import './home.scss'
 import {
     Menu,
@@ -8,6 +8,7 @@ import {
     Input,
     Typography,
     Textarea,
+    Button
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
@@ -16,8 +17,14 @@ import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 
 function Home() {
+    const [clientName, setClientName] = useState("")
+    const [clientEmail, setClientEmail] = useState("")
+    const [subject, setSubject] = useState("")
+    const [messageApi, contextHolder] = message.useMessage();
+
 
     useEffect(() => {
         document.body.style.backgroundColor = "#646f66"
@@ -37,9 +44,24 @@ function Home() {
         navigate("/gallery")
     }
 
+    const onEmailContact = () => {
+        if (clientName === "" || clientEmail === "" || subject === "") {
+            messageApi.open({
+                type: 'warning',
+                content: 'Faltan datos de contacto'
+            })
+        } else {
+            console.log(clientName, clientEmail, subject)
+            messageApi.open({
+                type: 'success',
+                content: 'Correo enviado correctamente'
+            })
+        }
+    }
 
     return (
         <>
+            {contextHolder}
             {/* header */}
             < ScrollContainer className="bg-foto-900">
                 <ScrollPage>
@@ -163,15 +185,15 @@ function Home() {
                                         {t("contact.contactMe")}
                                     </p>
                                     <div className="flex flex-col font-display gap-4">
-                                        <Input label={t("contact.name")} variant="standard" color="black" />
-                                        <Input label="Email" variant="standard" color="black" />
+                                        <Input label={t("contact.name")} variant="standard" color="black" value={clientName} onChange={e => setClientName(e.target.value)} />
+                                        <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
                                         <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
-                                        <Textarea variant="standard" />
+                                        <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
                                     </div>
                                     <div className='flex justify-center'>
-                                        <button className="md:text-xl text-base font-display text-foto-900" block src="#">
+                                        <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
                                             {t("contact.send")}
-                                        </button>
+                                        </Button>
                                     </div>
                                 </form>
                             </div>

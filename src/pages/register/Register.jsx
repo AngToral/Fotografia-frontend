@@ -21,6 +21,7 @@ function Register() {
     const [name, setName] = useState('')
     const [lastname, setLastname] = useState('')
     const [loading, setLoading] = useState(false)
+    const [messageApi, contextHolder] = message.useMessage();
 
     const onFinish = async (values) => {
         console.log('Received values of form: ', values);
@@ -30,15 +31,22 @@ function Register() {
         setLoading(false)
         if (!response.msg) {
             navigate('/login') //creado
-            message.success(`Account with ${email} created!`)
+            messageApi.open({
+                type: 'success',
+                content: `Account with ${email} created!`
+            })
         }
         if (response.msg === "You missed some parameter") {
-            message.warning("You missed some parameter")
+            messageApi.open({
+                type: 'warning',
+                content: 'You missed some parameter'
+            })
         }
     };
 
     return (
         <>
+            {contextHolder}
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
                     <Typography className="text-4xl font-firma mb-4 flex justify-center">Mariana Mendoza</Typography>

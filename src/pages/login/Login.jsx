@@ -23,6 +23,7 @@ function Login() {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [forgot, setForgot] = useState(false)
+    const [messageApi, contextHolder] = message.useMessage();
 
     const onFinish = async (values) => {
         console.log('Received values of form: ', values);
@@ -34,13 +35,22 @@ function Login() {
             navigate('/') //logeado
         }
         if (response.msg === "This email is not registered") {
-            message.warning("This email is not registered")
+            messageApi.open({
+                type: 'warning',
+                content: 'This email is not registered'
+            })
         }
         if (response.msg === "Email is no longer active") {
-            message.warning("Email is no longer active")
+            messageApi.open({
+                type: 'warning',
+                content: 'Email is no longer active'
+            })
         }
         if (response.msg === "Wrong password") {
-            message.warning("Wrong password")
+            messageApi.open({
+                type: 'error',
+                content: 'Wrong password'
+            })
         }
     };
 
@@ -53,15 +63,22 @@ function Login() {
         if (!response.msg) {
             setForgot(false)
             navigate('/login') //correo enviado
-            message.success("Email sent!")
+            messageApi.open({
+                type: 'success',
+                content: 'Email sent!'
+            })
         }
         if (response.msg === "This email is not registered") {
-            message.warning("This email is not registered")
+            messageApi.open({
+                type: 'warning',
+                content: 'This email is not registered'
+            })
         }
     }
 
     return (
         <>
+            {contextHolder}
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
                     {/* <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography> */}

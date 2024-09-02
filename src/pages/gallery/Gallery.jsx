@@ -19,7 +19,7 @@ const Gallery = () => {
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const [filtering, setFiltering] = useState([]);
     const [loading, setLoading] = useState(false)
-
+    const [messageApi, contextHolder] = message.useMessage();
 
     useEffect(() => {
         getAllPhotos();
@@ -62,7 +62,10 @@ const Gallery = () => {
             );
             if (filteredData.length !== 0) return setFiltering(filteredData);
             if (filteredData.length === 0) {
-                message.success('No data')
+                messageApi.open({
+                    type: 'warning',
+                    content: 'No data'
+                })
             }
         }
         if (!info) allPhotos;
@@ -78,6 +81,7 @@ const Gallery = () => {
 
     return (
         <>
+            {contextHolder}
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start">
