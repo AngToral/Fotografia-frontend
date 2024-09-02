@@ -56,10 +56,13 @@ const Gallery = () => {
         console.log(info?.source, value);
         const newList = [...allPhotos]
         if (info) {
-            const filteredData = newList.filter(info =>
-                info.theme1.toLowerCase().includes(value.toLowerCase()) ||
-                info.theme2.toLowerCase().includes(value.toLowerCase())
-            );
+            const searchTerms = value.toLowerCase().split(" ");
+            const filteredData = newList.filter(info => {
+                return searchTerms.every(term =>
+                    info.theme1.toLowerCase().includes(term) ||
+                    info.theme2.toLowerCase().includes(term)
+                )
+            })
             if (filteredData.length !== 0) return setFiltering(filteredData);
             if (filteredData.length === 0) {
                 messageApi.open({
