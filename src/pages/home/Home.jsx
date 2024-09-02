@@ -18,6 +18,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
+import { sendContactEmail } from "../../apiService/userApi";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -44,7 +45,7 @@ function Home() {
         navigate("/gallery")
     }
 
-    const onEmailContact = () => {
+    const onEmailContact = async () => {
         if (clientName === "" || clientEmail === "" || subject === "") {
             messageApi.open({
                 type: 'warning',
@@ -52,10 +53,17 @@ function Home() {
             })
         } else {
             console.log(clientName, clientEmail, subject)
+            //setLoading(true)
+            const response = await sendContactEmail({ clientName, clientEmail, subject })
+            //setLoading(false)
+
             messageApi.open({
                 type: 'success',
                 content: 'Correo enviado correctamente'
             })
+            setClientName("")
+            setClientEmail("")
+            setSubject("")
         }
     }
 

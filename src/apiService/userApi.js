@@ -62,3 +62,17 @@ export const forgotPasswordEmail = async (email) => {
     const user = await response.json();
     return user;
 }
+
+export const sendContactEmail = async (data) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/user/clientcontact`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}
