@@ -5,6 +5,7 @@ import ForgotPassword from './pages/forgotPassword/ForgotPassword'
 import Register from './pages/register/Register'
 import AboutMe from './pages/about-me/AboutMe'
 import Gallery from './pages/gallery/Gallery'
+import NewTestimonial from './pages/testimonios/newTestimonial'
 
 function App() {
 
@@ -18,10 +19,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/gallery' element={<Gallery />} />
+        <Route path='/testimonials' element={<NewTestimonial />} />
         {/* 
-        agregar nueva entrada 
-        elimino
-        edito
+        agregar nueva entrada de blog
         mi perfil
         */}
       </Routes>

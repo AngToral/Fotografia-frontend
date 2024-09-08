@@ -192,8 +192,6 @@ function Home() {
                 </ScrollPage>
             </ScrollContainer>
             {/* feedbacks */}
-            {/* <ScrollPage>
-                    <Animator animation={Fade()}> */}
             <p className="font-revista m-6 md:text-5xl text-xl text-foto-200" >{t("testimonials.testimonial")}</p>
             <div className='content-center'>
                 <Marquee pauseOnHover="true" autoFill="true">
@@ -207,12 +205,9 @@ function Home() {
                     }
                 </Marquee>
             </div>
-            {/* </Animator>
-                </ScrollPage> */}
             {/* contacto */}
             <div id='contacto'>
                 <div className="flex md:justify-start justify-center items-center contact h-screen" >
-                    {/* <Animator animation={Fade()} > */}
                     <div className="flex md:ml-48">
                         {loading ? <Loader type="bubble-ping" size={180} /> :
                             <form
@@ -235,10 +230,8 @@ function Home() {
                             </form>
                         }
                     </div>
-                    {/* </Animator> */}
                 </div>
             </div>
-            {/* </ScrollContainer> */}
             {/* footer */}
             <footer footer className="w-full bg-foto-200 p-8" >
                 <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">

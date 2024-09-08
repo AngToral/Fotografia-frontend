@@ -10,7 +10,7 @@ import Loader from "react-js-loader";
 
 function Login() {
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.png')"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.jpg')"
         document.body.style.backgroundSize = "contain"
         document.body.style.backgroundPosition = "center center"
     })
@@ -120,7 +120,7 @@ function Login() {
                         </Form>
                         :
                         <div>
-                            <Typography className="text-2xl mb-6 flex justify-center">Welcome back!</Typography>
+                            <Typography className="text-2xl mb-6 flex justify-center font-revista">Welcome back!</Typography>
                             <Form
                                 form={form}
                                 name="login"
@@ -166,14 +166,14 @@ function Login() {
                                 <Form.Item>
                                     <Flex justify="space-between" align="center">
                                         <Form.Item name="remember" valuePropName="checked" noStyle>
-                                            <Checkbox className="check">Remember me</Checkbox>
+                                            <Checkbox className="font-revista check">Remember me</Checkbox>
                                         </Form.Item>
-                                        <a onClick={e => setForgot(true)}>Forgot password</a>
+                                        <a className="font-revista" onClick={e => setForgot(true)}>Forgot password</a>
                                     </Flex>
                                 </Form.Item>
 
                                 <Form.Item>
-                                    <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
+                                    <Button className="button font-revista" block type="primary" htmlType="submit" disabled={loading}>
                                         {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
                                     </Button>
                                 </Form.Item>

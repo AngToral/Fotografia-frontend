@@ -2,7 +2,6 @@ import { Card, CardBody } from "@material-tailwind/react";
 
 function CardsOpinion({ opinion }) {
 
-
     return (
         <>
             <Card color="transparent" shadow={false} className="max-w-[400px] m-6">
