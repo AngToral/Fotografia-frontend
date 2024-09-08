@@ -22,6 +22,7 @@ import { sendContactEmail } from "../../apiService/userApi";
 import Loader from "react-js-loader";
 import CardsOpinion from "../../components/Testimonials/cardsOpinion";
 import { getOpinion } from "../../apiService/testimonialsApi";
+import Marquee from 'react-fast-marquee';
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -72,12 +73,12 @@ function Home() {
     }
 
     const getAllOpinions = async () => {
-        setLoading(true)
+        //setLoading(true)
         const testiminio = await getOpinion();
         const notRemoved = testiminio.filter((opinion) => !opinion.removeAt);
         if (testiminio.length) setAllOpinions(notRemoved);
         else setError(testiminio.message);
-        setLoading(false);
+        //setLoading(false);
     }
 
     return (
@@ -137,7 +138,7 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.documentary")}
                                 </p>
                                 <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[200px]" />
@@ -146,14 +147,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.portrait")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.stage")}
                                 </p>
                                 <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[200px]" />
@@ -166,14 +167,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.family")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.sports")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
@@ -182,59 +183,64 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
                                     {t("services.travel")}
                                 </p>
                             </div>
                         </Animator>
                     </div>
                 </ScrollPage>
-                {/* feedbacks */}
-                <ScrollPage>
-                    <Animator animation={batch(Fade())}>
-                        <p className="font-revista m-6 md:text-5xl text-foto-200" >Testimonials</p>
-                        {allOpinions.length === 0 ? <Empty /> :
-                            allOpinions.map(opinion =>
-                                <CardsOpinion
-                                    key={opinion._id}
-                                    opinion={opinion}
-                                />
-                            )
+            </ScrollContainer>
+            {/* feedbacks */}
+            {/* <ScrollPage>
+                    <Animator animation={Fade()}> */}
+            <p className="font-revista m-6 md:text-5xl text-xl text-foto-200" >{t("testimonials.testimonial")}</p>
+            <div className='content-center'>
+                <Marquee pauseOnHover="true" autoFill="true">
+                    {allOpinions.length === 0 ? <Empty /> :
+                        allOpinions.map(opinion =>
+                            <CardsOpinion
+                                key={opinion._id}
+                                opinion={opinion}
+                            />
+                        )
+                    }
+                </Marquee>
+            </div>
+            {/* </Animator>
+                </ScrollPage> */}
+            {/* contacto */}
+            <div id='contacto'>
+                <div className="flex md:justify-start justify-center items-center contact h-screen" >
+                    {/* <Animator animation={Fade()} > */}
+                    <div className="flex md:ml-48">
+                        {loading ? <Loader type="bubble-ping" size={180} /> :
+                            <form
+                                className="form"
+                            >
+                                <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
+                                    {t("contact.contactMe")}
+                                </p>
+                                <div className="flex flex-col font-display gap-4">
+                                    <Input label={t("contact.name")} variant="standard" color="black" value={clientName} onChange={e => setClientName(e.target.value)} />
+                                    <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
+                                    <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
+                                    <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
+                                </div>
+                                <div className='flex justify-center'>
+                                    <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
+                                        {t("contact.send")}
+                                    </Button>
+                                </div>
+                            </form>
                         }
-                    </Animator>
-                </ScrollPage>
-                {/* contacto */}
-                <div id='contacto'>
-                    <ScrollPage className="flex md:justify-start justify-center items-center contact" >
-                        <Animator animation={Fade()} >
-                            <div className="flex md:ml-48">
-                                {loading ? <Loader type="bubble-ping" size={180} /> :
-                                    <form
-                                        className="form"
-                                    >
-                                        <p type="text" className="flex justify-center m-4 text-4xl text-foto-900 font-cursiva font-extralight">
-                                            {t("contact.contactMe")}
-                                        </p>
-                                        <div className="flex flex-col font-display gap-4">
-                                            <Input label={t("contact.name")} variant="standard" color="black" value={clientName} onChange={e => setClientName(e.target.value)} />
-                                            <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
-                                            <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
-                                            <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
-                                        </div>
-                                        <div className='flex justify-center'>
-                                            <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
-                                                {t("contact.send")}
-                                            </Button>
-                                        </div>
-                                    </form>
-                                }
-                            </div>
-                        </Animator>
-                    </ScrollPage>
+                    </div>
+                    {/* </Animator> */}
                 </div>
-            </ ScrollContainer>
+            </div>
+            {/* </ScrollContainer> */}
             {/* footer */}
-            <footer className="w-full bg-foto-200 p-8">
+            <footer footer className="w-full bg-foto-200 p-8" >
                 <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
                     <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
                     <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
@@ -288,7 +294,7 @@ function Home() {
                         @AngToral
                     </Typography>
                 </div>
-            </footer>
+            </footer >
         </>
     );
 }

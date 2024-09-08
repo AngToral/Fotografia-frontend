@@ -21,5 +21,8 @@
         "send": "Send",
         "warning": "Contact details missing",
         "success": "Email sent successfully"
+    },
+    "testimonials": {
+        "testimonial": "Testimonials"
     }
 }
