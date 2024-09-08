@@ -192,18 +192,20 @@ function Home() {
                 </ScrollPage>
             </ScrollContainer>
             {/* feedbacks */}
-            <p className="font-revista m-6 md:text-5xl text-xl text-foto-200" >{t("testimonials.testimonial")}</p>
-            <div className='content-center'>
-                <Marquee pauseOnHover="true" autoFill="true">
-                    {allOpinions.length === 0 ? <Empty /> :
-                        allOpinions.map(opinion =>
-                            <CardsOpinion
-                                key={opinion._id}
-                                opinion={opinion}
-                            />
-                        )
-                    }
-                </Marquee>
+            <div className="bg-foto-900">
+                <p className="font-revista mx-6 mb-6 md:text-5xl text-xl text-foto-200" >{t("testimonials.testimonial")}</p>
+                <div className='content-center'>
+                    <Marquee pauseOnHover="true" autoFill="true">
+                        {allOpinions.length === 0 ? <Empty /> :
+                            allOpinions.map(opinion =>
+                                <CardsOpinion
+                                    key={opinion._id}
+                                    opinion={opinion}
+                                />
+                            )
+                        }
+                    </Marquee>
+                </div>
             </div>
             {/* contacto */}
             <div id='contacto'>

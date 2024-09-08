@@ -97,6 +97,17 @@
     color: $marron800 !important;
 }
 
+.link2:hover {
+    animation-name: Getbig;
+    animation-fill-mode: both;
+    cursor: pointer;
+    color: $beige300 !important;
+}
+
+.link2:active {
+    color: $beige300 !important;
+}
+
 @keyframes Getbig {
     0% {
         scale: 1;

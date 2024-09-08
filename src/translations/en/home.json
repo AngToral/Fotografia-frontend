@@ -23,6 +23,9 @@
         "success": "Email sent successfully"
     },
     "testimonials": {
-        "testimonial": "Testimonials"
+        "testimonial": "Testimonials",
+        "date": "Photoshoot date",
+        "opinion": "Your opinion",
+        "textarea": "Did you liked the photos?"
     }
 }
