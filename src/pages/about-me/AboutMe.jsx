@@ -46,21 +46,21 @@ function AboutMe() {
                         <img src="../../../images/about-me.png" className="foto" />
                     </div>
                     <div className="div-text">
-                        <p className="mx-6 font-revista text-lg"> {t("text.first")}</p>
-                        <p className="m-6 font-revista text-lg"> Idiomas, experiencias más relevantes</p>
-                        <hr className="m-4 border-foto-800" />
+                        <p className="mx-6 text-nani-50 font-revista text-xl"> {t("text.first")}</p>
+                        <p className="m-6 font-revista text-nani-50 text-xl"> Idiomas, experiencias más relevantes</p>
+                        <hr className="m-4 border-foto-400" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a
                                 href="https://www.instagram.com/nanamendozago/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-800 focus:text-foto-800 mb-4"
+                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4"
                             >
                                 <FaInstagram className="h-10 w-7 mr-4" />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/mariana1995/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-800 focus:text-foto-800 mb-4"
+                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4"
                             >
                                 <FaLinkedin className="h-10 w-7 mr-4" />
                             </a>

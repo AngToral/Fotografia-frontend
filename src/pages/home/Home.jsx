@@ -177,7 +177,7 @@ function Home() {
                     </div>
                 </ScrollPage>
                 {/* feedbacks */}
-                <ScrollPage className="bg-white">
+                <ScrollPage>
                     <p >Feedbak</p>
                 </ScrollPage>
                 {/* contacto */}

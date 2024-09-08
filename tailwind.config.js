@@ -35,6 +35,10 @@ module.exports = withMT({
           800: "#907a5f", //marron
           900: "#646f66", //verde
         },
+        nani: {
+          50: "#c7c7c7", //gris muy claro
+          100: "#EDEDF9", //morado tirando a blanco
+        },
       },
     },
   },
