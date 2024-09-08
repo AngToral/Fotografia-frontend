@@ -1,10 +1,13 @@
 import { Menu, MenuHandler, MenuItem, MenuList } from "@material-tailwind/react";
-import { Button, DatePicker, Form, Input } from "antd";
+import { Button, DatePicker, Form, Input, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown } from "react-icons/fa";
 import Loader from "react-js-loader";
+import { addOpinion } from "../../apiService/testimonialsApi";
+import { useNavigate } from "react-router-dom";
 
 function NewTestimonial() {
     useEffect(() => {
@@ -16,10 +19,36 @@ function NewTestimonial() {
     const [loading, setLoading] = useState(false)
     const [form] = Form.useForm();
     const [t, i18n] = useTranslation("home")
+    const [messageApi, contextHolder] = message.useMessage();
+    const navigate = useNavigate();
+
+    const onFinish = async (values) => {
+        console.log(values)
+        setLoading(true)
+        await addOpinion(values)
+        messageApi.open({
+            type: 'success',
+            content: 'Opinion sent'
+        })
+        setLoading(false)
+        form.resetFields();
+    }
+
+    const onChangeDate = (date, dateStrings) => {
+        form.setFieldsValue({ shootDate: dateStrings })
+    };
+
+    function handleHome() {
+        navigate("/")
+    }
 
     return (
         <>
-            <div className="flex justify-end">
+            {contextHolder}
+            <div className="flex justify-between">
+                <a className="font-display flex m-4 text-xl font-bold text-foto-700 link2" onClick={handleHome}>
+                    Home
+                </a>
                 <Menu>
                     <MenuHandler>
                         <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-700 link2">
@@ -32,7 +61,6 @@ function NewTestimonial() {
                     </MenuList>
                 </Menu>
             </div>
-            {/* {contextHolder} */}
             <div className="flex justify-center items-center">
                 <img className="w-72" src="../../../public/images/firma-rosa.png" />
             </div>
@@ -51,6 +79,7 @@ function NewTestimonial() {
                         wrapperCol={{
                             span: 30,
                         }}
+                        onFinish={(values) => onFinish(values)}
                     >
                         <Form.Item
                             label={t("contact.name")}
@@ -85,8 +114,9 @@ function NewTestimonial() {
                                     message: 'Please input the photoshoot date!',
                                 },
                             ]}
+                            getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
                         >
-                            <DatePicker />
+                            <DatePicker onChange={onChangeDate} />
                         </Form.Item>
                         <Form.Item
                             label={t("testimonials.opinion")}
