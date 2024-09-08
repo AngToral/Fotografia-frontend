@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 import { sendContactEmail } from "../../apiService/userApi";
 import Loader from "react-js-loader";
+import CardsOpinion from "../../components/Testimonials/cardsOpinion";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -178,7 +179,10 @@ function Home() {
                 </ScrollPage>
                 {/* feedbacks */}
                 <ScrollPage>
-                    <p >Feedbak</p>
+                    <Animator animation={batch(Fade())}>
+                        <p className="font-revista m-6 md:text-5xl text-foto-200" >Testimonials</p>
+                        <CardsOpinion />
+                    </Animator>
                 </ScrollPage>
                 {/* contacto */}
                 <div id='contacto'>
