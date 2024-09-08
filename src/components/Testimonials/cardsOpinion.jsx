@@ -1,16 +1,16 @@
 import { Card, CardBody } from "@material-tailwind/react";
 
-function CardsOpinion() {
+function CardsOpinion({ opinion }) {
 
 
     return (
         <>
-            <Card color="transparent" shadow={false} className="max-w-[300px] m-6">
+            <Card color="transparent" shadow={false} className="max-w-[400px] m-6">
                 <img src="../../../images/opiniones.png" alt="cabecera-texto-flor" />
                 <CardBody className="text-foto-200 font-revista">
-                    <p className="flex justify-start">Nombre</p>
-                    <p className="flex justify-center my-4">Opinión</p>
-                    <p className="flex justify-end">Fecha</p>
+                    <p className="flex justify-start"><strong>{opinion.clientName}:</strong></p>
+                    <p className="flex justify-center my-4">"{opinion.testimonial}"</p>
+                    <p className="flex justify-end italic">{opinion.shootDate.split("T")[0]}</p>
                 </CardBody>
                 <img src="../../../images/opiniones.png" className="rotate-180" alt="fondo-texto-flor" />
             </Card>

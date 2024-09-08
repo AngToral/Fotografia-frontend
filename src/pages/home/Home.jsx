@@ -17,10 +17,11 @@ import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { message } from "antd";
+import { Empty, message } from "antd";
 import { sendContactEmail } from "../../apiService/userApi";
 import Loader from "react-js-loader";
 import CardsOpinion from "../../components/Testimonials/cardsOpinion";
+import { getOpinion } from "../../apiService/testimonialsApi";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -28,8 +29,10 @@ function Home() {
     const [subject, setSubject] = useState("")
     const [messageApi, contextHolder] = message.useMessage();
     const [loading, setLoading] = useState(false)
+    const [allOpinions, setAllOpinions] = useState([]);
 
     useEffect(() => {
+        getAllOpinions();
         document.body.style.backgroundColor = "#646f66"
     })
 
@@ -66,6 +69,15 @@ function Home() {
             setClientEmail("")
             setSubject("")
         }
+    }
+
+    const getAllOpinions = async () => {
+        setLoading(true)
+        const testiminio = await getOpinion();
+        const notRemoved = testiminio.filter((opinion) => !opinion.removeAt);
+        if (testiminio.length) setAllOpinions(notRemoved);
+        else setError(testiminio.message);
+        setLoading(false);
     }
 
     return (
@@ -181,7 +193,14 @@ function Home() {
                 <ScrollPage>
                     <Animator animation={batch(Fade())}>
                         <p className="font-revista m-6 md:text-5xl text-foto-200" >Testimonials</p>
-                        <CardsOpinion />
+                        {allOpinions.length === 0 ? <Empty /> :
+                            allOpinions.map(opinion =>
+                                <CardsOpinion
+                                    key={opinion._id}
+                                    opinion={opinion}
+                                />
+                            )
+                        }
                     </Animator>
                 </ScrollPage>
                 {/* contacto */}
