@@ -24,7 +24,7 @@ function AboutMe() {
         navigate("/gallery")
     }
     function handleBlog() {
-        navigate("/")
+        navigate("/blog")
     }
 
     return (

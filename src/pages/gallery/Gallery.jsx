@@ -33,6 +33,10 @@ const Gallery = () => {
         navigate("/")
     }
 
+    function handleBlog() {
+        navigate("/blog")
+    }
+
     const getAllPhotos = async () => {
         setLoading(true)
         const gallery = await getPhoto();
@@ -91,7 +95,7 @@ const Gallery = () => {
                         <button variant="text" className="link font-display text-foto-500 m-4 md:text-xl font-bold" onClick={handleHome}>
                             Home
                         </button>
-                        <button variant="text" className="link font-display text-foto-500 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link font-display text-foto-500 m-4 md:text-xl font-bold" onClick={handleBlog}>
                             Blog
                         </button>
                     </div>
