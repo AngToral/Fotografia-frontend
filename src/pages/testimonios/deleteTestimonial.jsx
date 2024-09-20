@@ -30,13 +30,21 @@ function DeleteTestimonial() {
 
     const onDelete = async () => {
         setLoading(true)
-        await deleteOpinion(opinionid)
+        if (!response.msg) {
+            await deleteOpinion(opinionid)
+            messageApi.open({
+                type: 'success',
+                content: 'Opinion deleted!'
+            })
+            setOkDeleted(true)
+        }
+        if (response.msg === "Opinion not found") {
+            messageApi.open({
+                type: 'warning',
+                content: 'Opinion not found'
+            })
+        }
         setLoading(false)
-        messageApi.open({
-            type: 'success',
-            content: 'Opinion deleted'
-        })
-        setOkDeleted(true)
     }
 
     return (

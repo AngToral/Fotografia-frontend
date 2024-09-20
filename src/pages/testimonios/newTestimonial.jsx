@@ -26,14 +26,22 @@ function NewTestimonial() {
     const onFinish = async (values) => {
         console.log(values)
         setLoading(true)
-        await addOpinion(values)
-        messageApi.open({
-            type: 'success',
-            content: 'Opinion sent'
-        })
+        if (!response.msg) {
+            await addOpinion(values)
+            messageApi.open({
+                type: 'success',
+                content: 'Opinion sent!'
+            })
+            form.resetFields();
+            setOkOpinion(true)
+        }
+        if (response.msg === "You missed some parameter") {
+            messageApi.open({
+                type: 'warning',
+                content: 'You missed some parameter'
+            })
+        }
         setLoading(false)
-        form.resetFields();
-        setOkOpinion(true)
     }
 
     const onChangeDate = (date, dateStrings) => {
