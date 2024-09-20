@@ -17,6 +17,7 @@ function NewTestimonial() {
     })
 
     const [loading, setLoading] = useState(false)
+    const [okOpinion, setOkOpinion] = useState(false)
     const [form] = Form.useForm();
     const [t, i18n] = useTranslation("home")
     const [messageApi, contextHolder] = message.useMessage();
@@ -32,6 +33,7 @@ function NewTestimonial() {
         })
         setLoading(false)
         form.resetFields();
+        setOkOpinion(true)
     }
 
     const onChangeDate = (date, dateStrings) => {
@@ -61,83 +63,93 @@ function NewTestimonial() {
                     </MenuList>
                 </Menu>
             </div>
-            <div className="flex justify-center items-center">
-                <img className="w-72" src="../../../public/images/firma-rosa.png" />
-            </div>
-            <div className="flex justify-center items-center">
-                <div className="login w-[400px] mx-6 mb-6">
-                    <div className="flex justify-center">
-                        <p className="font-revista md:text-5xl text-4xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
+            {okOpinion ?
+                <>
+                    <div className="flex justify-center items-center h-screen">
+                        <p className="text-foto-700 text-5xl">{t("testimonials.created")}</p>
+                        <img src="../../../public/images/firma-rosa.png" />
                     </div>
-                    <Form
-                        form={form}
-                        name="testimonios"
-                        layout="vertical"
-                        labelCol={{
-                            span: 30,
-                        }}
-                        wrapperCol={{
-                            span: 30,
-                        }}
-                        onFinish={(values) => onFinish(values)}
-                    >
-                        <Form.Item
-                            label={t("contact.name")}
-                            name="clientName"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your name!',
-                                },
-                            ]}
-                        >
-                            <Input placeholder="Mariana" />
-                        </Form.Item>
-                        <Form.Item
-                            label="Email"
-                            name="clientEmail"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your email!',
-                                },
-                            ]}
-                        >
-                            <Input placeholder="example@gmail.com" />
-                        </Form.Item>
-                        <Form.Item
-                            label={t("testimonials.date")}
-                            name="shootDate"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input the photoshoot date!',
-                                },
-                            ]}
-                            getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
-                        >
-                            <DatePicker onChange={onChangeDate} />
-                        </Form.Item>
-                        <Form.Item
-                            label={t("testimonials.opinion")}
-                            name="testimonial"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your testimonial!',
-                                },
-                            ]}
-                        >
-                            <TextArea className="font-display" placeholder={t("testimonials.textarea")} rows={4} />
-                        </Form.Item>
-                        <Form.Item>
-                            <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                {loading ? <Loader type="rectangular-ping" size={180} /> : `${t("contact.send")}`}
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </div>
-            </div >
+                </> :
+                <>
+                    <div className="flex justify-center items-center">
+                        <img className="w-72" src="../../../public/images/firma-rosa.png" />
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <div className="login w-[400px] mx-6 mb-6">
+                            <div className="flex justify-center">
+                                <p className="font-revista md:text-5xl text-4xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
+                            </div>
+                            <Form
+                                form={form}
+                                name="testimonios"
+                                layout="vertical"
+                                labelCol={{
+                                    span: 30,
+                                }}
+                                wrapperCol={{
+                                    span: 30,
+                                }}
+                                onFinish={(values) => onFinish(values)}
+                            >
+                                <Form.Item
+                                    label={t("contact.name")}
+                                    name="clientName"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your name!',
+                                        },
+                                    ]}
+                                >
+                                    <Input placeholder="Mariana" />
+                                </Form.Item>
+                                <Form.Item
+                                    label="Email"
+                                    name="clientEmail"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your email!',
+                                        },
+                                    ]}
+                                >
+                                    <Input placeholder="example@gmail.com" />
+                                </Form.Item>
+                                <Form.Item
+                                    label={t("testimonials.date")}
+                                    name="shootDate"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input the photoshoot date!',
+                                        },
+                                    ]}
+                                    getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
+                                >
+                                    <DatePicker onChange={onChangeDate} />
+                                </Form.Item>
+                                <Form.Item
+                                    label={t("testimonials.opinion")}
+                                    name="testimonial"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your testimonial!',
+                                        },
+                                    ]}
+                                >
+                                    <TextArea className="font-display" placeholder={t("testimonials.textarea")} rows={4} />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
+                                        {loading ? <Loader type="rectangular-ping" size={180} /> : `${t("contact.send")}`}
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>
+                    </div >
+                </>
+            }
         </>
     );
 }

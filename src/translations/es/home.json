@@ -23,9 +23,10 @@
         "success": "Correo enviado correctamente"
     },
     "testimonials": {
-        "testimonial": "Testimonios",
+        "testimonial": "Valoración",
         "date": "Fecha de la sesión",
         "opinion": "Tu opinión",
-        "textarea": "¿Te han gustado las fotos?"
+        "textarea": "¿Te han gustado las fotos?",
+        "created": "¡Opinión enviada!"
     }
 }

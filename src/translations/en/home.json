@@ -26,6 +26,7 @@
         "testimonial": "Testimonials",
         "date": "Photoshoot date",
         "opinion": "Your opinion",
-        "textarea": "Did you liked the photos?"
+        "textarea": "Did you liked the photos?",
+        "created": "Review submitted!"
     }
 }
