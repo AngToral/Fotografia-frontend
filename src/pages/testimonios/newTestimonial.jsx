@@ -65,9 +65,9 @@ function NewTestimonial() {
             </div>
             {okOpinion ?
                 <>
-                    <div className="flex justify-center items-center h-screen">
+                    <div className="flex justify-center items-center flex-col h-screen">
                         <p className="text-foto-700 text-5xl">{t("testimonials.created")}</p>
-                        <img src="../../../public/images/firma-rosa.png" />
+                        <img className="h-[500px]" src="../../../public/images/thankyou.png" />
                     </div>
                 </> :
                 <>

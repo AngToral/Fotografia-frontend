@@ -48,7 +48,13 @@ function DeleteTestimonial() {
                 </a>
             </div>
             <div className="flex justify-center flex-col items-center h-screen">
-                {okDeleted ? "Eliminado" :
+                {okDeleted ?
+                    <>
+                        <div className="flex flex-col items-center">
+                            <p className="text-foto-900 text-5xl m-6">Deleted!</p>
+                            <img className="h-[250px]" src="../../../public/images/deleted.png" />
+                        </div>
+                    </> :
                     <>
                         <Typography className="text-foto-800 font-display" variant="h2">Do you want to delete this opinion?</Typography>
                         <Card color="transparent" shadow={false} className="max-w-[500px] m-6">
