@@ -7,7 +7,6 @@ import AboutMe from './pages/about-me/AboutMe'
 import Gallery from './pages/gallery/Gallery'
 import NewTestimonial from './pages/testimonios/newTestimonial'
 import DeleteTestimonial from './pages/testimonios/deleteTestimonial'
-import Blog from './pages/blog/Blog'
 
 function App() {
 
@@ -21,10 +20,10 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/gallery' element={<Gallery />} />
-        <Route path='/blog' element={<Blog />} />
+        <Route path='/blog' element={<AboutMe />} />
         <Route path='/createtestimonials' element={<NewTestimonial />} />
         <Route path='/deletetestimonials/:opinionid' element={<DeleteTestimonial />} />
-        {/* Blog
+        {/*
         mi perfil
         */}
       </Routes>
