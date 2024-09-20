@@ -50,6 +50,9 @@ function Home() {
     function handleGallery() {
         navigate("/gallery")
     }
+    function handleBlog() {
+        navigate("/blog")
+    }
 
     const onEmailContact = async () => {
         if (clientName === "" || clientEmail === "" || subject === "") {
@@ -125,7 +128,7 @@ function Home() {
                                     <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="../../../../public/files/portfolio.pdf" download={true}>
                                         Portfolio
                                     </a>
-                                    <a variant="text" className="text-lg text-foto-900 font-display link">
+                                    <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleBlog}>
                                         Blog
                                     </a>
                                 </div>
