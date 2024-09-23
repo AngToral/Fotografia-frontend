@@ -26,8 +26,8 @@ function NewTestimonial() {
     const onFinish = async (values) => {
         console.log(values)
         setLoading(true)
+        const response = await addOpinion(values)
         if (!response.msg) {
-            await addOpinion(values)
             messageApi.open({
                 type: 'success',
                 content: 'Opinion sent!'

@@ -168,7 +168,7 @@ function Login() {
                                         <Form.Item name="remember" valuePropName="checked" noStyle>
                                             <Checkbox className="font-revista check">Remember me</Checkbox>
                                         </Form.Item>
-                                        <a className="font-revista" onClick={e => setForgot(true)}>Forgot password</a>
+                                        <a className="font-revista forgot" onClick={e => setForgot(true)}>Forgot password</a>
                                     </Flex>
                                 </Form.Item>
 

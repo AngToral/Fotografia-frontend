@@ -30,8 +30,8 @@ function DeleteTestimonial() {
 
     const onDelete = async () => {
         setLoading(true)
+        const response = await deleteOpinion(opinionid)
         if (!response.msg) {
-            await deleteOpinion(opinionid)
             messageApi.open({
                 type: 'success',
                 content: 'Opinion deleted!'
