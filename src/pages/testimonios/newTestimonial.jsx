@@ -30,7 +30,7 @@ function NewTestimonial() {
         if (!response.msg) {
             messageApi.open({
                 type: 'success',
-                content: 'Opinion sent!'
+                content: `${t("testimonials.created")}`
             })
             form.resetFields();
             setOkOpinion(true)
