@@ -5,12 +5,14 @@ import { getEntry } from "../../apiService/entryApi";
 import CardsBlogs from "../../components/Blog/cardsBlogs";
 import { Empty } from "antd";
 import Loader from "react-js-loader";
+import ModalEntry from "../../components/Blog/modalEntry";
 
 function Blogs() {
     const [error, setError] = useState("");
     const [allEntrys, setAllEntrys] = useState("");
     const [dummy, refresh] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         getAllEntrys();
@@ -29,6 +31,11 @@ function Blogs() {
 
     const addEntry = () => {
         console.log("añade entrada de blog")
+        setOpen(true)
+    }
+
+    const onCancel = () => {
+        setOpen(false)
     }
 
 
@@ -72,6 +79,12 @@ function Blogs() {
                         }
                     </div>
                 </div>
+                <ModalEntry
+                    visible={open}
+                    onCancel={onCancel}
+                    refresh={refresh}
+                //entryId={selectedEntry}
+                />
                 {error ? error : null}
             </div>
         </>

@@ -14,7 +14,6 @@ const CardsBlogs = ({ entry, refresh }) => {
 
     const onEdit = async (id) => {
         console.log("edito id: ", id)
-
     }
 
     return (
