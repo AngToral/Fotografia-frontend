@@ -3,14 +3,21 @@ import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@mat
 
 const CardsBlogs = ({ entry, refresh }) => {
 
+    const onDelete = async () => {
+        console.log("elimino id: ", entry._id)
+    }
+
+    const onEdit = async () => {
+        console.log("edito id: ", entry._id)
+    }
 
     return (
         <>
             <div className="p-3">
                 <Card className="mt-6 max-w-[500px]">
-                    <CardHeader color="blue-gray" className="relative max-h-[400px]">
+                    <CardHeader color="blue-gray" className="relative">
                         <img
-                            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                            src={entry.photo}
                             alt="card-image"
                         />
                     </CardHeader>
@@ -18,11 +25,13 @@ const CardsBlogs = ({ entry, refresh }) => {
                         <Typography className="text-lg font-maquina">
                             {entry.text}
                         </Typography>
-                    </CardBody>
-                    <CardFooter className="pt-0">
-                        <Typography className="flex justify-end font-semibold font-revista text-lg">
+                        <Typography className="flex justify-end font-semibold font-revista text-lg mt-2">
                             {entry.photoDate.split("T")[0]}
                         </Typography>
+                    </CardBody>
+                    <CardFooter className="pt-0 flex justify-around">
+                        <Button className="bg-foto-400 text-foto-200" onClick={onEdit}>Editar</Button>
+                        <Button className="bg-foto-400 text-foto-200" onClick={onDelete}>Eliminar</Button>
                     </CardFooter>
                 </Card>
             </div>
