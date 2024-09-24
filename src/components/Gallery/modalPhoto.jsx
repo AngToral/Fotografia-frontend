@@ -55,12 +55,16 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             value: "Hombre"
         },
         {
+            label: "Pareja",
+            value: "Pareja"
+        },
+        {
             label: "Animal",
             value: "Animal"
         },
         {
-            label: "Pareja",
-            value: "Pareja"
+            label: "Mascota",
+            value: "Mascota"
         },
     ]
 
