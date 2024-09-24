@@ -20,7 +20,8 @@ module.exports = withMT({
         firma: 'AlexBrush', //super cursiva
         cursiva: ['Playwrite MX'],
         display: ['LXGW WenKai TC'],
-        revista: ['Playfair Display']
+        revista: ['Playfair Display'],
+        maquina: 'SpecialElite'
       },
       colors: {
         foto: {

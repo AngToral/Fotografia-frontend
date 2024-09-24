@@ -58,7 +58,7 @@ function Blogs() {
                     </button>
                 </div>
                 <div>
-                    <div className="flex flex-wrap justify-center place-items-center">
+                    <div className="flex flex-wrap justify-center place-items-center m-10">
                         {allEntrys.length === 0 ? <Empty /> :
                             (loading ? <Loader type="bubble-ping" bgColor="#EEE0C9" size={180} /> : allEntrys.map(entry =>
                                 <CardsBlogs
