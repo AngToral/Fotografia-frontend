@@ -10,7 +10,6 @@ dayjs().format()
 
 const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     const [form] = Form.useForm();
-    //const [messageApi, contextHolder] = message.useMessage();
     const [fileList, setFileList] = useState([]);
     const [loading, setLoading] = useState(false)
     const [initialValues, setInitialValues] = useState({})
@@ -95,18 +94,10 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
                 console.log("Edito el id: ", photoId, "formData", formData)
                 await updatePhoto(photoId, formData)
                 message.success("Photo updated correctly!")
-                // messageApi.open({
-                //     type: 'success',
-                //     content: 'Photo updated correctly!'
-                // })
             } else {
                 console.log("creo foto con los values: ", values)
                 await addPhoto(formData);
                 message.success("Photo uploaded correctly!")
-                // messageApi.open({
-                //     type: 'success',
-                //     content: 'Photo uploaded correctly!'
-                // })
             }
             setLoading(false)
             refresh(prev => !prev)
@@ -114,10 +105,6 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             onCancel();
         } catch (error) {
             message.error("Failed to upload photo")
-            // messageApi.open({
-            //     type: 'error',
-            //     content: 'Failed to upload photo'
-            // })
         }
     }
 
@@ -140,8 +127,8 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             <Modal
                 open={visible}
                 title={
-                    photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Editar foto</Typography>
-                        : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Nueva foto de galería</Typography>
+                    photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Edit photo</Typography>
+                        : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">New gallery photo</Typography>
                 }
                 okType="primary"
                 className="text-lg font-display"

@@ -22,7 +22,7 @@ const CardsBlogs = ({ entry, refresh }) => {
                 <Card className="mt-6 max-w-[500px]">
                     <CardHeader color="blue-gray" className="relative">
                         <img
-                            src={entry.photo}
+                            src={entry.imageBlog}
                             alt="card-image"
                         />
                     </CardHeader>
@@ -31,7 +31,7 @@ const CardsBlogs = ({ entry, refresh }) => {
                             {entry.text}
                         </Typography>
                         <Typography className="flex justify-end font-semibold font-revista text-lg mt-2">
-                            {entry.photoDate.split("T")[0]}
+                            {entry.photoDate}
                         </Typography>
                     </CardBody>
                     <CardFooter className="pt-0 flex justify-around">
@@ -53,3 +53,5 @@ const CardsBlogs = ({ entry, refresh }) => {
 }
 
 export default CardsBlogs;
+
+//.split("T")[0]

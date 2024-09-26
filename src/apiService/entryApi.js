@@ -20,16 +20,20 @@ export const getEntryId = async (id) => {
 
 export const addEntry = async (data) => {
     const token = localStorage.getItem("access_token");
-    const response = await fetch(`${baseUrl}/blog`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-            "authorization": `Bearer ${token}`,
-        },
-    });
-    const entry = await response.json();
-    return entry;
+    try {
+        const response = await fetch(`${baseUrl}/blog`, {
+            method: "POST",
+            body: data,
+            headers: {
+                "authorization": `Bearer ${token}`,
+            },
+        });
+        const entry = await response.json();
+        return entry;
+
+    } catch (error) {
+        throw error;
+    }
 };
 
 export const updateEntry = async (id, data) => {
