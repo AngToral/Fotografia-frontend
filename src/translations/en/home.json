@@ -27,6 +27,7 @@
         "date": "Photoshoot date",
         "opinion": "Your opinion",
         "textarea": "Did you liked the photos?",
-        "created": "Review submitted!"
+        "created": "Review submitted!",
+        "email": "Email (This data is private)"
     }
 }

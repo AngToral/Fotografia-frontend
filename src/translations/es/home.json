@@ -27,6 +27,7 @@
         "date": "Fecha de la sesión",
         "opinion": "Tu opinión",
         "textarea": "¿Te han gustado las fotos?",
-        "created": "¡Opinión enviada!"
+        "created": "¡Opinión enviada!",
+        "email": "Email (Esta información es privada)"
     }
 }

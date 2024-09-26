@@ -112,7 +112,7 @@ function NewTestimonial() {
                                     <Input placeholder="Mariana" />
                                 </Form.Item>
                                 <Form.Item
-                                    label="Email"
+                                    label={t("testimonials.email")}
                                     name="clientEmail"
                                     rules={[
                                         {
