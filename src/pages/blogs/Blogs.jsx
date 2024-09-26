@@ -16,7 +16,7 @@ function Blogs() {
 
     useEffect(() => {
         getAllEntrys();
-        document.body.style.backgroundColor = "#96B6C5";
+        document.body.style.backgroundImage = "url('../../../../images/fondo-blog.png')";
     }, [dummy]);
 
     const [t, i18n] = useTranslation("home")

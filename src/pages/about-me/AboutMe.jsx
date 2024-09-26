@@ -45,29 +45,29 @@ function AboutMe() {
                     <div className="div-foto flex justify-center">
                         <img src="../../../images/about-me.png" className="foto" />
                     </div>
-                    <div className="div-text">
-                        <p className="mx-6 text-nani-50 font-revista text-xl"> {t("text.first")}</p>
-                        <p className="m-6 font-revista text-nani-50 text-xl"> Idiomas, experiencias más relevantes</p>
+                    <div className="div-text textaboutme">
+                        <p className="mx-6 text-nani-50 font-revista text-lg"> {t("text.first")}</p>
+                        <p className="m-6 font-revista text-nani-50 text-lg"> Idiomas, experiencias más relevantes</p>
                         <hr className="m-4 border-foto-400" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a
                                 href="https://www.instagram.com/nanamendozago/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4"
+                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4 text-foto-400"
                             >
                                 <FaInstagram className="h-10 w-7 mr-4" />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/mariana1995/"
                                 target="_blanck"
-                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4"
+                                className="transition-colors hover:text-foto-700 focus:text-foto-700 mb-4 text-foto-400"
                             >
                                 <FaLinkedin className="h-10 w-7 mr-4" />
                             </a>
-                            <HiOutlineMail className="h-10 w-7 mr-1 mb-4" />
+                            <HiOutlineMail className="h-10 w-7 mr-1 mb-4 text-foto-400" />
                             <Typography
                                 color="blue-gray"
-                                className="font-display flex items-center mb-4"
+                                className="font-display flex items-center mb-4 text-foto-400"
                             >
                                 nanamendozago@gmail.com
                             </Typography>
