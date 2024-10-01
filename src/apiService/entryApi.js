@@ -40,10 +40,9 @@ export const updateEntry = async (id, data) => {
     const token = localStorage.getItem("access_token");
     const response = await fetch(`${baseUrl}/blog/${id}`, {
         method: "PUT",
-        body: JSON.stringify(data),
+        body: data,
         headers: {
-            "Content-Type": "application/json",
-            authorization: `Bearer ${token}`,
+            "authorization": `Bearer ${token}`,
         },
     });
     const entry = await response.json();

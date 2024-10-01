@@ -123,7 +123,6 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
 
     return (
         <>
-            {/* {contextHolder} */}
             <Modal
                 open={visible}
                 title={

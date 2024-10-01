@@ -1,9 +1,9 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { DatePicker, Form, Input, Modal, Typography, Upload, message } from "antd";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "react-js-loader";
-import { addEntry } from "../../apiService/entryApi";
+import { addEntry, getEntryId, updateEntry } from "../../apiService/entryApi";
 
 dayjs().format()
 
@@ -12,8 +12,27 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const [fileList, setFileList] = useState([]);
+    const [initialValues, setInitialValues] = useState({})
 
     const { TextArea } = Input;
+
+    useEffect(() => {
+        if (entryId) {
+            getEntryData(entryId)
+        }
+    }, [entryId]);
+
+    const getEntryData = async (entryId) => {
+        console.log(entryId)
+        const data = await getEntryId(entryId)
+        const formValues = {
+            text: data.text,
+            photoDate: data.photoDate
+        }
+        console.log(data)
+        setInitialValues(formValues)
+        form.setFieldsValue(formValues)
+    }
 
     const onFinish = async (values) => {
         console.log(values)
@@ -25,15 +44,17 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
             formData.append("text", values.text);
             formData.append("photoDate", values.photoDate);
             setLoading(true)
-
-            await addEntry(formData);
-            message.success("Entry uploaded correctly!")
-
+            if (entryId) {
+                await updateEntry(entryId, formData)
+                message.success("Entry updated correctly!")
+            } else {
+                await addEntry(formData);
+                message.success("Entry uploaded correctly!")
+            }
             setLoading(false)
             refresh(prev => !prev)
             form.resetFields();
             onCancel();
-
         } catch (error) {
             message.error("Failed to upload entry")
         }
@@ -57,8 +78,8 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
             <Modal
                 open={visible}
                 title={
-                    // entryId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Editar foto</Typography> :
-                    <Typography className="m-6 text-foto-900 font-bold text-lg font-display">New blog entry</Typography>
+                    entryId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Edit entry</Typography> :
+                        <Typography className="m-6 text-foto-900 font-bold text-lg font-display">New blog entry</Typography>
                 }
                 okType="primary"
                 className="text-lg font-display"

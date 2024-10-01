@@ -14,6 +14,7 @@ const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
 
     const onEdit = async (id) => {
         console.log("edito id: ", id)
+        entryId((prev) => id)
         visible(prev => !prev);
     }
 
