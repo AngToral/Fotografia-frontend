@@ -1,6 +1,7 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Popover, PopoverContent, PopoverHandler, Typography } from "@material-tailwind/react";
 import { message } from "antd";
 import { deleteEntry } from "../../apiService/entryApi";
+import moment from 'moment';
 
 
 const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
@@ -33,6 +34,7 @@ const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
                             {entry.text}
                         </Typography>
                         <Typography className="flex justify-end font-semibold font-revista text-lg mt-2">
+                            {/* {moment(entry.photoDate).format().split("T")[0]} */}
                             {entry.photoDate}
                         </Typography>
                     </CardBody>
