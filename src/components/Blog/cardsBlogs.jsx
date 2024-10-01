@@ -3,7 +3,7 @@ import { message } from "antd";
 import { deleteEntry } from "../../apiService/entryApi";
 
 
-const CardsBlogs = ({ entry, refresh }) => {
+const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
 
     const onDelete = async (id) => {
         console.log("elimino id: ", id)
@@ -14,13 +14,14 @@ const CardsBlogs = ({ entry, refresh }) => {
 
     const onEdit = async (id) => {
         console.log("edito id: ", id)
+        visible(prev => !prev);
     }
 
     return (
         <>
             <div className="p-3">
                 <Card className="mt-6 max-w-[500px]">
-                    <CardHeader color="blue-gray" className="relative">
+                    <CardHeader color="blue-gray" className="relative flex justify-center">
                         <img
                             src={entry.imageBlog}
                             alt="card-image"

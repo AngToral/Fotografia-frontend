@@ -5,16 +5,11 @@ import '../../pages/home/home.scss'
 import { deletePhoto } from "../../apiService/photoApi";
 
 const CardsGallery = ({ photo, refresh, visible, photoId }) => {
-    //const [messageApi, contextHolder] = message.useMessage();
 
     const handleDelete = async (id) => {
         await deletePhoto(id)
         refresh(prev => !prev);
         message.success("Photo deleted!")
-        // messageApi.open({
-        //     type: 'success',
-        //     content: 'Photo deleted!'
-        // })
     }
 
     const editPhoto = (id) => {

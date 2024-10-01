@@ -7,7 +7,7 @@ import { addEntry } from "../../apiService/entryApi";
 
 dayjs().format()
 
-function ModalEntry({ visible, onCancel, refresh }) {
+function ModalEntry({ visible, onCancel, refresh, entryId }) {
 
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);

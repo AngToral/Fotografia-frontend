@@ -13,6 +13,7 @@ function Blogs() {
     const [dummy, refresh] = useState(false);
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
+    const [selectedEntry, setSelectedEntry] = useState(null);
 
     useEffect(() => {
         getAllEntrys();
@@ -72,8 +73,8 @@ function Blogs() {
                                     key={entry._id}
                                     entry={entry}
                                     refresh={refresh}
-                                // visible={setOpen}
-                                // entryId={setSelectedEntry}
+                                    visible={setOpen}
+                                    entryId={setSelectedEntry}
                                 />
                             ))
                         }
@@ -83,7 +84,7 @@ function Blogs() {
                     visible={open}
                     onCancel={onCancel}
                     refresh={refresh}
-                //entryId={selectedEntry}
+                    entryId={selectedEntry}
                 />
                 {error ? error : null}
             </div>
