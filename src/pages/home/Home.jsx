@@ -53,6 +53,9 @@ function Home() {
     function handleBlog() {
         navigate("/blog")
     }
+    function handleMyProfile() {
+        navigate("/profile")
+    }
 
     const onEmailContact = async () => {
         if (clientName === "" || clientEmail === "" || subject === "") {
@@ -100,24 +103,31 @@ function Home() {
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
-                            <div className="flex justify-end navbar mb-4">
-                                <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
-                                    {t("header.about-me")}
-                                </a>
-                                <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={scrollToBottom}>
-                                    {t("header.contact")}
-                                </a>
-                                <Menu>
-                                    <MenuHandler>
-                                        <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-900 link">
-                                            {t("header.lenguage")}<FaAngleDown />
-                                        </a>
-                                    </MenuHandler>
-                                    <MenuList className="bg-foto-700 border-foto-100">
-                                        <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black font-display" data-lenguage="es">🇪🇸 Español</MenuItem>
-                                        <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black font-display" data-lenguage="en">🇬🇧 English</MenuItem>
-                                    </MenuList>
-                                </Menu>
+                            <div className="flex justify-between flex-wrap">
+                                <div className="flex  justify-start mx-6">
+                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-200 link2" onClick={handleMyProfile}>
+                                        My profile
+                                    </a>
+                                </div>
+                                <div className="flex justify-end navbar mb-4">
+                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
+                                        {t("header.about-me")}
+                                    </a>
+                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={scrollToBottom}>
+                                        {t("header.contact")}
+                                    </a>
+                                    <Menu>
+                                        <MenuHandler>
+                                            <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-900 link">
+                                                {t("header.lenguage")}<FaAngleDown />
+                                            </a>
+                                        </MenuHandler>
+                                        <MenuList className="bg-foto-700 border-foto-100">
+                                            <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black font-display" data-lenguage="es">🇪🇸 Español</MenuItem>
+                                            <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black font-display" data-lenguage="en">🇬🇧 English</MenuItem>
+                                        </MenuList>
+                                    </Menu>
+                                </div>
                             </div>
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />

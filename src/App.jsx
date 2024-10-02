@@ -8,6 +8,7 @@ import Gallery from './pages/gallery/Gallery'
 import NewTestimonial from './pages/testimonios/newTestimonial'
 import DeleteTestimonial from './pages/testimonios/deleteTestimonial'
 import Blogs from './pages/blogs/Blogs'
+import MyProfile from './pages/profile/MyProfile'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/blog' element={<Blogs />} />
+        <Route path='/profile' element={<MyProfile />} />
         <Route path='/createtestimonials' element={<NewTestimonial />} />
         <Route path='/deletetestimonials/:opinionid' element={<DeleteTestimonial />} />
         {/*
