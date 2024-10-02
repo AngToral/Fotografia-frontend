@@ -55,3 +55,17 @@ export const deleteOpinion = async (id) => {
     const opinion = await response.json();
     return opinion;
 };
+
+export const sendReseñaEmail = async (data) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/testimonials/solicituresena`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}

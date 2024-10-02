@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import { Button, Card, Collapse, Input, message } from "antd";
 import Loader from "react-js-loader";
+import { sendReseñaEmail } from "../../apiService/testimonialsApi";
 
 function MyProfile() {
     const [clientEmail, setClientEmail] = useState("")
     const [clienteEmail, setClienteEmail] = useState("")
+    const [clientName, setClientName] = useState("")
+    const [clienteNombre, setClienteNombre] = useState("")
     const [loading, setLoading] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -22,21 +25,21 @@ function MyProfile() {
     }
 
     const onEmailReview = async () => {
-        if (clientEmail === "" && clienteEmail === "") {
+        if ((clientEmail === "" || clientName === "") && (clienteEmail === "" || clienteNombre === "")) {
             messageApi.open({
                 type: 'warning',
-                content: "No email"
+                content: "No email or name"
             })
         } else {
             setLoading(true)
 
-            if (clientEmail !== "") {
-                console.log(clientEmail)
-                // await sendReviewEmail({ clientName })
+            if (clientEmail !== "" && clientName !== "") {
+                console.log(clientEmail, clientName)
+                // await sendReviewEmail({ clientEmail, clientName })
             }
-            if (clienteEmail !== "") {
-                console.log(clienteEmail)
-                // await sendReseñaEmail({ clienteName })
+            if (clienteEmail !== "" && clienteNombre !== "") {
+                console.log(clienteEmail, clienteNombre)
+                await sendReseñaEmail({ clienteEmail, clienteNombre })
             }
 
             setLoading(false)
@@ -45,7 +48,9 @@ function MyProfile() {
                 content: "Email sent!"
             })
             setClienteEmail("")
+            setClienteNombre("")
             setClientEmail("")
+            setClientName("")
         }
     }
 
@@ -80,18 +85,36 @@ function MyProfile() {
                                 <div className="my-4">
                                     <Input
                                         style={{
-                                            width: '80%',
+                                            width: '40%',
+                                        }}
+                                        placeholder="Nombre del cliente"
+                                        value={clienteNombre}
+                                        onChange={e => setClienteNombre(e.target.value)}
+                                        className="mr-2"
+                                    />
+                                    <Input
+                                        style={{
+                                            width: '40%',
                                         }}
                                         placeholder="Correo en español"
                                         value={clienteEmail}
                                         onChange={e => setClienteEmail(e.target.value)}
                                     />
-                                    <Button className="ml-4" onClick={onEmailReview}>Enviar</Button>
+                                    <Button className="ml-3" onClick={onEmailReview}>Enviar</Button>
                                 </div>
                                 <div className="my-4">
                                     <Input
                                         style={{
-                                            width: '80%',
+                                            width: '40%',
+                                        }}
+                                        placeholder="Client name"
+                                        value={clientName}
+                                        onChange={e => setClientName(e.target.value)}
+                                        className="mr-2"
+                                    />
+                                    <Input
+                                        style={{
+                                            width: '40%',
                                         }}
                                         placeholder="English email"
                                         value={clientEmail}
