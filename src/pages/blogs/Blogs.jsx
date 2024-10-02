@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getEntry } from "../../apiService/entryApi";
 import CardsBlogs from "../../components/Blog/cardsBlogs";
-import { Empty } from "antd";
+import { Empty, FloatButton } from "antd";
 import Loader from "react-js-loader";
 import ModalEntry from "../../components/Blog/modalEntry";
 
@@ -51,6 +51,14 @@ function Blogs() {
 
     return (
         <>
+            <FloatButton.Group
+                shape="circle"
+                style={{
+                    insetInlineEnd: 24,
+                }}
+            >
+                <FloatButton.BackTop visibilityHeight={0} />
+            </FloatButton.Group>
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start mx-6">

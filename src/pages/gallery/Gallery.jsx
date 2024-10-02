@@ -5,7 +5,7 @@ import { getPhoto } from "../../apiService/photoApi";
 import CardsGallery from "../../components/Gallery/cardsGallery";
 import ModalPhoto from "../../components/Gallery/modalPhoto";
 import { Button } from "@material-tailwind/react";
-import { Empty, Input, message } from "antd";
+import { Empty, FloatButton, Input, message } from "antd";
 import Loader from "react-js-loader";
 import './gallery.scss'
 
@@ -89,6 +89,14 @@ const Gallery = () => {
     return (
         <>
             {contextHolder}
+            <FloatButton.Group
+                shape="circle"
+                style={{
+                    insetInlineEnd: 24,
+                }}
+            >
+                <FloatButton.BackTop visibilityHeight={0} />
+            </FloatButton.Group>
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start mx-6">

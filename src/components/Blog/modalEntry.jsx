@@ -6,8 +6,6 @@ import Loader from "react-js-loader";
 import { addEntry, getEntryId, updateEntry } from "../../apiService/entryApi";
 import moment from "moment";
 
-dayjs().format()
-
 function ModalEntry({ visible, onCancel, refresh, entryId }) {
 
     const [form] = Form.useForm();
@@ -66,10 +64,7 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
     };
 
     const onChangeDate = (date, dateStrings) => {
-        const correctDate = new Date(dateStrings)
-        // const correctDate = moment.utc(dateStrings).format().split("T")[0]
-        console.log(correctDate)
-        form.setFieldsValue({ photo: new Date(correctDate) })
+        form.setFieldsValue({ photoDate: dateStrings })
     };
 
     const cancel = () => {
@@ -156,7 +151,7 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
                             ]}
                         >
                             <DatePicker
-                                onChange={onChangeDate}
+                                onChange={(date, dateString) => onChangeDate(date, dateString)}
                             />
                         </Form.Item>
                         <Form.Item

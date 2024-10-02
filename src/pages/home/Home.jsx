@@ -17,7 +17,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { Empty, message } from "antd";
+import { Empty, FloatButton, message } from "antd";
 import { sendContactEmail } from "../../apiService/userApi";
 import Loader from "react-js-loader";
 import CardsOpinion from "../../components/Testimonials/cardsOpinion";
@@ -87,6 +87,14 @@ function Home() {
     return (
         <>
             {contextHolder}
+            <FloatButton.Group
+                shape="circle"
+                style={{
+                    insetInlineEnd: 24,
+                }}
+            >
+                <FloatButton.BackTop visibilityHeight={0} />
+            </FloatButton.Group>
             {/* header */}
             < ScrollContainer className="bg-foto-900">
                 <ScrollPage>
