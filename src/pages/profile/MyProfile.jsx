@@ -2,6 +2,7 @@ import { Typography } from "@material-tailwind/react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
+import { Card, Collapse } from "antd";
 
 function MyProfile() {
 
@@ -14,6 +15,30 @@ function MyProfile() {
     function handleHome() {
         navigate("/")
     }
+
+    const items = [
+        {
+            key: '1',
+            label: <Typography className="font-display font-bold md:text-2xl">
+                Change password
+            </Typography>,
+            children: "Children de password"
+        },
+        {
+            key: '2',
+            label: <Typography className="font-display font-bold md:text-2xl">
+                Change email
+            </Typography>,
+            children: "Children de email"
+        },
+        {
+            key: '3',
+            label: <Typography className="font-display font-bold md:text-2xl">
+                Send new review email
+            </Typography>,
+            children: "Children de review"
+        },
+    ]
 
     return (
         <>
@@ -30,22 +55,19 @@ function MyProfile() {
                         </button>
                     </div>
                 </div>
-                <div>
-                    <div className="m-8">
-                        <Typography className="font-display font-bold md:text-2xl">
-                            Change password
-                        </Typography>
-                    </div>
-                    <div className="m-8">
-                        <Typography className="font-display font-bold md:text-2xl">
-                            Change email
-                        </Typography>
-                    </div>
-                    <div className="m-8">
-                        <Typography className="font-display font-bold md:text-2xl">
-                            Send new review email
-                        </Typography>
-                    </div>
+                <div className="flex justify-center">
+                    <Card
+                        title={<Typography className="font-display font-bold md:text-2xl">
+                            Hello, Nani !!
+                        </Typography>}
+                        bordered={false}
+                        style={{
+                            width: 620,
+                        }}
+                        className="m-8 font-display font-bold"
+                    >
+                        <Collapse items={items} bordered={false} />
+                    </Card>
                 </div>
             </div>
         </>
