@@ -129,6 +129,11 @@ function MyProfile() {
         },
     ]
 
+    const logout = () => {
+        localStorage.removeItem('access_token')
+        navigate('/login')
+    }
+
     return (
         <>
             {contextHolder}
@@ -140,7 +145,7 @@ function MyProfile() {
                         </button>
                     </div>
                     <div className="flex justify-end mx-6">
-                        <button variant="text" className="flex items-center link2 font-display text-foto-200 m-4 md:text-xl font-bold">
+                        <button variant="text" className="flex items-center link2 font-display text-foto-200 m-4 md:text-xl font-bold" onClick={logout}>
                             <IoIosLogOut className="mr-2" /> Logout
                         </button>
                     </div>
