@@ -18,10 +18,10 @@ export const AuthProvider = ({ children }) => {
         if (isExpired) {
             setLogOut();
         }
-    }, [isExpired, userId]);
+    }, [isExpired, userId, token]);
 
     return (
-        <AuthContext.Provider value={{ userId, isExpired }}>
+        <AuthContext.Provider value={{ userId, isExpired, setToken }}>
             {children}
         </AuthContext.Provider>
     )
