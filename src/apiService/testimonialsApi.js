@@ -69,3 +69,17 @@ export const sendReseñaEmail = async (data) => {
     const user = await response.json();
     return user;
 }
+
+export const sendReviewEmail = async (data) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/testimonials/reviewrequest`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}

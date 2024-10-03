@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import { Button, Card, Collapse, Input, message } from "antd";
 import Loader from "react-js-loader";
-import { sendReseñaEmail } from "../../apiService/testimonialsApi";
+import { sendReseñaEmail, sendReviewEmail } from "../../apiService/testimonialsApi";
 
 function MyProfile() {
     const [clientEmail, setClientEmail] = useState("")
@@ -35,7 +35,7 @@ function MyProfile() {
 
             if (clientEmail !== "" && clientName !== "") {
                 console.log(clientEmail, clientName)
-                // await sendReviewEmail({ clientEmail, clientName })
+                await sendReviewEmail({ clientEmail, clientName })
             }
             if (clienteEmail !== "" && clienteNombre !== "") {
                 console.log(clienteEmail, clienteNombre)
