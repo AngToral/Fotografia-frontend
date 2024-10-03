@@ -9,7 +9,7 @@ import { HiOutlineMail } from "react-icons/hi";
 function AboutMe() {
 
     useEffect(() => {
-        document.body.style.backgroundImage = "url('../../../../images/fondo-about-me.png')";
+        document.body.style.backgroundImage = "url('../../../../images/fondo-profile.png')";
     }, [])
 
     const [t, i18n] = useTranslation("contact")
@@ -29,13 +29,13 @@ function AboutMe() {
         <>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-start ml-6">
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleHome}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleHome}>
                         Home
                     </button>
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleGallery}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleGallery}>
                         {t("menu.gallery")}
                     </button>
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-500" onClick={handleBlog}>
+                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleBlog}>
                         Blog
                     </button>
                 </div>

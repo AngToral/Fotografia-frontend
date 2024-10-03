@@ -15,7 +15,7 @@ function MyProfile() {
     const [messageApi, contextHolder] = message.useMessage();
 
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.0), rgba(240, 255, 255, 0.10)), url('../../../../images/fondo-profile.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.0), rgba(240, 255, 255, 0.10)), url('../../../../images/fondo-about-me.png')";
     }, []);
 
     const navigate = useNavigate();
