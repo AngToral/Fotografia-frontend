@@ -23,6 +23,7 @@ import Loader from "react-js-loader";
 import CardsOpinion from "../../components/Testimonials/cardsOpinion";
 import { getOpinion } from "../../apiService/testimonialsApi";
 import Marquee from 'react-fast-marquee';
+import { useAuth } from "../../components/Context/authContext";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -32,10 +33,12 @@ function Home() {
     const [loading, setLoading] = useState(false)
     const [allOpinions, setAllOpinions] = useState([]);
 
+    const { userId, isExpired } = useAuth();
+
     useEffect(() => {
         getAllOpinions();
-        document.body.style.backgroundColor = "#646f66"
-    })
+        document.body.style.backgroundColor = "#646f66";
+    }, [userId, isExpired])
 
     const [t, i18n] = useTranslation("home")
     const navigate = useNavigate();
@@ -108,6 +111,8 @@ function Home() {
                                     <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleMyProfile}>
                                         My profile
                                     </a>
+                                    {userId ? "Sí hay ID-" : "No hay ID-"}
+                                    {isExpired ? "expirado" : "vigente"}
                                 </div>
                                 <div className="flex justify-end mb-4">
                                     <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
