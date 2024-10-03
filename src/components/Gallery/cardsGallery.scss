@@ -1,10 +1,10 @@
 @import "../../app.scss";
 
 .tema {
-    border: 1px solid $rosaClaro700;
+    border: 1px solid transparent;
     margin-left: 10px;
     padding: 8px;
     border-radius: 10px;
-    background-color: $rosaTransparente;
-    color: $marron800;
+    background-color: $verdeClaroTransparente;
+    color: $verde900;
 }

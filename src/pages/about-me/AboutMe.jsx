@@ -9,7 +9,7 @@ import { HiOutlineMail } from "react-icons/hi";
 function AboutMe() {
 
     useEffect(() => {
-        document.body.style.backgroundImage = "url('../../../../images/fondo-profile.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.05), rgba(240, 255, 255, 0.05)), url('../../../../images/gallery.png')";
     }, [])
 
     const [t, i18n] = useTranslation("contact")

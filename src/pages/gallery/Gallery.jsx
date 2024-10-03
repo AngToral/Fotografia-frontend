@@ -23,7 +23,7 @@ const Gallery = () => {
 
     useEffect(() => {
         getAllPhotos();
-        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.40), rgba(240, 255, 255, 0.40)), url('../../../../images/gallery.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.40), rgba(240, 255, 255, 0.40)), url('../../../../images/fondo-profile.png')";
     }, [dummy]);
 
     const [t, i18n] = useTranslation("themes")
@@ -100,14 +100,14 @@ const Gallery = () => {
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start mx-6">
-                        <button variant="text" className="link2 font-display text-foto-800 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link font-display text-foto-900 m-4 md:text-xl font-bold" onClick={handleHome}>
                             Home
                         </button>
-                        <button variant="text" className="link2 font-display text-foto-800 m-4 md:text-xl font-bold" onClick={handleBlog}>
+                        <button variant="text" className="link font-display text-foto-900 m-4 md:text-xl font-bold" onClick={handleBlog}>
                             Blog
                         </button>
                     </div>
-                    <button variant="text" className="link2 font-display text-foto-800 mx-10 md:text-xl font-bold" onClick={addPhoto}>
+                    <button variant="text" className="link font-display text-foto-900 mx-10 md:text-xl font-bold" onClick={addPhoto}>
                         Upload photo
                     </button>
                 </div>
