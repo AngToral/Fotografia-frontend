@@ -105,7 +105,7 @@ function Home() {
                         <div className="h-screen big-screen">
                             <div className="flex justify-between flex-wrap navbar h-[60px]">
                                 <div className="flex  justify-start mx-6">
-                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-200 link" onClick={handleMyProfile}>
+                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleMyProfile}>
                                         My profile
                                     </a>
                                 </div>
