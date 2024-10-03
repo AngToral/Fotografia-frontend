@@ -78,64 +78,41 @@ function Login() {
         }
     }
 
+    function handleHome() {
+        navigate("/")
+    }
+
     return (
         <>
             {contextHolder}
-            <div className="flex justify-center items-center h-screen">
-                <div className="login">
-                    {/* <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography> */}
-                    <img className="flex justify-center w-64" src="../../../public/images/firma-rosa.png" />
-                    {forgot ?
-                        <Form
-                            layout="vertical"
-                            form={form}
-                            name="passwordForgotten"
-                            initialValues={{
-                                remember: true,
-                            }}
-                            style={{
-                                maxWidth: 360,
-                            }}
-                            onFinish={onForgot}
-                        >
-                            <Form.Item
-                                name="email"
-                                label="Indique su correo electrónico:"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your email!',
-                                    },
-                                ]}
-                            >
-                                <Input
-                                    prefix={<UserOutlined />}
-                                    placeholder="Email"
-                                    value={emailForgotten}
-                                    onChange={e => setEmailForgotten(e.currentTarget.value)} />
-                            </Form.Item>
-                            <Form.Item>
-                                <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
-                                    {loading ? <Loader type="rectangular-ping" size={180} /> : 'Send email'}
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                        :
-                        <div>
-                            <Typography className="text-2xl mb-6 flex justify-center font-revista">Welcome back!</Typography>
+            <div className="h-screen">
+                <div className="flex justify-between flex-wrap mb-10">
+                    <div className="flex justify-start mx-6">
+                        <button variant="text" className="link2 font-display text-foto-200 m-4 md:text-xl font-bold" onClick={handleHome}>
+                            Home
+                        </button>
+                    </div>
+                </div>
+                <div className="flex justify-center items-center">
+                    <div className="login">
+                        {/* <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography> */}
+                        <img className="flex justify-center w-64" src="../../../public/images/firma-rosa.png" />
+                        {forgot ?
                             <Form
+                                layout="vertical"
                                 form={form}
-                                name="login"
+                                name="passwordForgotten"
                                 initialValues={{
                                     remember: true,
                                 }}
                                 style={{
                                     maxWidth: 360,
                                 }}
-                                onFinish={onFinish}
+                                onFinish={onForgot}
                             >
                                 <Form.Item
                                     name="email"
+                                    label="Indique su correo electrónico:"
                                     rules={[
                                         {
                                             required: true,
@@ -146,43 +123,79 @@ function Login() {
                                     <Input
                                         prefix={<UserOutlined />}
                                         placeholder="Email"
-                                        value={email}
-                                        onChange={e => setEmail(e.currentTarget.value)} />
-                                </Form.Item>
-                                <Form.Item
-                                    name="password"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Please input your password!',
-                                        },
-                                    ]}
-                                >
-                                    <Input.Password
-                                        prefix={<LockOutlined />}
-                                        type="password"
-                                        placeholder="Password"
-                                        value={password}
-                                        onChange={e => setPassword(e.currentTarget.value)} />
+                                        value={emailForgotten}
+                                        onChange={e => setEmailForgotten(e.currentTarget.value)} />
                                 </Form.Item>
                                 <Form.Item>
-                                    <Flex justify="space-between" align="center">
-                                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                                            <Checkbox className="font-revista check">Remember me</Checkbox>
-                                        </Form.Item>
-                                        <a className="font-revista forgot" onClick={e => setForgot(true)}>Forgot password</a>
-                                    </Flex>
-                                </Form.Item>
-
-                                <Form.Item>
-                                    <Button className="button font-revista" block type="primary" htmlType="submit" disabled={loading}>
-                                        {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
+                                    <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
+                                        {loading ? <Loader type="rectangular-ping" size={180} /> : 'Send email'}
                                     </Button>
                                 </Form.Item>
                             </Form>
-                        </div>}
-                </div>
-            </div >
+                            :
+                            <div>
+                                <Typography className="text-2xl mb-6 flex justify-center font-revista">Welcome back!</Typography>
+                                <Form
+                                    form={form}
+                                    name="login"
+                                    initialValues={{
+                                        remember: true,
+                                    }}
+                                    style={{
+                                        maxWidth: 360,
+                                    }}
+                                    onFinish={onFinish}
+                                >
+                                    <Form.Item
+                                        name="email"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: 'Please input your email!',
+                                            },
+                                        ]}
+                                    >
+                                        <Input
+                                            prefix={<UserOutlined />}
+                                            placeholder="Email"
+                                            value={email}
+                                            onChange={e => setEmail(e.currentTarget.value)} />
+                                    </Form.Item>
+                                    <Form.Item
+                                        name="password"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: 'Please input your password!',
+                                            },
+                                        ]}
+                                    >
+                                        <Input.Password
+                                            prefix={<LockOutlined />}
+                                            type="password"
+                                            placeholder="Password"
+                                            value={password}
+                                            onChange={e => setPassword(e.currentTarget.value)} />
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Flex justify="space-between" align="center">
+                                            <Form.Item name="remember" valuePropName="checked" noStyle>
+                                                <Checkbox className="font-revista check">Remember me</Checkbox>
+                                            </Form.Item>
+                                            <a className="font-revista forgot" onClick={e => setForgot(true)}>Forgot password</a>
+                                        </Flex>
+                                    </Form.Item>
+
+                                    <Form.Item>
+                                        <Button className="button font-revista" block type="primary" htmlType="submit" disabled={loading}>
+                                            {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
+                                        </Button>
+                                    </Form.Item>
+                                </Form>
+                            </div>}
+                    </div>
+                </div >
+            </div>
         </>
     );
 }
