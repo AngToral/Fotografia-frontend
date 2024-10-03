@@ -30,8 +30,10 @@ function Login() {
         if (values.username === "" || values.password === "") { }
         setLoading(true)
         const response = await login(email, password)
+        console.log(response)
         setLoading(false)
         if (!response.msg) {
+            localStorage.setItem('access_token', response)
             navigate('/') //logeado
         }
         if (response.msg === "This email is not registered") {
