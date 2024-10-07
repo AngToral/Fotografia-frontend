@@ -26,6 +26,7 @@ import Marquee from 'react-fast-marquee';
 import { useAuth } from "../../components/Context/authContext";
 
 function Home() {
+    //no recupera token al iniciar sesión
     const [clientName, setClientName] = useState("")
     const [clientEmail, setClientEmail] = useState("")
     const [subject, setSubject] = useState("")
@@ -33,12 +34,13 @@ function Home() {
     const [loading, setLoading] = useState(false)
     const [allOpinions, setAllOpinions] = useState([]);
 
-    const { userId, isExpired } = useAuth();
+    const { userId, isExpired, token } = useAuth();
 
     useEffect(() => {
+        console.log(token)
         getAllOpinions();
         document.body.style.backgroundColor = "#646f66";
-    }, [userId, isExpired])
+    }, [userId])
 
     const [t, i18n] = useTranslation("home")
     const navigate = useNavigate();
@@ -261,7 +263,7 @@ function Home() {
                 </div>
             </div>
             {/* footer */}
-            <footer footer className="w-full bg-foto-200 p-8" >
+            <footer footer="true" className="w-full bg-foto-200 p-8" >
                 <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
                     <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
                     <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">

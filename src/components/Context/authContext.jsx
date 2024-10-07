@@ -14,14 +14,22 @@ export const AuthProvider = ({ children }) => {
         setToken(null)
     }
 
+    const setLogIn = (login) => {
+        localStorage.setItem('access_token', login)
+        console.log("login ok: ", login, "token falta (null): ", token)
+        //sí recibe el login (response) al logearse
+        //no guarda el token en token cuando inicio sesión, pero si hago setToken(login/localStorage), se vuelve null al redireccionar
+    }
+
     useEffect(() => {
+        console.log(token);
         if (isExpired) {
             setLogOut();
         }
     }, [isExpired, userId, token]);
 
     return (
-        <AuthContext.Provider value={{ userId, isExpired, setToken }}>
+        <AuthContext.Provider value={{ userId, isExpired, token, setLogIn }}>
             {children}
         </AuthContext.Provider>
     )
