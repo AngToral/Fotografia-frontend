@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getPhoto } from "../../apiService/photoApi";
@@ -8,6 +8,7 @@ import { Button } from "@material-tailwind/react";
 import { Empty, FloatButton, Input, message } from "antd";
 import Loader from "react-js-loader";
 import './gallery.scss'
+import { authContext } from "../../components/Context/authContext";
 
 const { Search } = Input;
 
@@ -28,6 +29,8 @@ const Gallery = () => {
 
     const [t, i18n] = useTranslation("themes")
     const navigate = useNavigate();
+
+    const { userId } = useContext(authContext)
 
     function handleHome() {
         navigate("/")
@@ -107,9 +110,11 @@ const Gallery = () => {
                             Blog
                         </button>
                     </div>
-                    <button variant="text" className="link font-display text-foto-900 mx-10 md:text-xl font-bold" onClick={addPhoto}>
-                        Upload photo
-                    </button>
+                    {userId ?
+                        <button variant="text" className="link font-display text-foto-900 mx-10 md:text-xl font-bold" onClick={addPhoto}>
+                            Upload photo
+                        </button>
+                        : null}
                 </div>
                 <div className="flex justify-end mr-6">
                     <Search className="w-[300px]"

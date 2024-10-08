@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getEntry } from "../../apiService/entryApi";
@@ -6,6 +6,7 @@ import CardsBlogs from "../../components/Blog/cardsBlogs";
 import { Empty, FloatButton } from "antd";
 import Loader from "react-js-loader";
 import ModalEntry from "../../components/Blog/modalEntry";
+import { authContext } from "../../components/Context/authContext";
 
 function Blogs() {
     const [error, setError] = useState("");
@@ -14,6 +15,8 @@ function Blogs() {
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
     const [selectedEntry, setSelectedEntry] = useState(null);
+
+    const { userId } = useContext(authContext)
 
     useEffect(() => {
         getAllEntrys();
@@ -69,9 +72,11 @@ function Blogs() {
                             {t("header.gallery")}
                         </button>
                     </div>
-                    <button variant="text" className="link font-display text-foto-300 mx-10 md:text-xl font-bold" onClick={addEntry}>
-                        New entry
-                    </button>
+                    {userId ?
+                        <button variant="text" className="link font-display text-foto-300 mx-10 md:text-xl font-bold" onClick={addEntry}>
+                            New entry
+                        </button>
+                        : null}
                 </div>
                 <div>
                     <div className="flex flex-wrap justify-center place-items-center m-10">

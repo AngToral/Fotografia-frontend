@@ -3,8 +3,12 @@ import { Image, Popconfirm, message } from "antd";
 import './cardsGallery.scss'
 import '../../pages/home/home.scss'
 import { deletePhoto } from "../../apiService/photoApi";
+import { authContext } from "../Context/authContext";
+import { useContext } from "react";
 
 const CardsGallery = ({ photo, refresh, visible, photoId }) => {
+
+    const { userId } = useContext(authContext)
 
     const handleDelete = async (id) => {
         await deletePhoto(id)
@@ -31,15 +35,17 @@ const CardsGallery = ({ photo, refresh, visible, photoId }) => {
                         <p className="tema">{(photo.theme1)}</p>
                         <p className="tema">{(photo.theme2) !== "undefined" ? photo.theme2 : "🩶"}</p>
                     </div>
-                    <div className="flex justify-center gap-6 mt-4 place-content-end">
-                        <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800" variant="text">Edit</Button>
-                        <Popconfirm
-                            okType="dashed"
-                            title="Sure to delete?"
-                            onConfirm={() => handleDelete(photo._id)}>
-                            <Button className="link text-foto-800" variant="text">Delete</Button>
-                        </Popconfirm>
-                    </div>
+                    {userId ?
+                        <div className="flex justify-center gap-6 mt-4 place-content-end">
+                            <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800" variant="text">Edit</Button>
+                            <Popconfirm
+                                okType="dashed"
+                                title="Sure to delete?"
+                                onConfirm={() => handleDelete(photo._id)}>
+                                <Button className="link text-foto-800" variant="text">Delete</Button>
+                            </Popconfirm>
+                        </div>
+                        : null}
                 </CardBody>
             </Card>
         </>
