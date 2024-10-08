@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, Checkbox, Form, Input, Flex, message } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Typography } from "@material-tailwind/react";
@@ -7,6 +7,7 @@ import '../../color.scss'
 import { forgotPasswordEmail, login } from "../../apiService/userApi";
 import { useNavigate } from "react-router-dom";
 import Loader from "react-js-loader";
+import { authContext } from "../../components/Context/authContext";
 
 function Login() {
 
@@ -20,6 +21,7 @@ function Login() {
     const [forgot, setForgot] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
 
+    const { setLogIn } = useContext(authContext)
 
     useEffect(() => {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.jpg')"
@@ -35,7 +37,8 @@ function Login() {
         console.log(response)
         setLoading(false)
         if (!response.msg) {
-            localStorage.setItem('access_token', response)
+            //localStorage.setItem('access_token', response)
+            setLogIn(response)
             navigate('/') //logeado
         }
         if (response.msg === "This email is not registered") {

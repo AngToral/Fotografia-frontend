@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import './home.scss'
 import {
     Menu,
@@ -23,6 +23,7 @@ import Loader from "react-js-loader";
 import CardsOpinion from "../../components/Testimonials/cardsOpinion";
 import { getOpinion } from "../../apiService/testimonialsApi";
 import Marquee from 'react-fast-marquee';
+import { authContext } from "../../components/Context/authContext";
 
 function Home() {
     //no recupera token al iniciar sesión
@@ -33,6 +34,7 @@ function Home() {
     const [loading, setLoading] = useState(false)
     const [allOpinions, setAllOpinions] = useState([]);
 
+    const { userId } = useContext(authContext)
 
     useEffect(() => {
         getAllOpinions();
@@ -110,6 +112,7 @@ function Home() {
                                     <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleMyProfile}>
                                         My profile
                                     </a>
+                                    {userId ? `el userId es: ${userId}` : "No hay userId"}
                                 </div>
                                 <div className="flex justify-end mb-4">
                                     <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>

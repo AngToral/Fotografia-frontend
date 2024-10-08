@@ -1,10 +1,11 @@
 import { Typography } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import { Button, Card, Collapse, Input, message } from "antd";
 import Loader from "react-js-loader";
 import { sendReseñaEmail, sendReviewEmail } from "../../apiService/testimonialsApi";
+import { authContext } from "../../components/Context/authContext";
 
 function MyProfile() {
     const [clientEmail, setClientEmail] = useState("")
@@ -13,6 +14,8 @@ function MyProfile() {
     const [clienteNombre, setClienteNombre] = useState("")
     const [loading, setLoading] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
+
+    const { setLogOut } = useContext(authContext)
 
     useEffect(() => {
         document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.0), rgba(240, 255, 255, 0.10)), url('../../../../images/fondo-about-me.png')";
@@ -52,6 +55,11 @@ function MyProfile() {
             setClientEmail("")
             setClientName("")
         }
+    }
+
+    const logout = () => {
+        setLogOut()
+        navigate("/login")
     }
 
     const items = [
@@ -128,11 +136,6 @@ function MyProfile() {
                 </>
         },
     ]
-
-    const logout = () => {
-        localStorage.removeItem('access_token')
-        navigate('/login')
-    }
 
     return (
         <>
