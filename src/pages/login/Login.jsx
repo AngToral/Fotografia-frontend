@@ -7,7 +7,6 @@ import '../../color.scss'
 import { forgotPasswordEmail, login } from "../../apiService/userApi";
 import { useNavigate } from "react-router-dom";
 import Loader from "react-js-loader";
-import { useAuth } from "../../components/Context/authContext";
 
 function Login() {
 
@@ -21,7 +20,6 @@ function Login() {
     const [forgot, setForgot] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
 
-    const { setLogIn } = useAuth()
 
     useEffect(() => {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.jpg')"
@@ -35,11 +33,9 @@ function Login() {
         setLoading(true)
         const response = await login(email, password)
         console.log(response)
-        //sí manda el response a authContext
         setLoading(false)
         if (!response.msg) {
-            // localStorage.setItem('access_token', response)
-            setLogIn(response);
+            localStorage.setItem('access_token', response)
             navigate('/') //logeado
         }
         if (response.msg === "This email is not registered") {
