@@ -21,9 +21,9 @@ const AuthUser = ({ children }) => {
 
     useEffect(() => {
         console.log("token: ", token, "decodedToken: ", decodedToken, "userId: ", userId);
-        // if (isExpired) {
-        //     setLogOut();
-        // }
+        if (isExpired) {
+            setLogOut();
+        }
     }, []);
 
     return (
