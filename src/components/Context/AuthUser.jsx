@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { authContext } from './authContext';
 import { useJwt } from "react-jwt";
-import { useNavigate } from 'react-router-dom';
 
 const AuthUser = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('access_token'))
