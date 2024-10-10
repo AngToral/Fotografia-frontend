@@ -9,6 +9,8 @@ import NewTestimonial from './pages/testimonios/newTestimonial'
 import DeleteTestimonial from './pages/testimonios/deleteTestimonial'
 import Blogs from './pages/blogs/Blogs'
 import MyProfile from './pages/profile/MyProfile'
+import NewEmail from './pages/newEmail/NewEmail'
+import NewPassword from './pages/newPassword/NewPassword'
 
 function App() {
 
@@ -19,7 +21,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/newpassword/:userid' element={<ForgotPassword />} />
-        {/* repito anterior con changepassword/:userid y changeemail/:userid */}
+        <Route path='/changeemail/:userid' element={<NewEmail />} />
+        <Route path='/changepassword/:userid' element={<NewPassword />} />
         <Route path='/' element={<Home />} />
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/gallery' element={<Gallery />} />
