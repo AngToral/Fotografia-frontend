@@ -20,8 +20,9 @@ function MyProfile() {
     const { setLogOut, userId } = useContext(authContext)
 
     useEffect(() => {
-        getUserLogged();
         document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.0), rgba(240, 255, 255, 0.10)), url('../../../../images/fondo-about-me.png')";
+        document.body.style.backgroundSize = "cover"
+        getUserLogged();
     }, []);
 
     const navigate = useNavigate();
