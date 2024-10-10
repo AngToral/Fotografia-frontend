@@ -1,8 +1,8 @@
 const baseUrl = import.meta.env.VITE_BACKEND;
 
-export const getUser = async () => {
+export const getUser = async (id) => {
     const token = localStorage.getItem("access_token");
-    const response = await fetch(`${baseUrl}/user`, {
+    const response = await fetch(`${baseUrl}/user/${id}`, {
         headers: { "authorization": `Bearer ${token}` }, // ponemos en headers el token generado
     });
     const user = await response.json();
@@ -68,6 +68,34 @@ export const sendContactEmail = async (data) => {
     const response = await fetch(`${baseUrl}/user/clientcontact`, {
         method: "POST",
         body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}
+
+export const sendChangePassword = async (email) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/user/changepassword`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    });
+    const user = await response.json();
+    return user;
+}
+
+export const sendChangeEmail = async (email) => {
+    const token = localStorage.getItem("access_token");
+    const response = await fetch(`${baseUrl}/user/changeemail`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
         headers: {
             "Content-Type": "application/json",
             "authorization": `Bearer ${token}`,

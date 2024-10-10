@@ -19,6 +19,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/newpassword/:userid' element={<ForgotPassword />} />
+        {/* repito anterior con changepassword/:userid y changeemail/:userid */}
         <Route path='/' element={<Home />} />
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/gallery' element={<Gallery />} />
@@ -26,9 +27,6 @@ function App() {
         <Route path='/profile' element={<MyProfile />} />
         <Route path='/createtestimonials' element={<NewTestimonial />} />
         <Route path='/deletetestimonials/:opinionid' element={<DeleteTestimonial />} />
-        {/*
-        mi perfil
-        */}
       </Routes>
     </>
   )

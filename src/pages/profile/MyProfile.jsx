@@ -6,18 +6,21 @@ import { Button, Card, Collapse, Input, message } from "antd";
 import Loader from "react-js-loader";
 import { sendReseñaEmail, sendReviewEmail } from "../../apiService/testimonialsApi";
 import { authContext } from "../../components/Context/authContext";
+import { getUser, sendChangeEmail, sendChangePassword } from "../../apiService/userApi";
 
 function MyProfile() {
     const [clientEmail, setClientEmail] = useState("")
     const [clienteEmail, setClienteEmail] = useState("")
     const [clientName, setClientName] = useState("")
     const [clienteNombre, setClienteNombre] = useState("")
+    const [userLogged, setUserLogged] = useState("")
     const [loading, setLoading] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
 
-    const { setLogOut } = useContext(authContext)
+    const { setLogOut, userId } = useContext(authContext)
 
     useEffect(() => {
+        getUserLogged();
         document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.0), rgba(240, 255, 255, 0.10)), url('../../../../images/fondo-about-me.png')";
     }, []);
 
@@ -62,32 +65,68 @@ function MyProfile() {
         navigate("/login")
     }
 
+    const getUserLogged = async () => {
+        if (userId) {
+            const user = await getUser(userId);
+            setUserLogged(user?.email)
+        }
+    };
+
+    const changePassword = async () => {
+        setLoading(true)
+        if (userId) {
+            await sendChangePassword(userLogged)
+            messageApi.open({
+                type: 'success',
+                content: "Email sent!"
+            })
+        }
+        setLoading(false);
+    };
+
+    const changeEmail = async () => {
+        setLoading(true)
+        if (userId) {
+            await sendChangeEmail(userLogged)
+            messageApi.open({
+                type: 'success',
+                content: "Email sent!"
+            })
+        }
+        setLoading(false);
+    };
+
     const items = [
         {
             key: '1',
             label: <Typography className="font-display font-bold md:text-2xl">
-                Change password
+                Change email or password
             </Typography>,
-            children: "Children de password"
+            children:
+                <>
+                    {loading ? <Loader type="bubble-ping" size={180} /> :
+                        <>
+                            <div className="my-4">
+                                <Button className="" onClick={changeEmail}>Change email</Button>
+                            </div>
+                            <div className="my-4">
+                                <Button className="" onClick={changePassword}>Change password</Button>
+                            </div>
+                        </>
+                    }
+                </>
         },
         {
             key: '2',
             label: <Typography className="font-display font-bold md:text-2xl">
-                Change email
-            </Typography>,
-            children: "Children de email"
-        },
-        {
-            key: '3',
-            label: <Typography className="font-display font-bold md:text-2xl">
-                Send new review email
+                Send new review request email
             </Typography>,
             children:
                 <>
                     {loading ? <Loader type="bubble-ping" size={180} /> :
                         <>
                             <Typography className="font-display font-bold md:text-xl mb-4">
-                                Send email in:
+                                Send email to:
                             </Typography>
                             <div>
                                 <div className="my-4">

@@ -116,7 +116,7 @@ function Login() {
                             >
                                 <Form.Item
                                     name="email"
-                                    label="Indique su correo electrónico:"
+                                    label="Please enter your email address:"
                                     rules={[
                                         {
                                             required: true,
