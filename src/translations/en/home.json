@@ -28,6 +28,7 @@
         "opinion": "Your opinion",
         "textarea": "Did you like the photos?",
         "created": "Review submitted!",
-        "email": "Email (This data is private)"
+        "email": "Email (This data is private)",
+        "more": "See all..."
     }
 }

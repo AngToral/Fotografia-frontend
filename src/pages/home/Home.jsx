@@ -218,7 +218,10 @@ function Home() {
             </ScrollContainer>
             {/* feedbacks */}
             <div className="bg-foto-900">
-                <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-200" >{t("testimonials.testimonial")}</p>
+                <div className="flex items-end">
+                    <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-200" >{t("testimonials.testimonial")}</p>
+                    <a variant="text" className="text-lg text-nani-50 font-display link2" onClick={handleMyProfile}>{t("testimonials.more")}</a>
+                </div>
                 <div className='content-center'>
                     <Marquee pauseOnHover="true" autoFill="true">
                         {allOpinions.length === 0 ? <Empty /> :
