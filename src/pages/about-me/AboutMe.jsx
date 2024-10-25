@@ -45,7 +45,8 @@ function AboutMe() {
                     </div>
                     <div className="div-text textaboutme">
                         <p className="mx-6 text-nani-50 font-revista text-lg"> {t("text.first")}</p>
-                        <p className="m-6 font-revista text-nani-50 text-lg"> Idiomas, experiencias más relevantes</p>
+                        <p className="m-6 font-revista text-nani-50 text-lg"> {t("text.second")}</p>
+                        <p className="m-6 font-revista text-nani-50 text-lg"> {t("text.third")}</p>
                         <hr className="m-4 border-foto-400" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a

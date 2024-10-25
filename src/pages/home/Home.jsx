@@ -194,7 +194,7 @@ function Home() {
                     <div className="flex flex-col justify-between bg-foto-900">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/familia.jpg" className="foto md:h-[200px]" />
                                 <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.family")}
                                 </p>
@@ -205,7 +205,7 @@ function Home() {
                                 <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.sports")}
                                 </p>
-                                <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
+                                <img src="../../../public/images/crossfit.jpg" className="foto md:h-[200px]" />
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>

@@ -47,7 +47,7 @@ const AllTestimonials = () => {
                     Blog
                 </button>
             </div>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap justify-center'>
                 {allOpinions.length === 0 ? <Empty /> :
                     allOpinions.map(opinion =>
                         <CardsOpinion
