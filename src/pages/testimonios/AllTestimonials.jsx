@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { getOpinion } from '../../apiService/testimonialsApi';
 import { Empty } from 'antd';
 import CardsOpinion from '../../components/Testimonials/cardsOpinion';
+import CardsAllOpinions from '../../components/Testimonials/CardsAllOpinions';
 
 const AllTestimonials = () => {
     const [allOpinions, setAllOpinions] = useState([]);
@@ -50,7 +51,7 @@ const AllTestimonials = () => {
             <div className='flex flex-wrap justify-center'>
                 {allOpinions.length === 0 ? <Empty /> :
                     allOpinions.map(opinion =>
-                        <CardsOpinion
+                        <CardsAllOpinions
                             key={opinion._id}
                             opinion={opinion}
                         />
