@@ -26,7 +26,6 @@ import Marquee from 'react-fast-marquee';
 import { authContext } from "../../components/Context/authContext";
 
 function Home() {
-    //no recupera token al iniciar sesión
     const [clientName, setClientName] = useState("")
     const [clientEmail, setClientEmail] = useState("")
     const [subject, setSubject] = useState("")
@@ -83,12 +82,10 @@ function Home() {
     }
 
     const getAllOpinions = async () => {
-        //setLoading(true)
         const testiminio = await getOpinion();
         const notRemoved = testiminio.filter((opinion) => !opinion.removeAt);
         if (testiminio.length) setAllOpinions(notRemoved);
         else setError(testiminio.message);
-        //setLoading(false);
     }
 
     return (

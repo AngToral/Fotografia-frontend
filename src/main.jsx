@@ -15,7 +15,7 @@ import AuthUser from './components/Context/AuthUser.jsx'
 
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: "es",
+  lng: "en",
   resources: {
     es: {
       home: home_es,
