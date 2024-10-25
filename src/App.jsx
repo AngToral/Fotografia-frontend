@@ -11,6 +11,7 @@ import Blogs from './pages/blogs/Blogs'
 import MyProfile from './pages/profile/MyProfile'
 import NewEmail from './pages/newEmail/NewEmail'
 import NewPassword from './pages/newPassword/NewPassword'
+import AllTestimonials from './pages/testimonios/AllTestimonials'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/profile' element={<MyProfile />} />
         <Route path='/createtestimonials' element={<NewTestimonial />} />
         <Route path='/deletetestimonials/:opinionid' element={<DeleteTestimonial />} />
+        <Route path='/testimonials' element={<AllTestimonials />} />
       </Routes>
     </>
   )

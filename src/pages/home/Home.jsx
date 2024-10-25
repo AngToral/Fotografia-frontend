@@ -60,6 +60,9 @@ function Home() {
     function handleMyProfile() {
         navigate("/profile")
     }
+    function handleAllTestimonials() {
+        navigate("/testimonials")
+    }
 
     const onEmailContact = async () => {
         if (clientName === "" || clientEmail === "" || subject === "") {
@@ -147,7 +150,7 @@ function Home() {
                                     <a href="https://www.instagram.com/nanamendozago/" target="_blanck" variant="text" className="link text-lg text-foto-900 font-display">
                                         Instagram
                                     </a>
-                                    <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="../../../../public/files/portfolio.pdf" download={true}>
+                                    <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="../../../../public/files/portfolio-mariana-mendoza.pdf" download={true}>
                                         Portfolio
                                     </a>
                                     <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleBlog}>
@@ -220,7 +223,7 @@ function Home() {
             <div className="bg-foto-900">
                 <div className="flex items-end">
                     <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-200" >{t("testimonials.testimonial")}</p>
-                    <a variant="text" className="text-lg text-nani-50 font-display link2" onClick={handleMyProfile}>{t("testimonials.more")}</a>
+                    <a variant="text" className="text-lg text-nani-50 font-display link2" onClick={handleAllTestimonials}>{t("testimonials.more")}</a>
                 </div>
                 <div className='content-center'>
                     <Marquee pauseOnHover="true" autoFill="true">
