@@ -24,6 +24,7 @@ import CardsOpinion from "../../components/Testimonials/cardsOpinion";
 import { getOpinion } from "../../apiService/testimonialsApi";
 import Marquee from 'react-fast-marquee';
 import { authContext } from "../../components/Context/authContext";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -104,24 +105,24 @@ function Home() {
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
-                            <div className="flex justify-between flex-wrap navbar h-[60px]">
-                                <div className="flex  justify-start mx-6">
+                            <div className="flex justify-between flex-wrap navbar h-[60px] items-center">
+                                <div className="flex justify-start">
                                     {userId ?
-                                        <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleMyProfile}>
-                                            My profile
+                                        <a variant="text" className="font-display md:ml-4 m-2 md:text-2xl text-md font-semibold text-foto-900 link" onClick={handleMyProfile}>
+                                            <IoPersonCircleOutline className="md:h-11 md:w-11 h-10 w-10" />
                                         </a>
                                         : null}
                                 </div>
-                                <div className="flex justify-end mb-4">
-                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
+                                <div className="flex justify-end">
+                                    <a variant="text" className="font-display m-2 text-xl font-bold text-foto-900 link" onClick={handleAboutMe}>
                                         {t("header.about-me")}
                                     </a>
-                                    <a variant="text" className="font-display m-4 text-xl font-bold text-foto-900 link" onClick={scrollToBottom}>
+                                    <a variant="text" className="font-display m-2 text-xl font-bold text-foto-900 link" onClick={scrollToBottom}>
                                         {t("header.contact")}
                                     </a>
                                     <Menu>
                                         <MenuHandler>
-                                            <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-900 link">
+                                            <a variant="text" className="font-display flex m-2 text-xl font-bold text-foto-900 link">
                                                 {t("header.lenguage")}<FaAngleDown />
                                             </a>
                                         </MenuHandler>
@@ -135,7 +136,7 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.png" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.png" alt="mariana-mendoza" />
-                                <h1 variant="text" className="encabezado text-6xl text-foto-900 font-cursiva font-extralight">
+                                <h1 variant="text" className="encabezado pt-2 md:text-6xl text-5xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
                                 </h1>
                                 <p className="text-foto-900">__________________________________</p>
@@ -162,7 +163,7 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.documentary")}
                                 </p>
                                 <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[200px]" />
@@ -171,14 +172,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.portrait")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.stage")}
                                 </p>
                                 <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[200px]" />
@@ -191,14 +192,14 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.family")}
                                 </p>
                             </div>
                         </Animator>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.sports")}
                                 </p>
                                 <img src="../../../public/images/camera.png" className="foto md:h-[200px]" />
@@ -207,7 +208,7 @@ function Home() {
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto md:h-[200px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-xl">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.travel")}
                                 </p>
                             </div>
@@ -217,7 +218,7 @@ function Home() {
             </ScrollContainer>
             {/* feedbacks */}
             <div className="bg-foto-900">
-                <p className="font-revista mx-6 mb-6 md:text-5xl text-xl text-foto-200" >{t("testimonials.testimonial")}</p>
+                <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-200" >{t("testimonials.testimonial")}</p>
                 <div className='content-center'>
                     <Marquee pauseOnHover="true" autoFill="true">
                         {allOpinions.length === 0 ? <Empty /> :

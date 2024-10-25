@@ -4,7 +4,7 @@ function CardsOpinion({ opinion }) {
 
     return (
         <>
-            <Card color="transparent" shadow={false} className="max-w-[400px] m-6">
+            <Card color="transparent" shadow={false} className="md:max-w-[400px] max-w-[300px] ml-2 my-2">
                 <img src="../../../images/opiniones.png" alt="cabecera-texto-flor" />
                 <CardBody className="text-foto-200 font-revista">
                     <p className="flex justify-start ml-6"><strong>{opinion.clientName}:</strong></p>
