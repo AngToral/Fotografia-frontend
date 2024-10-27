@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { getOpinion } from '../../apiService/testimonialsApi';
 import { Empty, FloatButton } from 'antd';
-import CardsOpinion from '../../components/Testimonials/cardsOpinion';
 import CardsAllOpinions from '../../components/Testimonials/CardsAllOpinions';
 
 const AllTestimonials = () => {
@@ -11,8 +10,9 @@ const AllTestimonials = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../../../images/fondo-opiniones.png')";
+        document.body.style.backgroundSize = "cover";
         getAllOpinions();
-        document.body.style.backgroundColor = "#646f66";
     }, [])
 
     const [t, i18n] = useTranslation("contact")
