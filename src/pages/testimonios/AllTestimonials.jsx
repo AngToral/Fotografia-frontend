@@ -10,8 +10,9 @@ const AllTestimonials = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../../../images/fondo-opiniones.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../../../../images/fondo-opiniones.png')";
         document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "repeat";
         getAllOpinions();
     }, [])
 
@@ -57,6 +58,7 @@ const AllTestimonials = () => {
                         Blog
                     </button>
                 </div>
+                <p className='font-display md:text-3xl text-xl flex justify-center md:mb-7 mb-2 text-foto-200'>Todas las reseñas:</p>
                 <div className='flex flex-wrap justify-center'>
                     {allOpinions.length === 0 ? <Empty /> :
                         allOpinions.map(opinion =>
