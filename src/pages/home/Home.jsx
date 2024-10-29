@@ -183,14 +183,14 @@ function Home() {
                 <ScrollPage className="md:block flex flex-col justify-center">
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="md:flex justify-between m-10 md:flex-col">
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:right-[440px] md:top-32">
+                            <div className="flex md:justify-between justify-around justify-center md:m-10 m-5 md:flex-col">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:right-[440px] md:top-32 mb-5 flex items-center">
                                     {t("services.sports")}
                                 </p>
-                                <img src="../../../public/images/crossfit.jpg" className="foto md:h-[500px] md:max-w-[360px] m-6 md:self-end md:mt-16" />
+                                <img src="../../../public/images/crossfit.jpg" alt="photo-crossfit" className="foto md:self-end md:h-[500px] h-[340px] md:max-w-[360px] w-auto md:m-6 md:flex md:items-end md:mt-16" />
                             </div>
                             <div className="flex md:flex-row flex-col md:justify-between md:m-10 m-5">
-                                <img src="../../../public/images/familia.jpg" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
+                                <img src="../../../public/images/familia.jpg" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
                                 <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
                                     {t("services.family")}
                                 </p>
