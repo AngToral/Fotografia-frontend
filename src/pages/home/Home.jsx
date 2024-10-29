@@ -165,53 +165,55 @@ function Home() {
                 <ScrollPage>
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="flex justify-between m-10">
+                            <div className="md:flex justify-between m-10">
                                 <p className="font-revista text-foto-200 md:text-5xl text-2xl">
                                     {t("services.documentary")}
                                 </p>
-                                <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[450px] m-6" />
+                                <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[450px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex justify-between m-10">
-                                <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] absolute top-[300px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl m-6 absolute top-[550px] left-[300px] ">
+                                <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[300px]" />
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[550px] md:left-[300px] flex items-center">
                                     {t("services.portrait")}
                                 </p>
                             </div>
                         </Animator>
                     </div>
                 </ScrollPage>
-                <ScrollPage>
-                    <div className="flex flex-col">
+                <ScrollPage className="md:block flex flex-col justify-center">
+                    <div>
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
-                                    {t("services.stage")}
-                                </p>
-                                <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[400px] m-6" />
+                            <div className="md:flex justify-between m-10 md:flex-col">
+                                <div className="md:flex md:absolute md:right-[440px] md:top-32">
+                                    <p className="font-revista text-foto-200 md:text-5xl text-2xl">
+                                        {t("services.sports")}
+                                    </p>
+                                </div>
+                                <img src="../../../public/images/crossfit.jpg" className="foto md:h-[500px] md:max-w-[360px] m-6 md:self-end md:mt-16" />
                             </div>
-                            <div className="flex justify-between m-10">
-                                <img src="../../../public/images/familia.jpg" className="foto md:h-[400px] m-6 absolute top-[370px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl absolute top-[550px] left-[680px]">
-                                    {t("services.family")}
-                                </p>
+                            <div className="flex flex-col justify-center">
+                                <div className="flex md:flex-row flex-col md:justify-between md:m-10 m-5">
+                                    <img src="../../../public/images/familia.jpg" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
+                                    <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:bottom-[70px] md:left-[680px]">
+                                        {t("services.family")}
+                                    </p>
+                                </div>
                             </div>
                         </Animator>
                     </div>
                 </ScrollPage>
                 <ScrollPage >
-                    <div className="flex flex-col justify-between bg-foto-900">
+                    <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="flex justify-between m-10 flex-col">
-                                <div className="flex absolute right-[440px] top-32">
-                                    <p className="font-revista text-foto-200 md:text-5xl text-2xl">
-                                        {t("services.sports")}
-                                    </p>
-                                </div>
-                                <img src="../../../public/images/crossfit.jpg" className="foto md:h-[500px] md:max-w-[360px] m-6 self-end absolute" />
+                            <div className="flex md:flex-row flex-col md:justify-between md:items-start items-end md:m-10 m-5">
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl ">
+                                    {t("services.stage")}
+                                </p>
+                                <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[400px] h-[220px] md:m-6 mt-6" />
                             </div>
-                            <div className="flex justify-between m-10">
-                                <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto md:h-[550px] m-6 absolute top-[220px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl absolute top-[600px] left-[450px]">
+                            <div className="flex md:flex-row flex-col justify-between m-5">
+                                <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[220px]" />
+                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[600px] md:left-[450px] flex justify-center items-center">
                                     {t("services.travel")}
                                 </p>
                             </div>

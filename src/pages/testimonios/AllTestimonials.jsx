@@ -58,8 +58,8 @@ const AllTestimonials = () => {
                         Blog
                     </button>
                 </div>
-                <p className='font-display md:text-3xl text-xl flex justify-center md:mb-7 mb-2 text-foto-200'>Todas las reseñas:</p>
-                <div className='flex flex-wrap justify-center'>
+                {/* <p className='font-display md:text-3xl text-xl flex justify-center md:mb-7 mb-2 text-foto-200'>Todas las reseñas:</p> */}
+                <div className='flex flex-wrap justify-center mt-10'>
                     {allOpinions.length === 0 ? <Empty /> :
                         allOpinions.map(opinion =>
                             <CardsAllOpinions
