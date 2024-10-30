@@ -38,7 +38,7 @@ function Home() {
 
     useEffect(() => {
         getAllOpinions();
-        document.body.style.backgroundColor = "#646f66";
+        document.body.style.backgroundImage = "url('../../../../images/fondo-home.png')";
     }, [])
 
     const [t, i18n] = useTranslation("home")
@@ -104,7 +104,7 @@ function Home() {
                 <FloatButton.BackTop visibilityHeight={0} />
             </FloatButton.Group>
             {/* header */}
-            < ScrollContainer className="bg-foto-900">
+            < ScrollContainer>
                 <ScrollPage>
                     <Animator animation={Fade()}>
                         <div className="h-screen big-screen">
@@ -166,14 +166,14 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="md:flex justify-between m-10">
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl">
                                     {t("services.documentary")}
                                 </p>
                                 <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[450px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex justify-between m-10">
                                 <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[300px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[550px] md:left-[300px] flex items-center">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[550px] md:left-[360px] flex items-center">
                                     {t("services.portrait")}
                                 </p>
                             </div>
@@ -184,14 +184,14 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex md:justify-between justify-around justify-center md:m-10 m-5 md:flex-col">
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:right-[440px] md:top-32 mb-5 flex items-center">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl md:absolute md:right-[440px] md:top-32 mb-5 flex items-center">
                                     {t("services.sports")}
                                 </p>
                                 <img src="../../../public/images/crossfit.jpg" alt="photo-crossfit" className="foto md:self-end md:h-[500px] h-[340px] md:max-w-[360px] w-auto md:m-6 md:flex md:items-end md:mt-16" />
                             </div>
                             <div className="flex md:flex-row flex-col md:justify-between md:m-10 m-5">
                                 <img src="../../../public/images/familia.jpg" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
                                     {t("services.family")}
                                 </p>
                             </div>
@@ -202,14 +202,14 @@ function Home() {
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex md:flex-row flex-col md:justify-between md:items-start items-end md:m-10 m-5">
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl ">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl ">
                                     {t("services.stage")}
                                 </p>
                                 <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[400px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex md:flex-row flex-col justify-between m-5">
                                 <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[220px]" />
-                                <p className="font-revista text-foto-200 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[600px] md:left-[450px] flex justify-center items-center">
+                                <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[600px] md:left-[450px] flex justify-center items-center">
                                     {t("services.travel")}
                                 </p>
                             </div>
@@ -218,13 +218,13 @@ function Home() {
                 </ScrollPage>
             </ScrollContainer>
             {/* feedbacks */}
-            <div className="bg-foto-900">
+            <div>
                 <div className="flex items-end">
-                    <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-200" >{t("testimonials.testimonial")}</p>
-                    <a variant="text" className="text-lg text-nani-50 font-display link2" onClick={handleAllTestimonials}>{t("testimonials.more")}</a>
+                    <p className="font-revista m-6 mb-0 md:text-5xl text-2xl text-foto-900" >{t("testimonials.testimonial")}</p>
+                    <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleAllTestimonials}>{t("testimonials.more")}</a>
                 </div>
                 <div className='content-center'>
-                    <Marquee pauseOnHover="true" autoFill="true">
+                    <Marquee autoFill="true">
                         {allOpinions.length === 0 ? <Empty /> :
                             allOpinions.map(opinion =>
                                 <CardsOpinion
@@ -237,7 +237,7 @@ function Home() {
                 </div>
             </div>
             {/* contacto */}
-            <div id='contacto'>
+            < div id='contacto' >
                 <div className="flex md:justify-start justify-center items-center contact h-screen" >
                     <div className="flex md:ml-48">
                         {loading ? <Loader type="bubble-ping" size={180} /> :
@@ -262,64 +262,64 @@ function Home() {
                         }
                     </div>
                 </div>
-            </div>
-            {/* footer */}
-            <footer footer="true" className="w-full bg-foto-200 p-8" >
-                <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
-                    <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
-                    <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-                        <li>
-                            <Typography
-                                as="a"
-                                href="https://www.instagram.com/nanamendozago/"
-                                color="blue-gray"
-                                className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
-                                target="_blanck"
-                            >
-                                <FaInstagram className="h-10 mr-1" />
-                                @nanamendozago
-                            </Typography>
-                        </li>
-                        <li>
-                            <Typography
-                                as="a"
-                                href="https://www.linkedin.com/in/mariana1995/"
-                                color="blue-gray"
-                                className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
-                                target="_blanck"
-                            >
-                                <FaLinkedin className="h-10 mr-1" />
-                                Linked In
-                            </Typography>
-                        </li>
-                        <li>
-                            <Typography
-                                color="blue-gray"
-                                className="font-normal flex items-center"
-                            >
-                                <HiOutlineMail className="h-10 mr-1" />
-                                nanamendozago@gmail.com
-                            </Typography>
-                        </li>
-                    </ul>
-                </div>
-                <hr className="my-4 border-foto-800" />
-                <div className="flex justify-center">
-                    <Typography color="blue-gray" className="font-normal mr-1">
-                        Website made by:
-                    </Typography>
-                    <Typography
-                        as="a"
-                        href="https://angelatoral.es/"
-                        color="blue-gray"
-                        className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
-                        target="_blanck"
-                    >
-                        @AngToral
-                    </Typography>
-                </div>
-            </footer >
-        </>
+                {/* footer */}
+                <footer footer="true" className="w-full bg-foto-200 p-8" >
+                    <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
+                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
+                        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+                            <li>
+                                <Typography
+                                    as="a"
+                                    href="https://www.instagram.com/nanamendozago/"
+                                    color="blue-gray"
+                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    target="_blanck"
+                                >
+                                    <FaInstagram className="h-10 mr-1" />
+                                    @nanamendozago
+                                </Typography>
+                            </li>
+                            <li>
+                                <Typography
+                                    as="a"
+                                    href="https://www.linkedin.com/in/mariana1995/"
+                                    color="blue-gray"
+                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    target="_blanck"
+                                >
+                                    <FaLinkedin className="h-10 mr-1" />
+                                    Linked In
+                                </Typography>
+                            </li>
+                            <li>
+                                <Typography
+                                    color="blue-gray"
+                                    className="font-normal flex items-center"
+                                >
+                                    <HiOutlineMail className="h-10 mr-1" />
+                                    nanamendozago@gmail.com
+                                </Typography>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr className="my-4 border-foto-800" />
+                    <div className="flex justify-center">
+                        <Typography color="blue-gray" className="font-normal mr-1">
+                            Website made by:
+                        </Typography>
+                        <Typography
+                            as="a"
+                            href="https://angelatoral.es/"
+                            color="blue-gray"
+                            className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
+                            target="_blanck"
+                        >
+                            @AngToral
+                        </Typography>
+                    </div>
+                </footer>
+            </div >
+        </ >
     );
 }
 
