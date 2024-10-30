@@ -146,7 +146,7 @@ function NewTestimonial() {
                                         },
                                     ]}
                                 >
-                                    <Input className="font-display" placeholder="NL" />
+                                    <Input className="font-display" placeholder="NL" showCount maxLength={2} />
                                 </Form.Item>
                                 <Form.Item
                                     label={t("testimonials.opinion")}
@@ -158,7 +158,7 @@ function NewTestimonial() {
                                         },
                                     ]}
                                 >
-                                    <TextArea className="font-display" placeholder={t("testimonials.textarea")} rows={4} />
+                                    <TextArea className="font-display" placeholder={t("testimonials.textarea")} rows={4} showCount maxLength={520} />
                                 </Form.Item>
                                 <Form.Item>
                                     <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
