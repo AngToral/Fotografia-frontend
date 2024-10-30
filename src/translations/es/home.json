@@ -29,6 +29,7 @@
         "textarea": "¿Te han gustado las fotos?",
         "created": "¡Opinión enviada!",
         "email": "Email (Esta información es privada)",
-        "more": "Ver todos..."
+        "more": "Ver todos...",
+        "country": "Tu país reducido a 2 letras"
     }
 }

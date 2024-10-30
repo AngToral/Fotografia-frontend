@@ -85,7 +85,7 @@ function NewTestimonial() {
                     <div className="flex justify-center items-center">
                         <div className="login w-[400px] mx-6 mb-6">
                             <div className="flex justify-center">
-                                <p className="font-revista md:text-5xl text-4xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
+                                <p className="font-revista md:text-4xl text-3xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
                             </div>
                             <Form
                                 form={form}
@@ -135,6 +135,18 @@ function NewTestimonial() {
                                     getValueProps={(value) => ({ value: value ? dayjs(value) : "", })}
                                 >
                                     <DatePicker onChange={onChangeDate} />
+                                </Form.Item>
+                                <Form.Item
+                                    label={t("testimonials.country")}
+                                    name="country"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Please input your country!',
+                                        },
+                                    ]}
+                                >
+                                    <Input className="font-display" placeholder="NL" />
                                 </Form.Item>
                                 <Form.Item
                                     label={t("testimonials.opinion")}
