@@ -4,8 +4,8 @@
     margin: 20px 20px 0px 20px;
     padding: 20px 20px 0px 20px;
     color: #F1F0E8;
-    width: 310px;
-    height: 250px;
+    max-width: 450px;
+    max-height: 450px;
     backdrop-filter: blur(2px);
     border-bottom: 0px;
 }
@@ -14,7 +14,7 @@
     border: 1px solid white;
     border-radius: 0px 0px 20px 20px;
     margin: 0px 20px 20px 20px;
-    width: 310px;
+    max-width: 450px;
     height: 80px;
     border-top: 0px;
     backdrop-filter: blur(2px);
@@ -23,12 +23,19 @@
 
 @media screen and (max-width: 1079px) {
     .card-all-opinions {
-        width: 250px;
-        height: 180px;
+        max-width: 350px;
+        max-height: 420px;
     }
 
     .footer-all-opinions {
-        width: 250px;
+        max-width: 350px;
         height: 80px;
+    }
+
+    .testiminio {
+        font-size: 0.875rem;
+        /* 14px */
+        line-height: 1.25rem;
+        /* 20px */
     }
 }

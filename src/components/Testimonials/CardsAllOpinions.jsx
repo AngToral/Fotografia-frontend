@@ -18,7 +18,7 @@ function CardsAllOpinions({ opinion }) {
                             <p className="ml-1 flex items-end">{opinion.country}</p>
                         </div>
                     </div>
-                    <p className="flex justify-center my-4 font-maquina">"{opinion.testimonial}"</p>
+                    <p className="flex testiminio justify-center my-4 font-maquina">"{opinion.testimonial}"</p>
                     <p className="flex justify-end italic mr-6 text-sm">{opinion.shootDate.split("T")[0]}</p>
                 </div>
                 <div className="footer-all-opinions content-end px-5">
