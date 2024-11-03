@@ -68,11 +68,11 @@ function DeleteTestimonial() {
                         <Card color="transparent" shadow={false} className="max-w-[500px] m-6">
                             <img src="../../../images/opiniones.png" alt="cabecera-texto-flor" />
                             <CardBody className="text-foto-800 font-revista">
-                                <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong> {newOpinion.createdAt.split("T")[0]}</p>
+                                <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong> {newOpinion.createdAt}</p>
                                 <p className="flex justify-start ml-6"><strong>{newOpinion.clientEmail}</strong></p>
                                 <p className="flex justify-start ml-6"><strong>{newOpinion.clientName}:</strong></p>
                                 <p className="flex justify-center my-4">"{newOpinion.testimonial}"</p>
-                                <p className="flex justify-end italic mr-6">{newOpinion.shootDate.split("T")[0]}</p>
+                                <p className="flex justify-end italic mr-6">{newOpinion.shootDate}</p>
                             </CardBody>
                             <CardFooter className="p-0 flex justify-center">
                                 <Popover>

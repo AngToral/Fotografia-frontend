@@ -1,10 +1,14 @@
 import { Alert, Button, Form, Input, Typography, message } from "antd";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loader from "react-js-loader";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateUser } from "../../apiService/userApi";
+import { authContext } from "../../components/Context/authContext";
 
 function NewEmail() {
+
+    const { setLogOut } = useContext(authContext)
+
     useEffect(() => {
         document.body.style.backgroundColor = "#F1F0E8"
     })
@@ -21,11 +25,12 @@ function NewEmail() {
         const response = await updateUser(userid, { email: value.email })
         if (!response.msg) {
             setLoading(false)
-            navigate('/login')
             messageApi.open({
                 type: 'success',
                 content: 'Email changed successfully!'
             })
+            form.resetFields();
+            setLogOut()
         }
     }
 
@@ -51,6 +56,9 @@ function NewEmail() {
                                 {loading ? <Loader type="rectangular-ping" size={180} /> : 'Set new'}
                             </Button>
                         </Form.Item>
+                        <Button className="button" block type="primary" onClick={() => navigate('/login')}>
+                            Go to Login
+                        </Button>
                     </Form>
                 </div>
             </div>

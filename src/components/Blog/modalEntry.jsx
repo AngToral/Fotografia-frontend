@@ -115,6 +115,17 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
                         <Form.Item
                             label="Photo"
                             name="imageBlog"
+                            rules={entryId === null ? [
+                                {
+                                    required: true,
+                                    message: 'Please select a photo!',
+                                },
+                            ] : [
+                                {
+                                    required: false,
+                                }
+                            ]
+                            }
                         >
                             <Upload
                                 listType="picture-card"

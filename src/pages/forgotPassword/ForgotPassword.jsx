@@ -22,11 +22,11 @@ function ForgotPassword() {
         const response = await updateUser(userid, { password: value.password })
         if (!response.msg) {
             setLoading(false)
-            navigate('/login')
             messageApi.open({
                 type: 'success',
                 content: 'Password changed successfully!'
             })
+            form.resetFields();
         }
     }
 
@@ -73,7 +73,10 @@ function ForgotPassword() {
                                 {loading ? <Loader type="rectangular-ping" size={180} /> : 'Set new'}
                             </Button>
                         </Form.Item>
-                        {change ? <Alert message="The new password do not match!" type="error" /> : null}
+                        {change ? <Alert message="The new password do not match!" type="error" className="mb-4" /> : null}
+                        <Button className="button" block type="primary" onClick={() => (navigate('/login'))} >
+                            Go to login
+                        </Button>
                     </Form>
                 </div>
             </div>

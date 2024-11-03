@@ -81,6 +81,12 @@ function Login() {
                 content: 'This email is not registered'
             })
         }
+        if (response.msg === "Error") {
+            messageApi.open({
+                type: 'warning',
+                content: 'This email is not registered'
+            })
+        }
     }
 
     function handleHome() {

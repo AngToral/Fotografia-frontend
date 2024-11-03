@@ -11,6 +11,10 @@ import Loader from "react-js-loader";
 function Register() {
     useEffect(() => {
         document.body.style.backgroundColor = "#F1F0E8"
+        document.body.style.backgroundImage = "url('../../../../images/firma-verde.png')";
+        document.body.style.backgroundSize = "contain";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center";
     })
 
     const navigate = useNavigate();
@@ -29,11 +33,17 @@ function Register() {
         setLoading(true)
         const response = await addUser(values)
         setLoading(false)
-        if (!response.msg) {
-            navigate('/login') //creado
+        if (!response.msg) { //creado
             messageApi.open({
                 type: 'success',
                 content: `Account with ${email} created!`
+            })
+            form.resetFields();
+        }
+        if (response.msg === "This email already exist") {
+            messageApi.open({
+                type: 'warning',
+                content: 'This email already exist'
             })
         }
         if (response.msg === "You missed some parameter") {
@@ -126,6 +136,9 @@ function Register() {
                                 {loading ? <Loader type="rectangular-ping" size={180} /> : 'Submit'}
                             </Button>
                         </Form.Item>
+                        <Button className="button" block type="primary" onClick={() => (navigate('/login'))} >
+                            Go to login now
+                        </Button>
                     </Form>
                 </div>
             </div >

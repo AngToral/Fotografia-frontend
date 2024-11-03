@@ -1,10 +1,14 @@
 import { Alert, Button, Form, Input, Typography, message } from "antd";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loader from "react-js-loader";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateUser } from "../../apiService/userApi";
+import { authContext } from "../../components/Context/authContext";
 
 function NewPassword() {
+
+    const { setLogOut } = useContext(authContext)
+
     useEffect(() => {
         document.body.style.backgroundColor = "#F1F0E8"
     })
@@ -22,11 +26,12 @@ function NewPassword() {
         const response = await updateUser(userid, { password: value.password })
         if (!response.msg) {
             setLoading(false)
-            navigate('/login')
             messageApi.open({
                 type: 'success',
                 content: 'Password changed successfully!'
             })
+            form.resetFields();
+            setLogOut();
         }
     }
 
@@ -73,7 +78,10 @@ function NewPassword() {
                                 {loading ? <Loader type="rectangular-ping" size={180} /> : 'Set new'}
                             </Button>
                         </Form.Item>
-                        {change ? <Alert message="The new password do not match!" type="error" /> : null}
+                        {change ? <Alert message="The new password do not match!" type="error" className="mb-4" /> : null}
+                        <Button className="button" block type="primary" onClick={() => navigate('/login')}>
+                            Go to Login
+                        </Button>
                     </Form>
                 </div>
             </div>
