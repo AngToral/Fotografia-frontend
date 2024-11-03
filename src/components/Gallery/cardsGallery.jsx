@@ -40,8 +40,9 @@ const CardsGallery = ({ photo, refresh, visible, photoId }) => {
                             <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800" variant="text">Edit</Button>
                             <Popconfirm
                                 okType="dashed"
-                                title="Sure to delete?"
-                                onConfirm={() => handleDelete(photo._id)}>
+                                title="Are you sure?"
+                                onConfirm={() => handleDelete(photo._id)}
+                            >
                                 <Button className="link text-foto-800" variant="text">Delete</Button>
                             </Popconfirm>
                         </div>

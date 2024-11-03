@@ -3,7 +3,7 @@ import { deleteOpinion, getOpinionId } from "../../apiService/testimonialsApi";
 import { useEffect, useState } from "react";
 import { Button, Card, CardBody, CardFooter, Popover, PopoverContent, PopoverHandler, Typography } from "@material-tailwind/react";
 import { message } from "antd";
-
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 function DeleteTestimonial() {
     const [loading, setLoading] = useState(false)
@@ -80,7 +80,10 @@ function DeleteTestimonial() {
                                         <Button className="bg-nani-200 text-foto-200">Delete</Button>
                                     </PopoverHandler>
                                     <PopoverContent className="flex flex-col">
-                                        Are you sure?
+                                        <div className="flex">
+                                            <ExclamationCircleOutlined className="mr-1 bg-red" />
+                                            Are you sure?
+                                        </div>
                                         <Button className="bg-nani-200 text-foto-200 mt-4" onClick={onDelete}>Yes!</Button>
                                     </PopoverContent>
                                 </Popover>

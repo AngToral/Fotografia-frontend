@@ -3,7 +3,7 @@ import { message } from "antd";
 import { deleteEntry } from "../../apiService/entryApi";
 import { authContext } from "../Context/authContext";
 import { useContext } from "react";
-
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
 
@@ -49,7 +49,10 @@ const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
                                     <Button className="bg-foto-400 text-foto-200">Delete</Button>
                                 </PopoverHandler>
                                 <PopoverContent className="flex flex-col">
-                                    Are you sure?
+                                    <div className="flex">
+                                        <ExclamationCircleOutlined className="mr-1 bg-red" />
+                                        Are you sure?
+                                    </div>
                                     <Button className="bg-foto-200 text-foto-400 mt-3" onClick={() => onDelete(entry._id)}>Yes!</Button>
                                 </PopoverContent>
                             </Popover>
