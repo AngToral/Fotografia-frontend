@@ -169,10 +169,10 @@ function Home() {
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl">
                                     {t("services.documentary")}
                                 </p>
-                                <img src="../../../public/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[450px] h-[220px] md:m-6 mt-6" />
+                                <img src="/images/periodismo.jpg" alt="documentary-photo-venezuela" className="foto md:h-[450px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex justify-between m-10">
-                                <img src="../../../public/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[300px]" />
+                                <img src="/images/retrato.jpg" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[300px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[550px] md:left-[360px] flex items-center">
                                     {t("services.portrait")}
                                 </p>
@@ -187,10 +187,10 @@ function Home() {
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:absolute md:right-[440px] md:top-32 mb-5 flex items-center">
                                     {t("services.sports")}
                                 </p>
-                                <img src="../../../public/images/crossfit.jpg" alt="photo-crossfit" className="foto md:self-end md:h-[500px] h-[340px] md:max-w-[360px] w-auto md:m-6 md:flex md:items-end md:mt-16" />
+                                <img src="/images/crossfit.jpg" alt="photo-crossfit" className="foto md:self-end md:h-[500px] h-[340px] md:max-w-[360px] w-auto md:m-6 md:flex md:items-end md:mt-16" />
                             </div>
                             <div className="flex md:flex-row flex-col md:justify-between md:m-10 m-5">
-                                <img src="../../../public/images/familia.jpg" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
+                                <img src="/images/familia.jpg" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
                                     {t("services.family")}
                                 </p>
@@ -205,10 +205,10 @@ function Home() {
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl ">
                                     {t("services.stage")}
                                 </p>
-                                <img src="../../../public/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[400px] h-[220px] md:m-6 mt-6" />
+                                <img src="/images/stage.jpg" alt="stage-photo-boys" className="foto md:h-[400px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex md:flex-row flex-col justify-between m-5">
-                                <img src="../../../public/images/paisaje.jpg" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[220px]" />
+                                <img src="/images/paisaje.jpg" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[220px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[600px] md:left-[450px] flex justify-center items-center">
                                     {t("services.travel")}
                                 </p>
@@ -265,7 +265,7 @@ function Home() {
                 {/* footer */}
                 <footer footer="true" className="w-full bg-foto-200 p-8" >
                     <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
-                        <img src="../../../public/images/camera.png" alt="logo-ct" className="h-11" />
+                        <img src="/images/camera.png" alt="logo-ct" className="h-11" />
                         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                             <li>
                                 <Typography
