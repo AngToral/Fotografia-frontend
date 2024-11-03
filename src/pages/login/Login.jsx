@@ -84,7 +84,7 @@ function Login() {
         if (response.msg === "Error") {
             messageApi.open({
                 type: 'warning',
-                content: 'This email is not registered'
+                content: 'Error'
             })
         }
     }

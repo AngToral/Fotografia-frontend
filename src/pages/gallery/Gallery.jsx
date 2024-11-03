@@ -81,14 +81,6 @@ const Gallery = () => {
         if (!info) allPhotos;
     }
 
-    // if (loading) {
-    //     return (
-    //         <div className="flex justify-center items-center h-dvh">
-    //             <Loader type="bubble-ping" bgColor="#907a5f" size={180} />
-    //         </div>
-    //     )
-    // }
-
     return (
         <>
             {contextHolder}

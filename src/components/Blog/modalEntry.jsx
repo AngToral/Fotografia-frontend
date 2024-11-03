@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import Loader from "react-js-loader";
 import { addEntry, getEntryId, updateEntry } from "../../apiService/entryApi";
-import moment from "moment";
 
 function ModalEntry({ visible, onCancel, refresh, entryId }) {
 

@@ -40,6 +40,7 @@ function Blogs() {
 
     const onCancel = () => {
         setOpen(false)
+        setSelectedEntry(null)
     }
 
 
