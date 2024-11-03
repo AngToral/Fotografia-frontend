@@ -9,7 +9,7 @@ function CardsAllOpinions({ opinion }) {
             <div className="flex flex-col justify-center content-center">
                 <div className="card-all-opinions content-center">
                     <div className="flex justify-center absolute z-10 md:right-20 right-12 -top-6">
-                        <img src="../../../images/washitape.png" className="h-12 w-36" />
+                        <img src="../../../images/washitape.avif" className="h-12 w-36" />
                     </div>
                     <div className="flex justify-between items-center">
                         <p className="flex ml-2 md:text-xl text-lg font-cursiva"><strong>{opinion.clientName}:</strong></p>

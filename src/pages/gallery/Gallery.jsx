@@ -24,7 +24,7 @@ const Gallery = () => {
 
     useEffect(() => {
         getAllPhotos();
-        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.40), rgba(240, 255, 255, 0.40)), url('../../../../images/fondo-profile.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.40), rgba(240, 255, 255, 0.40)), url('../../../../images/fondo-profile.avif')";
     }, [dummy]);
 
     const [t, i18n] = useTranslation("themes")

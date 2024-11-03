@@ -10,7 +10,7 @@ const AllTestimonials = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../../../../images/fondo-opiniones.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../../../../images/fondo-opiniones.avif')";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "repeat";
         getAllOpinions();

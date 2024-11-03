@@ -20,7 +20,7 @@ function Blogs() {
 
     useEffect(() => {
         getAllEntrys();
-        document.body.style.backgroundImage = "url('../../../../images/fondo-blog.png')";
+        document.body.style.backgroundImage = "url('../../../../images/fondo-blog.avif')";
     }, [dummy]);
 
     const [t, i18n] = useTranslation("home")

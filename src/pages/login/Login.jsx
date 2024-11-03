@@ -24,7 +24,7 @@ function Login() {
     const { setLogIn } = useContext(authContext)
 
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.jpg')"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/papernews.avif')"
         document.body.style.backgroundSize = "contain"
         document.body.style.backgroundPosition = "center center"
     }, [])
@@ -106,7 +106,7 @@ function Login() {
                 </div>
                 <div className="flex justify-center items-center">
                     <div className="login">
-                        <img className="flex justify-center w-64" src="../../../public/images/firma-rosa.png" />
+                        <img className="flex justify-center w-64" src="../../../public/images/firma-rosa.avif" />
                         {forgot ?
                             <Form
                                 layout="vertical"

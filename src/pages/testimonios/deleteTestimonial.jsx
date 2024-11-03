@@ -60,7 +60,7 @@ function DeleteTestimonial() {
                     <>
                         <div className="flex flex-col">
                             <p className="text-foto-900 text-5xl m-6">Deleted!</p>
-                            <img className="h-[250px]" src="../../../public/images/deleted.png" />
+                            <img className="h-[250px]" src="../../../public/images/deleted.avif" />
                         </div>
                     </> :
                     <>
@@ -68,7 +68,7 @@ function DeleteTestimonial() {
                             <p className="text-foto-800 font-display md:text-5xl text-xl" >Do you want to delete this opinion?</p>
                         </div>
                         <Card color="transparent" shadow={false} className="max-w-[500px] m-6">
-                            <img src="../../../images/opiniones.png" alt="cabecera-texto-flor" />
+                            <img src="../../../images/opiniones.avif" alt="cabecera-texto-flor" />
                             <CardBody className="text-foto-800 font-revista">
                                 <div className="flex flex-col md:flex-row">
                                     <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong></p>
@@ -93,7 +93,7 @@ function DeleteTestimonial() {
                                     </PopoverContent>
                                 </Popover>
                             </CardFooter>
-                            <img src="../../../images/opiniones.png" className="rotate-180" alt="fondo-texto-flor" />
+                            <img src="../../../images/opiniones.avif" className="rotate-180" alt="fondo-texto-flor" />
                         </Card>
                     </>
                 }

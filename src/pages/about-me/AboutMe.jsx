@@ -9,7 +9,7 @@ import { HiOutlineMail } from "react-icons/hi";
 function AboutMe() {
 
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.05), rgba(240, 255, 255, 0.05)), url('../../../../images/gallery.png')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.05), rgba(240, 255, 255, 0.05)), url('../../../../images/gallery.avif')";
     }, [])
 
     const [t, i18n] = useTranslation("contact")
@@ -41,7 +41,7 @@ function AboutMe() {
                 </div>
                 <div className="screen items-center m-6">
                     <div className="div-foto flex justify-center">
-                        <img src="../../../images/about-me.png" className="foto-about-me" />
+                        <img src="../../../images/about-me.avif" className="foto-about-me" />
                     </div>
                     <div className="div-text textaboutme">
                         <p className="mx-6 text-nani-50 font-revista md:text-lg"> {t("text.first")}</p>
