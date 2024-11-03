@@ -22,48 +22,48 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
 
     const themes = [
         {
-            label: "Deportes",
-            value: "Deportes"
+            label: "Sports",
+            value: "Sports"
         },
         {
-            label: "Retrato",
-            value: "Retrato"
+            label: "Portrait",
+            value: "Portrait"
         },
         {
-            label: "Fotoperiodismo",
-            value: "Fotoperiodismo"
+            label: "Photojournalism",
+            value: "Photojournalism"
         },
         {
-            label: "Escenario",
-            value: "Escenario"
+            label: "Stage",
+            value: "Stage"
         },
         {
-            label: "Evento",
-            value: "Evento"
+            label: "Event",
+            value: "Event"
         },
         {
-            label: "Paisaje",
-            value: "Paisaje"
+            label: "Landscape",
+            value: "Landscape"
         },
         {
-            label: "Mujer",
-            value: "Mujer"
+            label: "Woman",
+            value: "Woman"
         },
         {
-            label: "Hombre",
-            value: "Hombre"
+            label: "Man",
+            value: "Man"
         },
         {
-            label: "Pareja",
-            value: "Pareja"
+            label: "Couple",
+            value: "Couple"
         },
         {
             label: "Animal",
             value: "Animal"
         },
         {
-            label: "Mascota",
-            value: "Mascota"
+            label: "Pet",
+            value: "Pet"
         },
     ]
 
