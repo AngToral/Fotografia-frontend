@@ -10,7 +10,7 @@ import { authContext } from "../../components/Context/authContext";
 
 function Blogs() {
     const [error, setError] = useState("");
-    const [allEntrys, setAllEntrys] = useState("");
+    const [allEntrys, setAllEntrys] = useState([]);
     const [dummy, refresh] = useState(false);
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);

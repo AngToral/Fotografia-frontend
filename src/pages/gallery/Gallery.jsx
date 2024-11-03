@@ -81,13 +81,13 @@ const Gallery = () => {
         if (!info) allPhotos;
     }
 
-    if (loading) {
-        return (
-            <div className="flex justify-center items-center h-dvh">
-                <Loader type="bubble-ping" bgColor="#907a5f" size={180} />
-            </div>
-        )
-    }
+    // if (loading) {
+    //     return (
+    //         <div className="flex justify-center items-center h-dvh">
+    //             <Loader type="bubble-ping" bgColor="#907a5f" size={180} />
+    //         </div>
+    //     )
+    // }
 
     return (
         <>
@@ -126,7 +126,7 @@ const Gallery = () => {
                 </div>
                 <div className="flex flex-wrap justify-center place-items-center">
                     {allPhotos.length === 0 ? <Empty /> :
-                        (filtering.length > 0 ? filtering : allPhotos).map(photo =>
+                        (loading ? <Loader type="bubble-ping" bgColor="#907a5f" size={180} /> : (filtering.length > 0 ? filtering : allPhotos).map(photo =>
                             <CardsGallery
                                 key={photo._id}
                                 photo={photo}
@@ -134,7 +134,7 @@ const Gallery = () => {
                                 visible={setOpen}
                                 photoId={setSelectedPhoto}
                             />
-                        )
+                        ))
                     }
                 </div>
                 <ModalPhoto
