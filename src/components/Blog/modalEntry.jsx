@@ -53,6 +53,7 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
             setLoading(false)
             refresh(prev => !prev)
             form.resetFields();
+            setFileList([]);
             onCancel();
         } catch (error) {
             message.error("Failed to upload entry")
@@ -70,6 +71,7 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
     const cancel = () => {
         onCancel();
         form.resetFields();
+        setFileList([]);
     }
 
     return (

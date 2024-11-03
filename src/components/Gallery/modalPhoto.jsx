@@ -102,6 +102,7 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             setLoading(false)
             refresh(prev => !prev)
             form.resetFields();
+            setFileList([]);
             onCancel();
         } catch (error) {
             message.error("Failed to upload photo")
@@ -119,6 +120,7 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
     const cancel = () => {
         onCancel();
         form.resetFields();
+        setFileList([]);
     }
 
     return (
