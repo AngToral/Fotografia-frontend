@@ -37,7 +37,6 @@ const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
                             {entry.text}
                         </Typography>
                         <Typography className="flex justify-end font-semibold font-revista md:text-lg mt-2">
-                            {/* {moment(entry.photoDate).format().split("T")[0]} */}
                             {(entry.photoDate).split("T")[0]}
                         </Typography>
                     </CardBody>
