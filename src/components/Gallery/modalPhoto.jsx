@@ -194,6 +194,17 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
                         <Form.Item
                             label="Photo"
                             name="imageGallery"
+                            rules={photoId === null ? [
+                                {
+                                    required: true,
+                                    message: 'Please select a photo!',
+                                },
+                            ] : [
+                                {
+                                    required: false,
+                                }
+                            ]
+                            }
                         >
                             <Upload
                                 listType="picture-card"
