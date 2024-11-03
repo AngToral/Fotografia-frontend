@@ -130,7 +130,7 @@ function MyProfile() {
                                 Send email to:
                             </Typography>
                             <div>
-                                <div className="flex flex-col my-4 mb-6">
+                                <div className="flex flex-col md:flex-row my-4 mb-6">
                                     <Input
                                         style={{
                                             width: '100%',
@@ -147,11 +147,11 @@ function MyProfile() {
                                         placeholder="Correo en español"
                                         value={clienteEmail}
                                         onChange={e => setClienteEmail(e.target.value)}
-                                        className="mb-2"
+                                        className="md:mr-2 mb-2"
                                     />
-                                    <Button className="md:ml-3" onClick={onEmailReview}>Enviar</Button>
+                                    <Button className="md:w-32" onClick={onEmailReview}>Enviar</Button>
                                 </div>
-                                <div className="flex flex-col my-4">
+                                <div className="flex flex-col md:flex-row my-4">
                                     <Input
                                         style={{
                                             width: '100%',
@@ -168,9 +168,9 @@ function MyProfile() {
                                         placeholder="English email"
                                         value={clientEmail}
                                         onChange={e => setClientEmail(e.target.value)}
-                                        className="mb-2"
+                                        className="md:mr-2 mb-2"
                                     />
-                                    <Button className="md:ml-4" onClick={onEmailReview}>Send</Button>
+                                    <Button className="md:w-32 justify-center items-center flex" onClick={onEmailReview}>Send</Button>
                                 </div>
                             </div>
                         </>
