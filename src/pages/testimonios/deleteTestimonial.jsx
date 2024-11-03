@@ -58,21 +58,26 @@ function DeleteTestimonial() {
             <div className="flex justify-center flex-col items-center h-screen">
                 {okDeleted ?
                     <>
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col">
                             <p className="text-foto-900 text-5xl m-6">Deleted!</p>
                             <img className="h-[250px]" src="../../../public/images/deleted.png" />
                         </div>
                     </> :
                     <>
-                        <Typography className="text-foto-800 font-display" variant="h2">Do you want to delete this opinion?</Typography>
+                        <div>
+                            <p className="text-foto-800 font-display md:text-5xl text-xl" >Do you want to delete this opinion?</p>
+                        </div>
                         <Card color="transparent" shadow={false} className="max-w-[500px] m-6">
                             <img src="../../../images/opiniones.png" alt="cabecera-texto-flor" />
                             <CardBody className="text-foto-800 font-revista">
-                                <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong> {newOpinion.createdAt}</p>
+                                <div className="flex flex-col md:flex-row">
+                                    <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong></p>
+                                    <p className="flex justify-start ml-6">{new Date(newOpinion.createdAt).toDateString()}</p>
+                                </div>
                                 <p className="flex justify-start ml-6"><strong>{newOpinion.clientEmail}</strong></p>
                                 <p className="flex justify-start ml-6"><strong>{newOpinion.clientName}:</strong></p>
                                 <p className="flex justify-center my-4">"{newOpinion.testimonial}"</p>
-                                <p className="flex justify-end italic mr-6">{newOpinion.shootDate}</p>
+                                <p className="flex justify-end italic mr-6">{new Date(newOpinion.shootDate).toDateString()}</p>
                             </CardBody>
                             <CardFooter className="p-0 flex justify-center">
                                 <Popover>
@@ -98,5 +103,3 @@ function DeleteTestimonial() {
 }
 
 export default DeleteTestimonial;
-
-// .split("T")[0]

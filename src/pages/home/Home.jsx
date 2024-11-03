@@ -198,7 +198,7 @@ function Home() {
                         </Animator>
                     </div>
                 </ScrollPage>
-                <ScrollPage >
+                <ScrollPage className="flex justify-self-center">
                     <div className="flex flex-col">
                         <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
                             <div className="flex md:flex-row flex-col md:justify-between md:items-start items-end md:m-10 m-5">

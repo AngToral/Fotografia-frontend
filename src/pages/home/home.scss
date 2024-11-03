@@ -20,6 +20,8 @@
 }
 
 @media screen and (min-width: 1080px) {
+
+    //grande
     .big-screen {
         background-image: url('../../../images/perfil.jpeg');
         background-size: cover;
@@ -49,6 +51,8 @@
 }
 
 @media screen and (max-width: 1079px) {
+
+    //movil
     .firma {
         top: 310px;
         height: 200px;
@@ -116,4 +120,8 @@
     100% {
         scale: 1.1;
     }
+}
+
+.foto {
+    border-radius: 20px;
 }

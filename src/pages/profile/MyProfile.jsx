@@ -130,45 +130,47 @@ function MyProfile() {
                                 Send email to:
                             </Typography>
                             <div>
-                                <div className="my-4">
+                                <div className="flex flex-col my-4 mb-6">
                                     <Input
                                         style={{
-                                            width: '40%',
+                                            width: '100%',
                                         }}
                                         placeholder="Nombre del cliente"
                                         value={clienteNombre}
                                         onChange={e => setClienteNombre(e.target.value)}
-                                        className="mr-2"
+                                        className="md:mr-2 mb-2"
                                     />
                                     <Input
                                         style={{
-                                            width: '40%',
+                                            width: '100%',
                                         }}
                                         placeholder="Correo en español"
                                         value={clienteEmail}
                                         onChange={e => setClienteEmail(e.target.value)}
+                                        className="mb-2"
                                     />
-                                    <Button className="ml-3" onClick={onEmailReview}>Enviar</Button>
+                                    <Button className="md:ml-3" onClick={onEmailReview}>Enviar</Button>
                                 </div>
-                                <div className="my-4">
+                                <div className="flex flex-col my-4">
                                     <Input
                                         style={{
-                                            width: '40%',
+                                            width: '100%',
                                         }}
                                         placeholder="Client name"
                                         value={clientName}
                                         onChange={e => setClientName(e.target.value)}
-                                        className="mr-2"
+                                        className="md:mr-2 mb-2"
                                     />
                                     <Input
                                         style={{
-                                            width: '40%',
+                                            width: '100%',
                                         }}
                                         placeholder="English email"
                                         value={clientEmail}
                                         onChange={e => setClientEmail(e.target.value)}
+                                        className="mb-2"
                                     />
-                                    <Button className="ml-4" onClick={onEmailReview}>Send</Button>
+                                    <Button className="md:ml-4" onClick={onEmailReview}>Send</Button>
                                 </div>
                             </div>
                         </>

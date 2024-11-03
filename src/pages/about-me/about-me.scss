@@ -1,4 +1,6 @@
 @media screen and (max-width: 1079px) {
+
+    //movil
     .screen {
         display: block;
     }
@@ -11,14 +13,14 @@
         width: auto;
     }
 
-    .foto {
-        border-radius: 10px;
-        height: 400px;
+    .foto-about-me {
         margin-bottom: 20px;
     }
 }
 
 @media screen and (min-width: 1080px) {
+
+    //grande
     .screen {
         display: flex;
     }
@@ -30,18 +32,14 @@
     .div-text {
         width: 50%;
     }
-
-    .foto {
-        border-radius: 30px;
-    }
 }
-
-// .fondo {
-//     background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)), url('../../../public/images/fondo-about-me.png');
-// }
 
 .textaboutme {
     border-radius: 30px;
     background-color: rgba(58, 58, 58, 0.52);
     padding: 30px;
+}
+
+.foto-about-me {
+    height: auto
 }

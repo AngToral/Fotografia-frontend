@@ -7,6 +7,10 @@ import { updateUser } from "../../apiService/userApi";
 function ForgotPassword() {
     useEffect(() => {
         document.body.style.backgroundColor = "#F1F0E8"
+        document.body.style.backgroundImage = "url('../../../../images/firma-verde.png')";
+        document.body.style.backgroundSize = "contain";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center";
     })
 
     const navigate = useNavigate();

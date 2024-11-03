@@ -41,12 +41,12 @@ function AboutMe() {
                 </div>
                 <div className="screen items-center m-6">
                     <div className="div-foto flex justify-center">
-                        <img src="../../../images/about-me.png" className="foto" />
+                        <img src="../../../images/about-me.png" className="foto-about-me" />
                     </div>
                     <div className="div-text textaboutme">
-                        <p className="mx-6 text-nani-50 font-revista text-lg"> {t("text.first")}</p>
-                        <p className="m-6 font-revista text-nani-50 text-lg"> {t("text.second")}</p>
-                        <p className="m-6 font-revista text-nani-50 text-lg"> {t("text.third")}</p>
+                        <p className="mx-6 text-nani-50 font-revista md:text-lg"> {t("text.first")}</p>
+                        <p className="m-6 font-revista text-nani-50 md:text-lg"> {t("text.second")}</p>
+                        <p className="m-6 font-revista text-nani-50 md:text-lg"> {t("text.third")}</p>
                         <hr className="m-4 border-foto-400" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a
