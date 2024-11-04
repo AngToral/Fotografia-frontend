@@ -172,7 +172,7 @@ function Home() {
                                 <img src="/images/periodismo.avif" alt="documentary-photo-venezuela" className="foto md:h-[450px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex justify-between m-10">
-                                <img src="/images/retrato.avif" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[300px]" />
+                                <img src="/images/retrato.avif" alt="portrait-photo-blonde-girl" className="foto md:h-[500px] h-[340px] md:absolute md:top-[230px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[550px] md:left-[360px] flex items-center">
                                     {t("services.portrait")}
                                 </p>
@@ -190,7 +190,7 @@ function Home() {
                                 <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto md:self-end md:h-[500px] h-[340px] md:max-w-[360px] w-auto md:m-6 md:flex md:items-end md:mt-16" />
                             </div>
                             <div className="flex md:flex-row flex-col md:justify-between md:m-10 m-5">
-                                <img src="/images/familia.avif" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[370px] h-[220px]" />
+                                <img src="/images/familia.avif" alt="family-photo" className="foto md:h-[400px] md:m-6 mt-6 md:absolute md:top-[320px] h-[220px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
                                     {t("services.family")}
                                 </p>
@@ -208,7 +208,7 @@ function Home() {
                                 <img src="/images/stage.avif" alt="stage-photo-boys" className="foto md:h-[400px] h-[220px] md:m-6 mt-6" />
                             </div>
                             <div className="flex md:flex-row flex-col justify-between m-5">
-                                <img src="/images/paisaje.avif" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[220px]" />
+                                <img src="/images/paisaje.avif" alt="travel-photo-snow" className="foto mb-2 md:h-[550px] md:w-auto h-[340px] w-[260px] md:absolute md:top-[190px]" />
                                 <p className="font-revista text-foto-900 md:text-5xl text-2xl md:m-4 m-2 md:absolute md:top-[600px] md:left-[450px] flex justify-center items-center">
                                     {t("services.travel")}
                                 </p>

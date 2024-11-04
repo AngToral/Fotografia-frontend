@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 function NewTestimonial() {
     useEffect(() => {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../../public/images/paperOpiniones.avif')"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/paperOpiniones.avif')"
         document.body.style.backgroundSize = "contain"
         document.body.style.backgroundPosition = "center center"
     })
@@ -75,12 +75,12 @@ function NewTestimonial() {
                 <>
                     <div className="flex justify-center items-center flex-col h-screen">
                         <p className="text-foto-700 text-5xl">{t("testimonials.created")}</p>
-                        <img className="h-[500px]" src="../../../public/images/thankyou.avif" />
+                        <img className="h-[500px]" src="/images/thankyou.avif" />
                     </div>
                 </> :
                 <>
                     <div className="flex justify-center items-center">
-                        <img className="w-72" src="../../../public/images/firma-rosa.avif" />
+                        <img className="w-72" src="/images/firma-rosa.avif" />
                     </div>
                     <div className="flex justify-center items-center">
                         <div className="login w-[400px] mx-6 mb-6">
