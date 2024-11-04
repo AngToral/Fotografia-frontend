@@ -150,7 +150,7 @@ function Home() {
                                     <a href="https://www.instagram.com/nanamendozago/" target="_blanck" variant="text" className="link text-lg text-foto-900 font-display">
                                         Instagram
                                     </a>
-                                    <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="../../../../public/files/portfolio-mariana-mendoza.pdf" download={true}>
+                                    <a variant="text" className="text-lg text-foto-900 font-display link" target='_blanck' href="/files/portfolio-mariana-mendoza.pdf" download={true}>
                                         Portfolio
                                     </a>
                                     <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleBlog}>
@@ -268,37 +268,37 @@ function Home() {
                         <img src="/images/camera.avif" alt="logo-ct" className="h-11" />
                         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                             <li>
-                                <Typography
+                                <h2
                                     as="a"
                                     href="https://www.instagram.com/nanamendozago/"
                                     color="blue-gray"
-                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    className="font-light transition-colors link flex items-center"
                                     target="_blanck"
                                 >
                                     <FaInstagram className="h-10 mr-1" />
                                     @nanamendozago
-                                </Typography>
+                                </h2>
                             </li>
                             <li>
-                                <Typography
+                                <h2
                                     as="a"
                                     href="https://www.linkedin.com/in/mariana1995/"
                                     color="blue-gray"
-                                    className="font-normal transition-colors hover:text-foto-800 focus:text-foto-800 flex items-center"
+                                    className="transition-colors link flex items-center font-light"
                                     target="_blanck"
                                 >
                                     <FaLinkedin className="h-10 mr-1" />
                                     Linked In
-                                </Typography>
+                                </h2>
                             </li>
                             <li>
-                                <Typography
+                                <h2
                                     color="blue-gray"
-                                    className="font-normal flex items-center"
+                                    className="font-light flex items-center"
                                 >
                                     <HiOutlineMail className="h-10 mr-1" />
                                     nanamendozago@gmail.com
-                                </Typography>
+                                </h2>
                             </li>
                         </ul>
                     </div>
@@ -307,15 +307,15 @@ function Home() {
                         <Typography color="blue-gray" className="font-normal mr-1">
                             Website made by:
                         </Typography>
-                        <Typography
+                        <h2
                             as="a"
                             href="https://angelatoral.es/"
                             color="blue-gray"
-                            className=" font-normal transition-colors hover:text-foto-800 focus:text-foto-800"
+                            className=" font-light transition-colors link ml-1"
                             target="_blanck"
                         >
                             @AngToral
-                        </Typography>
+                        </h2>
                     </div>
                 </footer>
             </div >
