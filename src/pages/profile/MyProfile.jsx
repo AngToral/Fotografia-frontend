@@ -14,6 +14,7 @@ function MyProfile() {
     const [clientName, setClientName] = useState("")
     const [clienteNombre, setClienteNombre] = useState("")
     const [userLogged, setUserLogged] = useState("")
+    const [userName, setUserName] = useState("")
     const [loading, setLoading] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -70,6 +71,7 @@ function MyProfile() {
         if (userId) {
             const user = await getUser(userId);
             setUserLogged(user?.email)
+            setUserName(user?.name)
         }
     };
 
@@ -198,7 +200,7 @@ function MyProfile() {
                 <div className="flex justify-center">
                     <Card
                         title={<Typography className="font-display font-bold md:text-2xl">
-                            Hello, Nani !!
+                            Hello, {userName} !!
                         </Typography>}
                         bordered={false}
                         style={{
