@@ -268,8 +268,7 @@ function Home() {
                         <img src="/images/camera.avif" alt="logo-ct" className="h-11" />
                         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                             <li>
-                                <h2
-                                    as="a"
+                                <a
                                     href="https://www.instagram.com/nanamendozago/"
                                     color="blue-gray"
                                     className="font-light transition-colors link flex items-center"
@@ -277,11 +276,10 @@ function Home() {
                                 >
                                     <FaInstagram className="h-10 mr-1" />
                                     @nanamendozago
-                                </h2>
+                                </a>
                             </li>
                             <li>
-                                <h2
-                                    as="a"
+                                <a
                                     href="https://www.linkedin.com/in/mariana1995/"
                                     color="blue-gray"
                                     className="transition-colors link flex items-center font-light"
@@ -289,7 +287,7 @@ function Home() {
                                 >
                                     <FaLinkedin className="h-10 mr-1" />
                                     Linked In
-                                </h2>
+                                </a>
                             </li>
                             <li>
                                 <h2
@@ -307,15 +305,14 @@ function Home() {
                         <Typography color="blue-gray" className="font-normal mr-1">
                             Website made by:
                         </Typography>
-                        <h2
-                            as="a"
+                        <a
                             href="https://angelatoral.es/"
                             color="blue-gray"
                             className=" font-light transition-colors link ml-1"
                             target="_blanck"
                         >
                             @AngToral
-                        </h2>
+                        </a>
                     </div>
                 </footer>
             </div >
