@@ -139,9 +139,10 @@ function Home() {
                             <div className="flex flex-col items-center">
                                 <img className="imagen rounded-full h-[300px]" src="../../../images/perfil-cuadrado.avif" alt="mariana-mendoza" />
                                 <img className="firma absolute" src="../../../images/firma-verde.avif" alt="mariana-mendoza" />
-                                <h1 variant="text" className="encabezado pt-2 md:text-6xl text-5xl text-foto-900 font-cursiva font-extralight">
+                                <h1 className="text-transparent">Mariana Mendoza Photographer Netherlands</h1>
+                                <h2 variant="text" className="encabezado pt-2 md:text-6xl text-5xl text-foto-900 font-cursiva font-extralight">
                                     {t("header.fotographer")}
-                                </h1>
+                                </h2>
                                 <p className="text-foto-900">__________________________________</p>
                                 <div className="flex gap-6">
                                     <a variant="text" className="text-lg text-foto-900 font-display link" onClick={handleGallery}>
@@ -311,7 +312,7 @@ function Home() {
                             className=" font-light transition-colors link ml-1"
                             target="_blanck"
                         >
-                            @AngToral
+                            <h2>@AngToral</h2>
                         </a>
                     </div>
                 </footer>
