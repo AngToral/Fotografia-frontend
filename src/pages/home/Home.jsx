@@ -312,7 +312,7 @@ function Home() {
                             className=" font-light transition-colors link ml-1"
                             target="_blanck"
                         >
-                            <h2>@AngToral</h2>
+                            @AngToral
                         </a>
                     </div>
                 </footer>
