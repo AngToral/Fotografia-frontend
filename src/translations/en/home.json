@@ -20,7 +20,9 @@
         "subject": "How can I help?",
         "send": "Send",
         "warning": "Contact details missing",
-        "success": "Email sent successfully"
+        "success": "Email sent successfully",
+        "accept": "I have read and accept the",
+        "privacy": "Privacy Policy"
     },
     "testimonials": {
         "testimonial": "Testimonials",

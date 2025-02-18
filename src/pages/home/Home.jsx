@@ -34,6 +34,7 @@ function Home() {
     const [messageApi, contextHolder] = message.useMessage();
     const [loading, setLoading] = useState(false)
     const [allOpinions, setAllOpinions] = useState([]);
+    const [accept, setAccept] = useState(false);
 
     const { userId } = useContext(authContext)
 
@@ -63,6 +64,10 @@ function Home() {
     }
     function handleAllTestimonials() {
         navigate("/testimonials")
+    }
+    function handlePrivacy() {
+        navigate("/privacy-policy")
+        window.scrollTo(0, 0);
     }
 
     const onEmailContact = async () => {
@@ -254,9 +259,16 @@ function Home() {
                                     <Input label="Email" variant="standard" color="black" value={clientEmail} onChange={e => setClientEmail(e.target.value)} />
                                     <Typography className="font-display text-sm font-bold">{t("contact.subject")}</Typography>
                                     <Textarea variant="standard" value={subject} onChange={e => setSubject(e.target.value)} />
+                                    <div className="flex flex-row gap-2 mb-2">
+                                        <input type="checkbox" onClick={() => setAccept(!accept)} />
+                                        <p className="font-display text-sm">
+                                            {t("contact.accept")}
+                                            <button className="underline" onClick={handlePrivacy}>{t("contact.privacy")}</button>
+                                        </p>
+                                    </div>
                                 </div>
                                 <div className='flex justify-center'>
-                                    <Button size="sm" variant="text" className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
+                                    <Button size="sm" variant="text" disabled={!accept} className="md:text-lg text-base font-display text-foto-900" fullWidth onClick={onEmailContact}>
                                         {t("contact.send")}
                                     </Button>
                                 </div>

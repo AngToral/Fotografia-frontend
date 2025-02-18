@@ -10,6 +10,11 @@ const Footer = () => {
     const navigate = useNavigate();
     const [t, i18n] = useTranslation("policy")
 
+    function handlePrivacy() {
+        navigate("/privacy-policy")
+        window.scrollTo(0, 0);
+    }
+
     return (
         <footer footer="true" className="w-full bg-foto-200 p-8" >
             <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
@@ -47,7 +52,7 @@ const Footer = () => {
                         </h2>
                     </li>
                     <li>
-                        <button onClick={() => navigate('/privacy-policy')} className="link font-light flex items-center">
+                        <button onClick={handlePrivacy} className="link font-light flex items-center">
                             {t("privacy.tittle")}
                         </button>
                     </li>

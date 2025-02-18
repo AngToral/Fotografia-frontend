@@ -9,6 +9,7 @@ const PrivacyPolicy = () => {
     const [t, i18n] = useTranslation("policy")
 
     useEffect(() => {
+        document.body.style.backgroundImage = "none";
         document.body.style.backgroundColor = "#F1F0E8";
     }, [])
 
@@ -43,7 +44,7 @@ const PrivacyPolicy = () => {
                 <div className='flex justify-center mb-5'>
                     <h1 className="font-revista md:text-4xl text-2xl text-foto-900">{t("privacy.tittle")}</h1>
                 </div>
-                <div className='flex gap-2 flex-col'>
+                <div className='flex gap-2 flex-col mb-10'>
                     <p className="font-display md:text-xl text-lg mx-20">{t("privacy.1")}</p>
                     <p className="font-display md:text-xl text-lg mx-20 underline">{t("privacy.2")}</p>
                     <p className="font-display md:text-xl text-lg mx-20">{t("privacy.3")}</p>

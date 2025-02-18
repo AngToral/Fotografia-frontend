@@ -20,7 +20,9 @@
         "subject": "¿En qué te puedo ayudar?",
         "send": "Enviar",
         "warning": "Faltan datos de contacto",
-        "success": "Correo enviado correctamente"
+        "success": "Correo enviado correctamente",
+        "accept": "He leído y acepto las",
+        "privacy": "Políticas de Privacidad"
     },
     "testimonials": {
         "testimonial": "Valoraciones",
