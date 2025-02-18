@@ -9,6 +9,7 @@ import { Empty, FloatButton, Input, message } from "antd";
 import Loader from "react-js-loader";
 import './gallery.scss'
 import { authContext } from "../../components/Context/authContext";
+import Footer from "../../components/Footer/Footer";
 
 const { Search } = Input;
 
@@ -137,6 +138,7 @@ const Gallery = () => {
                 />
                 {error ? error : null}
             </div>
+            <Footer />
         </>
     );
 }

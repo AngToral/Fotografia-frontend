@@ -7,6 +7,7 @@ import { Empty, FloatButton } from "antd";
 import Loader from "react-js-loader";
 import ModalEntry from "../../components/Blog/modalEntry";
 import { authContext } from "../../components/Context/authContext";
+import Footer from "../../components/Footer/Footer";
 
 function Blogs() {
     const [error, setError] = useState("");
@@ -102,6 +103,7 @@ function Blogs() {
                 />
                 {error ? error : null}
             </div>
+            <Footer />
         </>
     );
 }

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { getOpinion } from '../../apiService/testimonialsApi';
 import { Empty, FloatButton } from 'antd';
 import CardsAllOpinions from '../../components/Testimonials/CardsAllOpinions';
+import Footer from '../../components/Footer/Footer';
 
 const AllTestimonials = () => {
     const [allOpinions, setAllOpinions] = useState([]);
@@ -73,6 +74,7 @@ const AllTestimonials = () => {
                         )
                     }
                 </div>
+                <Footer />
             </div>
         </>
     )

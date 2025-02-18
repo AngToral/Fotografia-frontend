@@ -12,6 +12,7 @@ import MyProfile from './pages/profile/MyProfile'
 import NewEmail from './pages/newEmail/NewEmail'
 import NewPassword from './pages/newPassword/NewPassword'
 import AllTestimonials from './pages/testimonios/AllTestimonials'
+import PrivacyPolicy from './pages/Legals/PrivacyPolicy'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/createtestimonials' element={<NewTestimonial />} />
         <Route path='/deletetestimonials/:opinionid' element={<DeleteTestimonial />} />
         <Route path='/testimonials' element={<AllTestimonials />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
     </>
   )

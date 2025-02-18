@@ -5,6 +5,7 @@ import './about-me.scss'
 import { useEffect } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import Footer from "../../components/Footer/Footer";
 
 function AboutMe() {
 
@@ -74,6 +75,7 @@ function AboutMe() {
                     </div>
                 </div>
             </div >
+            <Footer />
         </>
     );
 }

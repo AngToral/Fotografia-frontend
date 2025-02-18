@@ -11,6 +11,8 @@ import contact_es from "./translations/es/contact.json"
 import contact_en from "./translations/en/contact.json"
 import themes_es from "./translations/es/themes.json"
 import themes_en from "./translations/en/themes.json"
+import policy_es from "./translations/es/policy.json"
+import policy_en from "./translations/en/policy.json"
 import AuthUser from './components/Context/AuthUser.jsx'
 
 i18next.init({
@@ -20,12 +22,14 @@ i18next.init({
     es: {
       home: home_es,
       contact: contact_es,
-      themes: themes_es
+      themes: themes_es,
+      policy: policy_es
     },
     en: {
       home: home_en,
       contact: contact_en,
-      themes: themes_en
+      themes: themes_en,
+      policy: policy_en
     }
   }
 })
