@@ -102,8 +102,8 @@ function Blogs() {
                     entryId={selectedEntry}
                 />
                 {error ? error : null}
-                <Footer />
             </div>
+            <Footer />
         </>
     );
 }

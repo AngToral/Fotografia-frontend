@@ -137,8 +137,8 @@ const Gallery = () => {
                     photoId={selectedPhoto}
                 />
                 {error ? error : null}
-                <Footer />
             </div>
+            <Footer />
         </>
     );
 }
