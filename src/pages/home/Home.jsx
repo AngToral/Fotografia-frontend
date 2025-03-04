@@ -276,7 +276,7 @@ function Home() {
                                     </div>
                                 </div>
                                 <div className='flex justify-center'>
-                                    <Button size="sm" variant="text" disabled={accept} className="md:text-lg text-base text-foto-900 josefin-sans font-normal" fullWidth onClick={onEmailContact}>
+                                    <Button size="sm" variant="text" disabled={!accept} className="md:text-lg text-base text-foto-900 josefin-sans font-normal" fullWidth onClick={onEmailContact}>
                                         {t("contact.send")}
                                     </Button>
                                 </div>
