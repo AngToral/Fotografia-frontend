@@ -16,11 +16,13 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        firma: 'AlexBrush', //super cursiva
-        cursiva: ['Playwrite MX'],
-        display: ['LXGW WenKai TC'],
-        revista: ['Playfair Display'],
-        maquina: 'SpecialElite'
+        // firma: 'AlexBrush', //super cursiva
+        // cursiva: ['Playwrite MX'],
+        // display: ['LXGW WenKai TC'],
+        // revista: ['Playfair Display'],
+        // maquina: 'SpecialElite',
+        firma: ['Pinyon Script'],
+        normal: ['Josefin Sans']
       },
       colors: {
         foto: {

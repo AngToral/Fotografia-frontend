@@ -51,7 +51,7 @@ function DeleteTestimonial() {
         <>
             {contextHolder}
             <div className="flex justify-start">
-                <a className="font-display flex m-4 text-xl font-bold text-foto-100 link" onClick={handleHome}>
+                <a className="flex m-4 text-xl font-bold text-foto-100 link" onClick={handleHome}>
                     Home
                 </a>
             </div>
@@ -65,11 +65,11 @@ function DeleteTestimonial() {
                     </> :
                     <>
                         <div>
-                            <p className="text-foto-800 font-display md:text-5xl text-xl" >Do you want to delete this opinion?</p>
+                            <p className="text-foto-800 md:text-5xl text-xl" >Do you want to delete this opinion?</p>
                         </div>
                         <Card color="transparent" shadow={false} className="max-w-[500px] m-6">
                             <img src="../../../images/opiniones.avif" alt="cabecera-texto-flor" />
-                            <CardBody className="text-foto-800 font-revista">
+                            <CardBody className="text-foto-800">
                                 <div className="flex flex-col md:flex-row">
                                     <p className="flex justify-start ml-6"><strong>Creation date of the opinion:&nbsp;&nbsp; </strong></p>
                                     <p className="flex justify-start ml-6">{new Date(newOpinion.createdAt).toDateString()}</p>

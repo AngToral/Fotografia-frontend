@@ -59,8 +59,8 @@ function Register() {
             {contextHolder}
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
-                    <Typography className="text-4xl font-firma mb-4 flex justify-center">Mariana Mendoza</Typography>
-                    <Typography className="text-l mb-6 flex justify-center">Signup now and get full access to our app!</Typography>
+                    <p className="text-4xl pinyon-script-regular mb-4 flex justify-center">Mariana Mendoza</p>
+                    <p className="text-l mb-6 flex justify-center">Signup now and get full access to our app!</p>
                     <Form
                         form={form}
                         name="register"

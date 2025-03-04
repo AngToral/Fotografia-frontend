@@ -37,13 +37,13 @@ const CardsGallery = ({ photo, refresh, visible, photoId }) => {
                     </div>
                     {userId ?
                         <div className="flex justify-center gap-6 mt-4 place-content-end">
-                            <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800" variant="text">Edit</Button>
+                            <Button onClick={() => editPhoto(photo._id)} className="link text-foto-800 font-normal" variant="text">Edit</Button>
                             <Popconfirm
                                 okType="dashed"
                                 title="Are you sure?"
                                 onConfirm={() => handleDelete(photo._id)}
                             >
-                                <Button className="link text-foto-800" variant="text">Delete</Button>
+                                <Button className="link text-foto-800 font-normal" variant="text">Delete</Button>
                             </Popconfirm>
                         </div>
                         : null}

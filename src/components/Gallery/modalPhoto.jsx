@@ -128,11 +128,11 @@ const ModalPhoto = ({ visible, onCancel, refresh, photoId }) => {
             <Modal
                 open={visible}
                 title={
-                    photoId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Edit photo</Typography>
-                        : <Typography className="m-6 text-foto-900 font-bold text-lg font-display">New gallery photo</Typography>
+                    photoId ? <p className="m-6 text-foto-900 text-lg font-light">Edit photo</p>
+                        : <p className="m-6 text-foto-900 text-lg font-light">New gallery photo</p>
                 }
                 okType="primary"
-                className="text-lg font-display"
+                className="text-lg"
                 onCancel={cancel}
                 okButtonProps={{
                     autoFocus: true,

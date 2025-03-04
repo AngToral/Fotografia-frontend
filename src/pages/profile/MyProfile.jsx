@@ -102,9 +102,9 @@ function MyProfile() {
     const items = [
         {
             key: '1',
-            label: <Typography className="font-display font-bold md:text-2xl">
+            label: <p className="md:text-2xl font-light">
                 Change email or password
-            </Typography>,
+            </p>,
             children:
                 <>
                     {loading ? <Loader type="bubble-ping" size={180} /> :
@@ -121,16 +121,16 @@ function MyProfile() {
         },
         {
             key: '2',
-            label: <Typography className="font-display font-bold md:text-2xl">
+            label: <p className="md:text-2xl font-light">
                 Send new review request email
-            </Typography>,
+            </p>,
             children:
                 <>
                     {loading ? <Loader type="bubble-ping" size={180} /> :
                         <>
-                            <Typography className="font-display font-bold md:text-xl mb-4">
+                            <p className="md:text-xl mb-4 font-light">
                                 Send email to:
-                            </Typography>
+                            </p>
                             <div>
                                 <div className="flex flex-col md:flex-row my-4 mb-6">
                                     <Input
@@ -187,26 +187,26 @@ function MyProfile() {
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex justify-start mx-6">
-                        <button variant="text" className="link2 font-display text-foto-200 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link2 text-foto-200 m-4 md:text-2xl " onClick={handleHome}>
                             Home
                         </button>
                     </div>
                     <div className="flex justify-end mx-6">
-                        <button variant="text" className="flex items-center link2 font-display text-foto-200 m-4 md:text-xl font-bold" onClick={logout}>
+                        <button variant="text" className="flex items-center link2 text-foto-200 m-4 md:text-2xl " onClick={logout}>
                             <IoIosLogOut className="mr-2" /> Logout
                         </button>
                     </div>
                 </div>
                 <div className="flex justify-center">
                     <Card
-                        title={<Typography className="font-display font-bold md:text-2xl">
+                        title={<p className="md:text-2xl font-light">
                             Hello, {userName} !!
-                        </Typography>}
+                        </p>}
                         bordered={false}
                         style={{
                             width: 620,
                         }}
-                        className="m-8 font-display font-bold"
+                        className="m-8 font-bold"
                     >
                         <Collapse items={items} bordered={false} />
                     </Card>

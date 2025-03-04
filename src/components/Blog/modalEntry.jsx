@@ -78,11 +78,11 @@ function ModalEntry({ visible, onCancel, refresh, entryId }) {
             <Modal
                 open={visible}
                 title={
-                    entryId ? <Typography className="m-6 text-foto-900 font-bold text-lg font-display">Edit entry</Typography> :
-                        <Typography className="m-6 text-foto-900 font-bold text-lg font-display">New blog entry</Typography>
+                    entryId ? <p className="m-6 text-foto-900 font-light text-lg">Edit entry</p> :
+                        <p className="m-6 text-foto-900 font-light text-lg">New blog entry</p>
                 }
                 okType="primary"
-                className="text-lg font-display"
+                className="text-lg"
                 onCancel={cancel}
                 okButtonProps={{
                     autoFocus: true,

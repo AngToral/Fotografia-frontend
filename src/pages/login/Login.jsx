@@ -99,7 +99,7 @@ function Login() {
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap mb-10">
                     <div className="flex justify-start mx-6">
-                        <button variant="text" className="link2 font-display text-foto-200 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link2 text-foto-200 m-4 md:text-2xl" onClick={handleHome}>
                             Home
                         </button>
                     </div>
@@ -144,7 +144,7 @@ function Login() {
                             </Form>
                             :
                             <div>
-                                <Typography className="text-2xl mb-6 flex justify-center font-revista">Welcome back!</Typography>
+                                <p className="text-2xl mb-6 flex justify-center">Welcome back!</p>
                                 <Form
                                     form={form}
                                     name="login"
@@ -190,14 +190,14 @@ function Login() {
                                     <Form.Item>
                                         <Flex justify="space-between" align="center">
                                             <Form.Item name="remember" valuePropName="checked" noStyle>
-                                                <Checkbox className="font-revista check">Remember me</Checkbox>
+                                                <Checkbox className="check">Remember me</Checkbox>
                                             </Form.Item>
-                                            <a className="font-revista forgot" onClick={e => setForgot(true)}>Forgot password</a>
+                                            <a className="forgot" onClick={e => setForgot(true)}>Forgot password</a>
                                         </Flex>
                                     </Form.Item>
 
                                     <Form.Item>
-                                        <Button className="button font-revista" block type="primary" htmlType="submit" disabled={loading}>
+                                        <Button className="button" block type="primary" htmlType="submit" disabled={loading}>
                                             {loading ? <Loader type="rectangular-ping" size={180} /> : 'Login'}
                                         </Button>
                                     </Form.Item>

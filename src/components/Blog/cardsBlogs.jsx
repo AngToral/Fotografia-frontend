@@ -33,19 +33,19 @@ const CardsBlogs = ({ entry, refresh, visible, entryId }) => {
                         />
                     </CardHeader>
                     <CardBody>
-                        <Typography className="md:text-lg font-maquina">
+                        <p className="md:text-lg">
                             {entry.text}
-                        </Typography>
-                        <Typography className="flex justify-end font-semibold font-revista md:text-lg mt-2">
+                        </p>
+                        <p className="flex justify-end md:text-lg mt-2">
                             {(entry.photoDate).split("T")[0]}
-                        </Typography>
+                        </p>
                     </CardBody>
                     {userId ?
                         <CardFooter className="pt-0 flex justify-around">
-                            <Button className="bg-foto-400 text-foto-200" onClick={() => onEdit(entry._id)}>Edit</Button>
+                            <Button className="bg-foto-400 text-foto-200 font-normal" onClick={() => onEdit(entry._id)}>Edit</Button>
                             <Popover>
                                 <PopoverHandler>
-                                    <Button className="bg-foto-400 text-foto-200">Delete</Button>
+                                    <Button className="bg-foto-400 text-foto-200 font-normal">Delete</Button>
                                 </PopoverHandler>
                                 <PopoverContent className="flex flex-col">
                                     <div className="flex">

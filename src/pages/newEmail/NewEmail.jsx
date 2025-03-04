@@ -43,7 +43,7 @@ function NewEmail() {
             {contextHolder}
             <div className="flex justify-center items-center h-screen">
                 <div className="login">
-                    <Typography className="text-4xl font-display mb-6 flex justify-center">Mariana Mendoza</Typography>
+                    <p className="text-4xl mb-6 flex justify-center">Mariana Mendoza</p>
                     <Form
                         form={form}
                         name="dependencies"

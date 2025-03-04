@@ -49,17 +49,17 @@ const AllTestimonials = () => {
             </FloatButton.Group>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-start ml-6">
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleHome}>
+                    <button variant="text" className="link2 m-4 md:text-2xl text-base text-foto-200" onClick={handleHome}>
                         Home
                     </button>
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleGallery}>
+                    <button variant="text" className="link2 m-4 md:text-2xl text-base text-foto-200" onClick={handleGallery}>
                         {t("menu.gallery")}
                     </button>
-                    <button variant="text" className="link2 m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleBlog}>
+                    <button variant="text" className="link2 m-4 md:text-2xl text-base text-foto-200" onClick={handleBlog}>
                         Blog
                     </button>
                 </div>
-                {/* <p className='font-display md:text-3xl text-xl flex justify-center md:mb-7 mb-2 text-foto-200'>Todas las reseñas:</p> */}
+                {/* <p className='md:text-3xl text-xl flex justify-center md:mb-7 mb-2 text-foto-200'>Todas las reseñas:</p> */}
                 <div className='flex flex-wrap justify-center mt-10'>
                     {allOpinions.length === 0 ? <Empty /> :
                         (

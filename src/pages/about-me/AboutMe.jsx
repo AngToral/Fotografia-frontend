@@ -30,13 +30,13 @@ function AboutMe() {
         <>
             <div className="h-screen">
                 <div className="flex flex-wrap justify-start ml-6">
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleHome}>
+                    <button variant="text" className="link m-4 md:text-2xl text-base text-foto-200" onClick={handleHome}>
                         Home
                     </button>
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleGallery}>
+                    <button variant="text" className="link m-4 md:text-2xl text-base text-foto-200" onClick={handleGallery}>
                         {t("menu.gallery")}
                     </button>
-                    <button variant="text" className="link m-4 font-display md:text-xl text-base font-bold text-foto-200" onClick={handleBlog}>
+                    <button variant="text" className="link m-4 md:text-2xl text-base text-foto-200" onClick={handleBlog}>
                         Blog
                     </button>
                 </div>
@@ -45,9 +45,9 @@ function AboutMe() {
                         <img src="../../../images/about-me.avif" className="foto-about-me" />
                     </div>
                     <div className="div-text textaboutme">
-                        <p className="mx-6 text-nani-50 font-revista md:text-lg"> {t("text.first")}</p>
-                        <p className="m-6 font-revista text-nani-50 md:text-lg"> {t("text.second")}</p>
-                        <p className="m-6 font-revista text-nani-50 md:text-lg"> {t("text.third")}</p>
+                        <p className="mx-6 text-nani-50 md:text-lg"> {t("text.first")}</p>
+                        <p className="m-6 text-nani-50 md:text-lg"> {t("text.second")}</p>
+                        <p className="m-6 text-nani-50 md:text-lg"> {t("text.third")}</p>
                         <hr className="m-4 border-foto-400" />
                         <div className="flex flex-wrap items-center justify-center">
                             <a
@@ -65,17 +65,17 @@ function AboutMe() {
                                 <FaLinkedin className="h-10 w-7 mr-4" />
                             </a>
                             <HiOutlineMail className="h-10 w-7 mr-1 mb-4 text-nani-50" />
-                            <Typography
+                            <p
                                 color="blue-gray"
-                                className="font-display flex items-center mb-4 text-nani-50"
+                                className="flex items-center mb-4 text-nani-50"
                             >
-                                nanamendozago@gmail.com
-                            </Typography>
+                                hello@nanamendozago.com
+                            </p>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div >
-            <Footer />
         </>
     );
 }

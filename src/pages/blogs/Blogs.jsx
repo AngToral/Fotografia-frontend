@@ -67,15 +67,15 @@ function Blogs() {
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start mx-6">
-                        <button variant="text" className="link font-display text-foto-300 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link text-foto-300 m-4 md:text-2xl" onClick={handleHome}>
                             Home
                         </button>
-                        <button variant="text" className="link font-display text-foto-300 m-4 md:text-xl font-bold" onClick={handleGallery}>
+                        <button variant="text" className="link text-foto-300 m-4 md:text-2xl" onClick={handleGallery}>
                             {t("header.gallery")}
                         </button>
                     </div>
                     {userId ?
-                        <button variant="text" className="link font-display text-foto-300 mx-10 md:text-xl font-bold" onClick={addEntry}>
+                        <button variant="text" className="link text-foto-300 mx-10 md:text-2xl" onClick={addEntry}>
                             New entry
                         </button>
                         : null}
@@ -102,8 +102,8 @@ function Blogs() {
                     entryId={selectedEntry}
                 />
                 {error ? error : null}
+                <Footer />
             </div>
-            <Footer />
         </>
     );
 }

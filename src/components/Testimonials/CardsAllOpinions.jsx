@@ -12,13 +12,13 @@ function CardsAllOpinions({ opinion }) {
                         <img src="../../../images/washitape.avif" className="h-12 w-36" />
                     </div>
                     <div className="flex justify-between items-center">
-                        <p className="flex ml-2 md:text-xl text-lg font-cursiva"><strong>{opinion.clientName}:</strong></p>
+                        <p className="flex ml-2 md:text-xl text-lg"><strong>{opinion.clientName}:</strong></p>
                         <div className="flex">
                             <MdOutlinePlace className="h-6 w-6" />
                             <p className="ml-1 flex items-end">{opinion.country}</p>
                         </div>
                     </div>
-                    <p className="flex testiminio justify-center my-4 font-maquina">"{opinion.testimonial}"</p>
+                    <p className="flex testiminio justify-center my-4">"{opinion.testimonial}"</p>
                     <p className="flex justify-end italic mr-6 text-sm">{opinion.shootDate.split("T")[0]}</p>
                 </div>
                 <div className="footer-all-opinions content-end px-5">

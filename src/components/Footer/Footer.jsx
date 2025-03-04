@@ -19,7 +19,7 @@ const Footer = () => {
         <footer footer="true" className="w-full bg-foto-200 p-8" >
             <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-foto-200 text-center md:justify-between">
                 <img src="/images/camera.avif" alt="logo-ct" className="h-11" />
-                <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+                <ul className="flex flex-wrap items-center justify-center gap-y-2 gap-x-8">
                     <li>
                         <a
                             href="https://www.instagram.com/nanamendozago/"
@@ -48,7 +48,7 @@ const Footer = () => {
                             className="font-light flex items-center"
                         >
                             <HiOutlineMail className="h-10 mr-1" />
-                            nanamendozago@gmail.com
+                            hello@nanamendozago.com
                         </h2>
                     </li>
                     <li>
@@ -60,9 +60,9 @@ const Footer = () => {
             </div>
             <hr className="my-4 border-foto-800" />
             <div className="flex justify-center">
-                <Typography color="blue-gray" className="font-normal mr-1">
+                <p color="blue-gray" className="font-light mr-1">
                     Website made by:
-                </Typography>
+                </p>
                 <a
                     href="https://angelatoral.es/"
                     color="blue-gray"

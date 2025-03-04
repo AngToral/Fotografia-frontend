@@ -56,18 +56,18 @@ function NewTestimonial() {
         <>
             {contextHolder}
             <div className="flex justify-between">
-                <a className="font-display flex m-4 text-xl font-bold text-foto-700 link2" onClick={handleHome}>
+                <a className="flex m-4 text-xl font-bold text-foto-700 link2" onClick={handleHome}>
                     Home
                 </a>
                 <Menu>
                     <MenuHandler>
-                        <a variant="text" className="font-display flex m-4 text-xl font-bold text-foto-700 link2">
+                        <a variant="text" className="flex m-4 text-xl font-bold text-foto-700 link2">
                             {t("header.lenguage")}<FaAngleDown />
                         </a>
                     </MenuHandler>
                     <MenuList className="bg-foto-700 border-foto-100">
-                        <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black font-display" data-lenguage="es">🇪🇸 Español</MenuItem>
-                        <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black font-display" data-lenguage="en">🇬🇧 English</MenuItem>
+                        <MenuItem onClick={() => i18n.changeLanguage("es")} className="text-black" data-lenguage="es">🇪🇸 Español</MenuItem>
+                        <MenuItem onClick={() => i18n.changeLanguage("en")} className="text-black" data-lenguage="en">🇬🇧 English</MenuItem>
                     </MenuList>
                 </Menu>
             </div>
@@ -85,7 +85,7 @@ function NewTestimonial() {
                     <div className="flex justify-center items-center">
                         <div className="login w-[400px] mx-6 mb-6">
                             <div className="flex justify-center">
-                                <p className="font-revista md:text-4xl text-3xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
+                                <p className="md:text-4xl text-3xl mb-6 text-foto-300">{t("testimonials.testimonial")}</p>
                             </div>
                             <Form
                                 form={form}
@@ -146,7 +146,7 @@ function NewTestimonial() {
                                         },
                                     ]}
                                 >
-                                    <Input className="font-display" placeholder="NL" showCount maxLength={2} />
+                                    <Input className="" placeholder="NL" showCount maxLength={2} />
                                 </Form.Item>
                                 <Form.Item
                                     label={t("testimonials.opinion")}
@@ -158,7 +158,7 @@ function NewTestimonial() {
                                         },
                                     ]}
                                 >
-                                    <TextArea className="font-display" placeholder={t("testimonials.textarea")} rows={4} showCount maxLength={520} />
+                                    <TextArea className="" placeholder={t("testimonials.textarea")} rows={4} showCount maxLength={520} />
                                 </Form.Item>
                                 <Form.Item>
                                     <Button className="button" block type="primary" htmlType="submit" disabled={loading}>

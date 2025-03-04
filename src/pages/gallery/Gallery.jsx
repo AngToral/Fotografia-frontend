@@ -96,15 +96,15 @@ const Gallery = () => {
             <div className="h-screen">
                 <div className="flex justify-between flex-wrap">
                     <div className="flex  justify-start mx-6">
-                        <button variant="text" className="link font-display text-foto-900 m-4 md:text-xl font-bold" onClick={handleHome}>
+                        <button variant="text" className="link text-foto-900 m-4 md:text-2xl" onClick={handleHome}>
                             Home
                         </button>
-                        <button variant="text" className="link font-display text-foto-900 m-4 md:text-xl font-bold" onClick={handleBlog}>
+                        <button variant="text" className="link text-foto-900 m-4 md:text-2xl" onClick={handleBlog}>
                             Blog
                         </button>
                     </div>
                     {userId ?
-                        <button variant="text" className="link font-display text-foto-900 mx-10 md:text-xl font-bold" onClick={addPhoto}>
+                        <button variant="text" className="link text-foto-900 mx-10 md:text-2xl" onClick={addPhoto}>
                             Upload photo
                         </button>
                         : null}
@@ -137,8 +137,8 @@ const Gallery = () => {
                     photoId={selectedPhoto}
                 />
                 {error ? error : null}
+                <Footer />
             </div>
-            <Footer />
         </>
     );
 }
