@@ -175,88 +175,88 @@ function Home() {
                 </ScrollPage>
                 {/* servicios */}
 
-                <div className="flex flex-col m-10 gap-5 items-center mb-28 mt-20">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 items-center md:mb-28 mb-16 md:mt-20">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.sports")}
                     </p>
                     <div className="flex flex-wrap justify-center gap-5">
                         {/* vertical */}
-                        <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[400px]" />
-                        <img src="/images/boxing.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[400px]" />
+                        <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto md:max-w-[400px] h-auto" />
+                        <img src="/images/boxing.avif" alt="photo-boxing" className="foto md:max-w-[400px] h-auto" />
                         {/* horizontal */}
-                        <img src="/images/sports-boxing.avif" alt="family-photo" className="foto max-w-[800px]" />
+                        <img src="/images/sports-boxing.avif" alt="photo-boxing" className="foto md:max-w-[800px] h-auto" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 items-center mb-28">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 items-center md:mb-28 mb-16">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.family")}
                     </p>
                     <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
-                        <img src="/images/family.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[450px]" />
+                        <img src="/images/family.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[450px] h-auto" />
                         {/* horizontal */}
                         <div className="flex flex-col justify-center items-center gap-5">
-                            <img src="/images/family2.avif" alt="family-photo" className="foto max-h-[350px]" />
-                            <img src="/images/familia.avif" alt="family-photo" className="foto max-h-[350px]" />
+                            <img src="/images/family2.avif" alt="family-photo" className="foto md:max-h-[350px] h-auto" />
+                            <img src="/images/familia.avif" alt="family-photo" className="foto md:max-h-[350px] h-auto" />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 items-center mb-28">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 items-center md:mb-28 mb-16">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.couple")}
                     </p>
                     <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
-                        <img src="/images/wedding.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
-                        <img src="/images/couple.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
-                        <img src="/images/couples.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
+                        <img src="/images/wedding.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
+                        <img src="/images/couple.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
+                        <img src="/images/couples.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 mb-28 items-center">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 md:mb-28 mb-16 items-center">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.documentary")}
                     </p>
-                    <div className="flex flex-wrap justify-center items-center gap-5">
+                    <div className="flex flex-wrap enter items-center gap-5">
                         {/* horizontal */}
-                        <img src="/images/periodismo.avif" alt="family-photo" className="foto max-h-[400px]" />
-                        <img src="/images/periodismo2.avif" alt="family-photo" className="foto max-h-[400px]" />
-                        <img src="/images/periodismo3.avif" alt="family-photo" className="foto max-h-[600px]" />
+                        <img src="/images/periodismo.avif" alt="family-photo" className="foto md:max-h-[400px] h-auto" />
+                        <img src="/images/periodismo2.avif" alt="family-photo" className="foto md:max-h-[400px] h-auto" />
+                        <img src="/images/periodismo3.avif" alt="family-photo" className="foto md:max-h-[600px] h-auto" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 mb-28 items-center">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 md:mb-28 mb-16 items-center">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.portrait")}
                     </p>
                     <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
-                        <img src="/images/retrato.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[400px]" />
-                        <img src="/images/portrait.avif" alt="family-photo" className="foto max-h-[500px]" />
+                        <img src="/images/retrato.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[400px] h-auto" />
+                        <img src="/images/portrait.avif" alt="family-photo" className="foto md:max-h-[500px] h-auto" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 items-center mb-28">
-                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                <div className="flex flex-col md:m-10 m-5 gap-5 md:mb-28 mb-16 items-center">
+                    <p className="text-foto-900 lg:text-5xl text-4xl flex items-center">
                         {t("services.travel")}
                     </p>
                     <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
-                        <img src="/images/paisaje.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
-                        <img src="/images/paisajes2.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
-                        <img src="/images/paisajes.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
+                        <img src="/images/paisaje.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
+                        <img src="/images/paisajes2.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
+                        <img src="/images/paisajes.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end md:max-w-[350px] h-auto" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 mb-28">
+                <div className="flex flex-col md:m-10 m-5 gap-5 md:mb-28 mb-16">
                     <div className="flex flex-wrap justify-center items-center gap-5">
-                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center w-1/3">
+                        <p className="text-foto-900 lg:text-5xl text-4xl flex items-center md:w-1/3">
                             {t("services.stage")}
                         </p>
                         {/* horizontal */}
-                        <img src="/images/stage.avif" alt="family-photo" className="foto max-h-[450px]" />
+                        <img src="/images/stage.avif" alt="family-photo" className="foto max-h-[450px] h-auto" />
                     </div>
                 </div>
 
@@ -264,7 +264,7 @@ function Home() {
             {/* feedbacks */}
             < div >
                 <div className="flex items-end">
-                    <p className="m-6 mb-0 md:text-5xl text-2xl text-foto-900" >{t("testimonials.testimonial")}</p>
+                    <p className="m-6 mb-0 md:text-5xl text-4xl text-foto-900" >{t("testimonials.testimonial")}</p>
                     <a variant="text" className="text-lg text-foto-900 link" onClick={handleAllTestimonials}>{t("testimonials.more")}</a>
                 </div>
                 <div className='content-center'>
