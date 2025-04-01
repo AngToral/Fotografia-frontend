@@ -184,7 +184,7 @@ function Home() {
                         <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto md:max-w-[400px] h-auto" />
                         <img src="/images/boxing.avif" alt="photo-boxing" className="foto md:max-w-[400px] h-auto" />
                         {/* horizontal */}
-                        <img src="/images/sports-boxing.avif" alt="photo-boxing" className="foto md:max-w-[800px] h-[400px]" />
+                        <img src="/images/sports-boxing.avif" alt="photo-boxing" className="foto md:max-w-[800px] h-auto" />
                     </div>
                 </div>
 
@@ -223,7 +223,7 @@ function Home() {
                         {/* horizontal */}
                         <img src="/images/periodismo.avif" alt="documentary-photo" className="foto md:max-h-[400px] h-auto" />
                         <img src="/images/periodismo2.avif" alt="documentary-photo" className="foto md:max-h-[400px] h-auto" />
-                        <img src="/images/periodismo3.avif" alt="documentary-photo" className="foto md:max-h-[600px] h-[410px]" />
+                        <img src="/images/periodismo3.avif" alt="documentary-photo" className="foto md:max-h-[600px] h-auto" />
                     </div>
                 </div>
 
