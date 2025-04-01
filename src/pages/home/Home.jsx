@@ -95,6 +95,11 @@ function Home() {
         else setError(testiminio.message);
     }
 
+    function bloquearBotonDerecho(event) {
+        event.preventDefault();
+    }
+    document.addEventListener("contextmenu", bloquearBotonDerecho)
+
     return (
         <>
             {contextHolder}
@@ -205,45 +210,53 @@ function Home() {
                     <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
                         <img src="/images/wedding.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
-                        <img src="/images/couples.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
                         <img src="/images/couple.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
+                        <img src="/images/couples.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
                     </div>
                 </div>
 
-                <div className="flex flex-col m-10 gap-5 mb-28">
+                <div className="flex flex-col m-10 gap-5 mb-28 items-center">
+                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                        {t("services.documentary")}
+                    </p>
                     <div className="flex flex-wrap justify-center items-center gap-5">
-                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
-                            {t("services.documentary")}
-                        </p>
                         {/* horizontal */}
-                        <img src="/images/periodismo.avif" alt="family-photo" className="foto max-h-[500px]" />
+                        <img src="/images/periodismo.avif" alt="family-photo" className="foto max-h-[400px]" />
+                        <img src="/images/periodismo2.avif" alt="family-photo" className="foto max-h-[400px]" />
+                        <img src="/images/periodismo3.avif" alt="family-photo" className="foto max-h-[600px]" />
                     </div>
                 </div>
 
-                <div className="flex m-10 gap-5 mb-28 justify-center">
-                    <div className="flex flex-wrap justify-center items-center gap-5 w-2/5">
-                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
-                            {t("services.portrait")}
-                        </p>
+                <div className="flex flex-col m-10 gap-5 mb-28 items-center">
+                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                        {t("services.portrait")}
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
                         <img src="/images/retrato.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[400px]" />
+                        <img src="/images/portrait.avif" alt="family-photo" className="foto max-h-[500px]" />
                     </div>
-                    <div className="flex flex-wrap justify-center items-center gap-5 w-2/5">
-                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
-                            {t("services.travel")}
-                        </p>
+                </div>
+
+                <div className="flex flex-col m-10 gap-5 items-center mb-28">
+                    <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                        {t("services.travel")}
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-5">
                         {/* vertical */}
-                        <img src="/images/paisaje.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[400px]" />
+                        <img src="/images/paisaje.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
+                        <img src="/images/paisajes2.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
+                        <img src="/images/paisajes.avif" alt="photo-crossfit" className="foto lg:flex lg:items-end max-w-[350px]" />
                     </div>
                 </div>
 
                 <div className="flex flex-col m-10 gap-5 mb-28">
                     <div className="flex flex-wrap justify-center items-center gap-5">
-                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center w-1/3">
                             {t("services.stage")}
                         </p>
                         {/* horizontal */}
-                        <img src="/images/stage.avif" alt="family-photo" className="foto max-h-[500px]" />
+                        <img src="/images/stage.avif" alt="family-photo" className="foto max-h-[450px]" />
                     </div>
                 </div>
 
