@@ -170,7 +170,7 @@ function Home() {
                 </ScrollPage>
                 {/* servicios */}
 
-                <div className="flex flex-col m-10 gap-5 items-center mb-28">
+                <div className="flex flex-col m-10 gap-5 items-center mb-28 mt-20">
                     <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
                         {t("services.sports")}
                     </p>
