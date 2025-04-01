@@ -169,60 +169,52 @@ function Home() {
                     </Animator>
                 </ScrollPage>
                 {/* servicios */}
-                <ScrollPage>
-                    <div className="flex flex-col">
-                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="md:flex justify-between m-10">
-                                <p className="text-foto-900 lg:text-5xl text-2xl">
-                                    {t("services.documentary")}
-                                </p>
-                                <img src="/images/periodismo.avif" alt="documentary-photo-venezuela" className="foto lg:h-[450px] h-[220px] lg:m-6 mt-6" />
-                            </div>
-                            <div className="flex justify-between m-10">
-                                <img src="/images/retrato.avif" alt="portrait-photo-blonde-girl" className="foto lg:h-[500px] h-[340px] lg:absolute lg:top-[230px]" />
-                                <p className="text-foto-900 lg:text-5xl text-2xl lg:m-4 m-2 lg:absolute lg:top-[550px] lg:left-[360px] flex items-center">
-                                    {t("services.portrait")}
-                                </p>
-                            </div>
-                        </Animator>
+
+                <div className="flex flex-col">
+                    <div className="md:flex justify-between m-10">
+                        <p className="text-foto-900 lg:text-5xl text-2xl">
+                            {t("services.documentary")}
+                        </p>
+                        <img src="/images/periodismo.avif" alt="documentary-photo-venezuela" className="foto lg:h-[450px] h-[220px] lg:m-6 mt-6" />
                     </div>
-                </ScrollPage>
-                <ScrollPage className="lg:block flex flex-col justify-center">
-                    <div className="flex flex-col">
-                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="flex lg:justify-between justify-around justify-center lg:m-10 m-5 lg:flex-col">
-                                <p className="text-foto-900 lg:text-5xl text-2xl lg:absolute lg:right-[440px] lg:top-32 mb-5 flex items-center">
-                                    {t("services.sports")}
-                                </p>
-                                <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto lg:self-end lg:h-[500px] h-[340px] lg:max-w-[360px] w-auto lg:m-6 lg:flex lg:items-end lg:mt-16" />
-                            </div>
-                            <div className="flex md:flex-row flex-col lg:justify-between lg:m-10 m-5">
-                                <img src="/images/familia.avif" alt="family-photo" className="foto lg:h-[400px] lg:m-6 mt-6 md:absolute lg:top-[320px] h-[220px]" />
-                                <p className="text-foto-900 lg:text-5xl text-2xl md:absolute md:top-[670px] md:left-[680px]">
-                                    {t("services.family")}
-                                </p>
-                            </div>
-                        </Animator>
+                    <div className="flex justify-between m-10">
+                        <img src="/images/retrato.avif" alt="portrait-photo-blonde-girl" className="foto lg:h-[500px] h-[340px] " />
+                        <p className="text-foto-900 lg:text-5xl text-2xl lg:m-4 m-2 flex items-center">
+                            {t("services.portrait")}
+                        </p>
                     </div>
-                </ScrollPage>
-                <ScrollPage>
-                    <div className="flex flex-col lg:ml-10">
-                        <Animator animation={batch(Fade(), MoveIn(1000, 0))}>
-                            <div className="flex lg:flex-row flex-col lg:justify-between lg:items-start items-end lg:m-10 m-5">
-                                <p className="text-foto-900 lg:text-5xl text-2xl">
-                                    {t("services.stage")}
-                                </p>
-                                <img src="/images/stage.avif" alt="stage-photo-boys" className="foto lg:h-[400px] h-[220px] lg:m-6 mt-6" />
-                            </div>
-                            <div className="flex lg:flex-row flex-col justify-between m-5">
-                                <img src="/images/paisaje.avif" alt="travel-photo-snow" className="foto mb-2 lg:h-[550px] lg:w-auto h-[340px] w-[260px] lg:absolute lg:top-[190px]" />
-                                <p className="text-foto-900 lg:text-5xl text-2xl lg:m-4 m-2 lg:absolute lg:top-[600px] lg:right-[350px] flex justify-center items-center">
-                                    {t("services.travel")}
-                                </p>
-                            </div>
-                        </Animator>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="flex lg:justify-between justify-around justify-center lg:m-10 m-5 lg:flex-col">
+                        <p className="text-foto-900 lg:text-5xl text-2xl flex items-center">
+                            {t("services.sports")}
+                        </p>
+                        <img src="/images/crossfit.avif" alt="photo-crossfit" className="foto lg:self-end lg:h-[500px] h-[340px] lg:max-w-[360px] w-auto lg:m-6 lg:flex lg:items-end lg:mt-16" />
                     </div>
-                </ScrollPage>
+                    <div className="flex md:flex-row flex-col lg:justify-between lg:m-10 m-5">
+                        <img src="/images/familia.avif" alt="family-photo" className="foto lg:h-[400px] lg:m-6 mt-6 h-[220px]" />
+                        <p className="text-foto-900 lg:text-5xl text-2xl">
+                            {t("services.family")}
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col lg:ml-10">
+                    <div className="flex lg:flex-row flex-col lg:justify-between lg:items-start items-end lg:m-10 m-5">
+                        <p className="text-foto-900 lg:text-5xl text-2xl">
+                            {t("services.stage")}
+                        </p>
+                        <img src="/images/stage.avif" alt="stage-photo-boys" className="foto lg:h-[400px] h-[220px] lg:m-6 mt-6" />
+                    </div>
+                    <div className="flex lg:flex-row flex-col justify-between m-5">
+                        <img src="/images/paisaje.avif" alt="travel-photo-snow" className="foto mb-2 lg:h-[550px] lg:w-auto h-[340px] w-[260px] " />
+                        <p className="text-foto-900 lg:text-5xl text-2xl lg:m-4 m-2 flex justify-center items-center">
+                            {t("services.travel")}
+                        </p>
+                    </div>
+                </div>
+
             </ScrollContainer >
             {/* feedbacks */}
             <div div >
