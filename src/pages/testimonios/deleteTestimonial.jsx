@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Button, Card, CardBody, CardFooter, Popover, PopoverContent, PopoverHandler, Typography } from "@material-tailwind/react";
 import { message } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
-import algo from "../../../public/images/"
 
 function DeleteTestimonial() {
     const [loading, setLoading] = useState(false)
