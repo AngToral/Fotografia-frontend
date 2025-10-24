@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button, Card, CardBody, CardFooter, Popover, PopoverContent, PopoverHandler, Typography } from "@material-tailwind/react";
 import { message } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
+import algo from "../../../public/images/"
 
 function DeleteTestimonial() {
     const [loading, setLoading] = useState(false)
@@ -60,7 +61,7 @@ function DeleteTestimonial() {
                     <>
                         <div className="flex flex-col">
                             <p className="text-foto-900 text-5xl m-6">Deleted!</p>
-                            <img className="h-[250px]" src="../../../public/images/deleted.avif" />
+                            <img className="h-[250px]" src="/images/deleted.avif" />
                         </div>
                     </> :
                     <>
