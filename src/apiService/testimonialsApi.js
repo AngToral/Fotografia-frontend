@@ -66,6 +66,13 @@ export const sendReseñaEmail = async (data) => {
             "authorization": `Bearer ${token}`,
         },
     });
+
+    if (!response.ok) {
+        const error = new Error('HTTP Error')
+        error.response = { status: response.status }
+        throw error
+    }
+
     const user = await response.json();
     return user;
 }
@@ -80,6 +87,13 @@ export const sendReviewEmail = async (data) => {
             "authorization": `Bearer ${token}`,
         },
     });
+
+    if (!response.ok) {
+        const error = new Error('HTTP Error')
+        error.response = { status: response.status }
+        throw error
+    }
+
     const user = await response.json();
     return user;
 }

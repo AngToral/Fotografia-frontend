@@ -40,25 +40,41 @@ function MyProfile() {
             })
         } else {
             setLoading(true)
+            try {
+                if (clientEmail !== "" && clientName !== "") {
+                    console.log(clientEmail, clientName)
+                    await sendReviewEmail({ clientEmail, clientName })
+                }
+                if (clienteEmail !== "" && clienteNombre !== "") {
+                    console.log(clienteEmail, clienteNombre)
+                    await sendReseñaEmail({ clienteEmail, clienteNombre })
+                }
 
-            if (clientEmail !== "" && clientName !== "") {
-                console.log(clientEmail, clientName)
-                await sendReviewEmail({ clientEmail, clientName })
+                setLoading(false)
+                messageApi.open({
+                    type: 'success',
+                    content: "Email sent!"
+                })
+                setClienteEmail("")
+                setClienteNombre("")
+                setClientEmail("")
+                setClientName("")
             }
-            if (clienteEmail !== "" && clienteNombre !== "") {
-                console.log(clienteEmail, clienteNombre)
-                await sendReseñaEmail({ clienteEmail, clienteNombre })
-            }
+            catch (error) {
+                setLoading(false)
 
-            setLoading(false)
-            messageApi.open({
-                type: 'success',
-                content: "Email sent!"
-            })
-            setClienteEmail("")
-            setClienteNombre("")
-            setClientEmail("")
-            setClientName("")
+                if (error.response && error.response.status === 403) {
+                    messageApi.open({
+                        type: 'error',
+                        content: "Mensaje no enviado"
+                    })
+                } else {
+                    messageApi.open({
+                        type: 'error',
+                        content: "Error al enviar el mensaje"
+                    })
+                }
+            }
         }
     }
 
