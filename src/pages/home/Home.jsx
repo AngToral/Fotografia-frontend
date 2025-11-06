@@ -23,6 +23,7 @@ import Marquee from 'react-fast-marquee';
 import { authContext } from "../../components/Context/authContext";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import Footer from "../../components/Footer/Footer";
+import { cache } from "react";
 
 function Home() {
     const [clientName, setClientName] = useState("")
@@ -76,15 +77,32 @@ function Home() {
         } else {
             console.log(clientName, clientEmail, subject)
             setLoading(true)
-            await sendContactEmail({ clientName, clientEmail, subject })
-            setLoading(false)
-            messageApi.open({
-                type: 'success',
-                content: `${t("contact.success")}`
-            })
-            setClientName("")
-            setClientEmail("")
-            setSubject("")
+            try {
+                await sendContactEmail({ clientName, clientEmail, subject })
+                setLoading(false)
+                messageApi.open({
+                    type: 'success',
+                    content: `${t("contact.success")}`
+                })
+                setClientName("")
+                setClientEmail("")
+                setSubject("")
+            }
+            catch (error) {
+                setLoading(false)
+
+                if (error.response && error.response.status === 403) {
+                    messageApi.open({
+                        type: 'error',
+                        content: "Mensaje no enviado"
+                    })
+                } else {
+                    messageApi.open({
+                        type: 'error',
+                        content: "Error al enviar el mensaje"
+                    })
+                }
+            }
         }
     }
 
